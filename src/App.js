@@ -2,7 +2,6 @@ import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./components/Home";
-import Navbar from "./components/Navbar";
 import './App.css';
 import Profile from './components/Profile';
 import Navbar from './components/Navbar';
