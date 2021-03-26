@@ -1,3 +1,4 @@
+import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./components/Home";
@@ -20,14 +21,13 @@ function App() {
           <Logout />
         </div>
         <h1>Puppy Luv</h1>
+        <p>The app to bring the only pure souls in this cruel world, together.</p>
       </header>
-      <Profile />
 
       <Router>
         <Switch>
           <Route exact path="/">
-            <Home/>
-            <NavBar/>
+            <Profile />
           </Route>
         </Switch>
       </Router>
