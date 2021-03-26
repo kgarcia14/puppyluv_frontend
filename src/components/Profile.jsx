@@ -1,5 +1,6 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import JSONPretty from 'react-json-pretty';
+import Home from './Home';
 
 const Profile = () => {
     const { user, isAuthenticated } = useAuth0();
@@ -14,7 +15,7 @@ const Profile = () => {
                 <JSONPretty data={user} />
             </div>
         ) : (
-            <p>Home page for non Logged in users goes here</p>
+            <Home />
         )
     )
 }
