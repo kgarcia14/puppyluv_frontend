@@ -3,8 +3,8 @@ import * as ReactBootStrap from "react-bootstrap";
 import LoginButton from './LoginButton';
 import LogoutButton from './LogoutButton';
 
-function Navbar() {
 
+const Navbar = () => {
     return (
 
         <ReactBootStrap.Navbar sticky="top" collapseOnSelect expand="xl" bg="dark" variant="dark">
