@@ -1,5 +1,7 @@
 import React from 'react';
 import * as ReactBootStrap from "react-bootstrap";
+import LoginButton from './LoginButton';
+import LogoutButton from './LogoutButton';
 
 function Navbar() {
 
@@ -21,8 +23,11 @@ function Navbar() {
         </ReactBootStrap.Nav>
         <ReactBootStrap.Nav>
             <ReactBootStrap.Nav.Link href="/">About The Developers</ReactBootStrap.Nav.Link>
+            <ReactBootStrap.Nav.Link eventKey={1} href="/">
+                <LoginButton />
+            </ReactBootStrap.Nav.Link>
             <ReactBootStrap.Nav.Link eventKey={2} href="/">
-            Log Out
+                <LogoutButton />
             </ReactBootStrap.Nav.Link>
         </ReactBootStrap.Nav>
         </ReactBootStrap.Navbar.Collapse>
