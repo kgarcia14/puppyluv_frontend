@@ -30,3 +30,7 @@ form {
 label{
   display: block;
 }
+
+.title {
+  border: black
+}

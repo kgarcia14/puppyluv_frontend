@@ -4,20 +4,20 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Profile from './components/Profile';
 import LandingPage from './components/LandingPage';
-import PlaceToVisit from './components/PlaceToVisit';
+import MoreInfo from './components/MoreInfo';
 
 import { makeStyles } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';
 
-import './App.css';
 
 
 const useStyles = makeStyles((theme) => ({
   root: {
     minHeight: '100vh',
-    backgroundImage: `url('https://images.wallpaperscraft.com/image/dog_cat_kitten_puppy_drawing_heart_96341_1600x1200.jpg')`,
+    backgroundImage: `url('https://i.pinimg.com/originals/f2/72/fe/f272fe97a657045cabb4dddb911cf4ae.jpg')`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
+    backgroundAttachment: 'fixed',
   },
 }))
 
@@ -29,9 +29,9 @@ function App() {
   return (
     <div className={classes.root}>
       <CssBaseline/>
-      <Navbar />
+      <Navbar/>
       <LandingPage/>
-      <PlaceToVisit />
+      <MoreInfo/>
     <div className="App">
       <Router>
         <Switch>
