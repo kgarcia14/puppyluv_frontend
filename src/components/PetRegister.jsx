@@ -4,6 +4,7 @@ import { useState } from 'react';
 const PetRegister = () => {
     const { user } = useAuth0();
 
+    const [userNickname, setUserNickname] = useState('')
     const [aboutUs, setAboutUs] = useState('');
     const [petName, setPetName] = useState('');
     const [petBreed, setPetBreed] = useState('');
@@ -13,6 +14,7 @@ const PetRegister = () => {
 
     const _aboutUsChange = async (e) => {
         setAboutUs(e.target.value)
+        setUserNickname(user.nickname)
     }
     const _petNameChange = async (e) => {
         setPetName(e.target.value)
@@ -32,11 +34,12 @@ const PetRegister = () => {
 
     const _handleSubmitPetInfo = async (e) => {
         e.preventDefault();
-        const apiUrl = 'http://127.0.0.1:3333/users/add';
+        const apiUrl = 'http://127.0.0.1:3333/users/update';
         const submitResponse = await fetch(apiUrl, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({  
+            body: JSON.stringify({ 
+                user_nickname: userNickname, 
                 about_us: aboutUs, 
                 pet_name: petName, 
                 pet_breed: petBreed, 
