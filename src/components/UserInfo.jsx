@@ -22,11 +22,10 @@ const UserInfo = () => {
         <>
         {!!uniqueId.length ? (
             <UserRegister />
-            
-            ) : (
-                <>
-                </>
-            )}
+        ) : (
+            <>
+            </>
+        )}
 
         {uniqueId.pet_name === null ? (
             <PetRegister />

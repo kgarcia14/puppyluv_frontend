@@ -12,6 +12,7 @@ const UserRegister = () => {
     const [city, setCity] = useState('');
     const [zipCode, setZipCode] = useState('');
     const [userImg, setUserImg] = useState('');
+    const [numbPets, setNumbPets] = useState('');
 
     const _firstNameChange = async (e) => {
         setFirstName(e.target.value)
@@ -35,6 +36,9 @@ const UserRegister = () => {
     const _userImgChange = async (e) => {
         setUserImg(e.target.value)
     }
+    const _numPetsChange = async (e) => {
+        setNumbPets(e.target.value)
+    }
 
     const _handleSubmitUserInfo = async (e) => {
         e.preventDefault();
@@ -50,7 +54,8 @@ const UserRegister = () => {
                 city: city, 
                 zipcode: zipCode,
                 user_img: userImg,
-                user_nickname: userNickname,     
+                user_nickname: userNickname,
+                numb_pets: numbPets,    
             })
         }).then((response) => response);
         console.log("submit user response is: ", submitResponse)
@@ -122,13 +127,23 @@ const UserRegister = () => {
                         value={zipCode}
                         onChange={_zipCodeChange}/>
                 </label>
-                <label>picture of you and your dog
+                <label>picture of you
                     <input 
                     type="file"
                     name="pet_img"
                     value={userImg}
                     onChange={_userImgChange}
                     />
+                </label>
+                <label>How many dogs do you have?
+                    <select
+                    required
+                        onChange={_numPetsChange}>
+                        <option value="">Select a number</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
                 </label>
                 <button 
                     type="submit">
@@ -139,4 +154,4 @@ const UserRegister = () => {
     )
 }
 
-export default UserRegister
+export default UserRegister;
