@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import './App.css';
 import Profile from './components/Profile';
-import Header from './components/Header';
+import Home from './components/Home';
 
 import { makeStyles } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';
@@ -26,7 +26,7 @@ function App() {
   return (
     <div className={classes.root}>
       <CssBaseline/>
-      <Header/>
+      <Home/>
     <div className="App">
       <Navbar />
       <Router>
