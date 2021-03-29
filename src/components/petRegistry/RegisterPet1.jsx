@@ -35,11 +35,11 @@ const RegisterPet1 = ({ pet1 }) => {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ 
                 user_nickname: userNickname,
-                pet_name: petName, 
-                pet_breed: petBreed, 
-                pet_age: petAge, 
-                pet_personality: petPersonality, 
-                pet_img: petImg 
+                pet_name1: petName, 
+                pet_breed1: petBreed, 
+                pet_age1: petAge, 
+                pet_personality1: petPersonality, 
+                pet_img1: petImg 
             })
         }).then((response) => response);
         console.log("submit pet response is: ", submitResponse)

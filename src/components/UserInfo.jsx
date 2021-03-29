@@ -6,7 +6,7 @@ import UserRegister from './UserRegister';
 const UserInfo = () => {
     const { user } = useAuth0();
     const [uniqueId, setUniqueId] = useState([]);
-    console.log('pet name:', uniqueId.pet_name)
+    console.log('pet name:', uniqueId.pet_name1)
     console.log('user Name', uniqueId.first_name)
 
     useEffect(() => {
@@ -27,13 +27,13 @@ const UserInfo = () => {
             </>
         )}
 
-        {uniqueId.pet_name === null ? (
+        {uniqueId.about_us === null ? (
             <PetRegister />
         ) : (
             <>
             </>
         )}
-        {uniqueId.length || uniqueId.pet_name === null ? (
+        {uniqueId.length || uniqueId.about_us !== null ? (
             <>
             </>
         ) : (
