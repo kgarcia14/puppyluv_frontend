@@ -10,7 +10,7 @@ const Navbar = () => {
 
     return (
         <ReactBootStrap.Navbar sticky="top" collapseOnSelect expand="xl" bg="dark" variant="dark">
-        <ReactBootStrap.Navbar.Brand href="/">PuppyLuv 🐶🐶</ReactBootStrap.Navbar.Brand>
+        <ReactBootStrap.Navbar.Brand href="/">PuppyLuv 🐶</ReactBootStrap.Navbar.Brand>
         <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
         <ReactBootStrap.Nav className="mr-auto">

@@ -1488,7 +1488,7 @@
     "@types/yargs" "^15.0.0"
     "chalk" "^4.0.0"
 
-"@material-ui/core@^4.11.3":
+"@material-ui/core@^4.0.0", "@material-ui/core@^4.11.3":
   "integrity" "sha512-Adt40rGW6Uds+cAyk3pVgcErpzU/qxc7KBR94jFHBYretU4AtWZltYcNsbeMn9tXL86jjVL1kuGcIHsgLgFGRw=="
   "resolved" "https://registry.npmjs.org/@material-ui/core/-/core-4.11.3.tgz"
   "version" "4.11.3"
@@ -1505,6 +1505,13 @@
     "prop-types" "^15.7.2"
     "react-is" "^16.8.0 || ^17.0.0"
     "react-transition-group" "^4.4.0"
+
+"@material-ui/icons@^4.11.2":
+  "integrity" "sha512-fQNsKX2TxBmqIGJCSi3tGTO/gZ+eJgWmMJkgDiOfyNaunNaxcklJQFaFogYcFl0qFuaEz1qaXYXboa/bUXVSOQ=="
+  "resolved" "https://registry.npmjs.org/@material-ui/icons/-/icons-4.11.2.tgz"
+  "version" "4.11.2"
+  dependencies:
+    "@babel/runtime" "^7.4.4"
 
 "@material-ui/styles@^4.11.3":
   "integrity" "sha512-HzVzCG+PpgUGMUYEJ2rTEmQYeonGh41BYfILNFb/1ueqma+p1meSdu4RX6NjxYBMhf7k+jgfHFTTz+L1SXL/Zg=="
@@ -10949,6 +10956,11 @@
   "integrity" "sha512-GrdeshiRmS1YLMYgzF16olf2jJ/IzxXY9lhKOskuVziubpTYcYqyOwYeJKzQkwy7uN0fYSsbsC4RQaXf9LCrYA=="
   "resolved" "https://registry.npmjs.org/stackframe/-/stackframe-1.2.0.tgz"
   "version" "1.2.0"
+
+"start@^5.1.0":
+  "integrity" "sha1-HBcfDvlIf1bQq5p1Ws6GAWkgh2M="
+  "resolved" "https://registry.npmjs.org/start/-/start-5.1.0.tgz"
+  "version" "5.1.0"
 
 "static-extend@^0.1.1":
   "integrity" "sha1-YICcOcv/VTNyJv1eC1IPNB8ftcY="

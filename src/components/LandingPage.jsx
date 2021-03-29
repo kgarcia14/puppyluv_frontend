@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Home() {
+export default function LandingPage() {
   const classes = useStyles();
   const [checked, setChecked] = useState(false);
   useEffect(() => {
