@@ -1,11 +1,11 @@
 import { useAuth0 } from '@auth0/auth0-react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import JSONPretty from 'react-json-pretty';
 
 const Register = () => {
     const { user } = useAuth0();
 
-    const [userId, setUserId] = useState('');
+    const [userNickname, setUserNickname] = useState('');
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [age, setAge] = useState('');
@@ -23,7 +23,7 @@ const Register = () => {
 
     const _firstNameChange = async (e) => {
         setFirstName(e.target.value)
-        setUserId(user.sub)
+        setUserNickname(user.nickname)
     }
     const _lastNameChange = async (e) => {
         setLastName(e.target.value)
@@ -77,7 +77,7 @@ const Register = () => {
                 zipcode: zipCode, 
                 about_us: aboutUs, 
                 user_img: userImg,
-                user_id: userId, 
+                user_nickname: userNickname, 
                 pet_name: petName, 
                 pet_breed: petBreed, 
                 pet_age: petAge, 

@@ -5,14 +5,17 @@ import Register from './Register';
 const UserInfo = () => {
     const { user } = useAuth0();
     const [uniqueId, setUniqueId] = useState([]);
+    console.log(uniqueId)
 
     useEffect(() => {
         (async () => {
-            const apiUrl = `http://127.0.0.1:3333/users/user/${user.sub}`
+            console.log(user.nickname)
+            const apiUrl = `http://127.0.0.1:3333/users/${user.nickname}`
             const usersData = await fetch(apiUrl).then(response => response.json());
             setUniqueId(usersData)
+            console.log()
         })();
-    }, [user.sub])
+    }, [user.nickname])
 
     return (
         <>
