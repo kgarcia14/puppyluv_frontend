@@ -8,12 +8,15 @@ import Navbar from './components/Navbar';
 
 function App() {
   const { isLoading } = useAuth0();
+  const classes = useStyles();
 
   if (isLoading) return <div>Loading...</div>
   return (
+    <div className={classes.root}>
+      <CssBaseline/>
+      <Header/>
     <div className="App">
       <Navbar />
-
       <Router>
         <Switch>
           <Route exact path="/">
@@ -21,6 +24,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
+    </div>
     </div>
   );
 }
