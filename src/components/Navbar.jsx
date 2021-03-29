@@ -1,12 +1,14 @@
 import React from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
 import * as ReactBootStrap from "react-bootstrap";
 import LoginButton from './LoginButton';
 import LogoutButton from './LogoutButton';
 
 
 const Navbar = () => {
-    return (
+    const { user, isAuthenticated } = useAuth0();
 
+    return (
         <ReactBootStrap.Navbar sticky="top" collapseOnSelect expand="xl" bg="dark" variant="dark">
         <ReactBootStrap.Navbar.Brand href="/">PuppyLuv 🐶🐶</ReactBootStrap.Navbar.Brand>
         <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -22,6 +24,12 @@ const Navbar = () => {
             </ReactBootStrap.NavDropdown>
         </ReactBootStrap.Nav>
         <ReactBootStrap.Nav>
+            {isAuthenticated ? (
+                <ReactBootStrap.Nav.Link href="/">Logged in as: {user.nickname}</ReactBootStrap.Nav.Link> 
+            ) : (
+                <>
+                </>
+            )}
             <ReactBootStrap.Nav.Link href="/">About The Developers</ReactBootStrap.Nav.Link>
             <ReactBootStrap.Nav.Link eventKey={1} href="/">
                 <LoginButton />
