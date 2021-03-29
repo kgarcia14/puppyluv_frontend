@@ -9,6 +9,7 @@ const RegisterPet1 = ({ pet1 }) => {
     const [petAge, setPetAge] = useState('');
     const [petPersonality, setPetPersonality] = useState('');
     const [petImg, setPetImg] = useState('');
+    console.log('pet 1 is:', pet1)
 
     const _petNameChange = async (e) => {
         setPetName(e.target.value)

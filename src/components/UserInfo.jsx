@@ -27,13 +27,13 @@ const UserInfo = () => {
             </>
         )}
 
-        {uniqueId.pet_name === null ? (
+        {uniqueId.about_us === null ? (
             <PetRegister />
         ) : (
             <>
             </>
         )}
-        {uniqueId.length || uniqueId.pet_name === null ? (
+        {uniqueId.length || uniqueId.about_us === null ? (
             <>
             </>
         ) : (
