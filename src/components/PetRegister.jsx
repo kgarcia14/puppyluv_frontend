@@ -5,7 +5,7 @@ import Registerpet2 from './petRegistry/RegisterPet2';
 import Registerpet3 from './petRegistry/RegisterPet3';
 import AboutUs from './AboutUs';
 
-const UserInfo = () => {
+const UserInfo = ({ reload, handleReload }) => {
     const { user } = useAuth0();
     const [numbPet, setNumbPet] = useState('');
     const [pet1, setPet1] = useState('');
@@ -21,9 +21,10 @@ const UserInfo = () => {
             setNumbPet(usersData.numb_pets)
             setPet1(usersData.pet_name1)
             setPet2(usersData.pet_name2)
-            setPet3(usersData.pet_name3)  
+            setPet3(usersData.pet_name3)
+              
         })();
-    }, [user.nickname])
+    }, [user.nickname, reload])
 
     return (
         <>
