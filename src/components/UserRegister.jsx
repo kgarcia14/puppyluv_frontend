@@ -1,7 +1,7 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import { useState } from 'react';
 
-const UserRegister = () => {
+const UserRegister = ({handleReload}) => {
     const { user } = useAuth0();
 
     const [userNickname, setUserNickname] = useState('');
@@ -62,6 +62,7 @@ const UserRegister = () => {
 
         if (submitResponse.status === 200) {
             console.log("submit response is 200")
+            handleReload(true)
         }
     }
 
