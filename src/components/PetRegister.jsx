@@ -11,11 +11,11 @@ const UserInfo = () => {
     const [pet1, setPet1] = useState('');
     const [pet2, setPet2] = useState('');
     const [pet3, setPet3] = useState('');
-    console.log('number of pets is:', numbPet)
+    console.log("we are here")
+    console.log('numbPet is:', numbPet)
 
     useEffect(() => {
         (async () => {
-            console.log(user.nickname)
             const apiUrl = `http://127.0.0.1:3333/users/${user.nickname}`
             const usersData = await fetch(apiUrl).then(response => response.json());
             setNumbPet(usersData.numb_pets)

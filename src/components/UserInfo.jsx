@@ -6,7 +6,8 @@ import UserRegister from './UserRegister';
 const UserInfo = () => {
     const { user } = useAuth0();
     const [uniqueId, setUniqueId] = useState([]);
-    console.log('pet name:', uniqueId.pet_name)
+    console.log("uniqueId: ", uniqueId)
+    console.log('pet name:', uniqueId.pet_name1)
     console.log('user Name', uniqueId.first_name)
 
     useEffect(() => {
@@ -33,13 +34,13 @@ const UserInfo = () => {
             <>
             </>
         )}
-        {uniqueId.length || uniqueId.about_us === null ? (
-            <>
-            </>
-        ) : (
+        {uniqueId !== 'No data returned from the query.' && uniqueId.about_us !== null ? (
             <p>
                 UsersProfile will go here
             </p>
+        ) : (
+            <>   
+            </>
         )}
         </>
     )
