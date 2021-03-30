@@ -1,5 +1,4 @@
 import { useAuth0 } from '@auth0/auth0-react';
-import { useState } from 'react';
 import JSONPretty from 'react-json-pretty';
 import Home from './Home';
 import UserInfo from './UserInfo';
