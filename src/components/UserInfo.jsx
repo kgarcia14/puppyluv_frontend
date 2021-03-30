@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import PetRegister from './PetRegister';
 import UserRegister from './UserRegister';
 
-const UserInfo = () => {
+const UserInfo = ({handleReload, reload}) => {
     const { user } = useAuth0();
     const [uniqueId, setUniqueId] = useState([]);
     console.log("uniqueId: ", uniqueId)
@@ -17,19 +17,19 @@ const UserInfo = () => {
             const usersData = await fetch(apiUrl).then(response => response.json());
             setUniqueId(usersData)
         })();
-    }, [user.nickname])
+    }, [user.nickname, reload])
 
     return (
         <>
         {!!uniqueId.length ? (
-            <UserRegister />
+            <UserRegister handleReload={handleReload} />
         ) : (
             <>
             </>
         )}
 
         {uniqueId.about_us === null ? (
-            <PetRegister />
+            <PetRegister handleReload={handleReload} reload={reload}/>
         ) : (
             <>
             </>
