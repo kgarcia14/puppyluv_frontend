@@ -5,7 +5,7 @@ import Registerpet2 from './petRegistry/RegisterPet2';
 import Registerpet3 from './petRegistry/RegisterPet3';
 import AboutUs from './AboutUs';
 
-const UserInfo = ({ reload, handleReload }) => {
+const PetRegister = ({handleReload, reload}) => {
     const { user } = useAuth0();
     const [numbPet, setNumbPet] = useState('');
     const [pet1, setPet1] = useState('');
@@ -29,7 +29,7 @@ const UserInfo = ({ reload, handleReload }) => {
     return (
         <>
         {numbPet === 1 ? (
-            <Registerpet1 pet1={pet1} />
+            <Registerpet1 handleReload={handleReload} pet1={pet1} />
         ) : (
             <>
             </>
@@ -37,8 +37,8 @@ const UserInfo = ({ reload, handleReload }) => {
 
         {numbPet === 2 ? (
             <>
-                <Registerpet1 pet1={pet1} />
-                <Registerpet2 pet1={pet1} pet2={pet2} />
+                <Registerpet1 handleReload={handleReload} pet1={pet1} />
+                <Registerpet2 handleReload={handleReload} pet1={pet1} pet2={pet2} />
             </>
         ) : (
             <>
@@ -47,16 +47,16 @@ const UserInfo = ({ reload, handleReload }) => {
 
         {numbPet === 3 ? (
             <>
-                <Registerpet1 pet1={pet1} />
-                <Registerpet2 pet1={pet1} pet2={pet2} />
-                <Registerpet3 pet1={pet1} pet2={pet2} pet3={pet3} />
+                <Registerpet1 handleReload={handleReload} pet1={pet1} />
+                <Registerpet2 handleReload={handleReload} pet1={pet1} pet2={pet2} />
+                <Registerpet3 handleReload={handleReload} pet1={pet1} pet2={pet2} pet3={pet3} />
             </>
         ) : (
             <>
             </>
         )}
         {pet1 !== null && pet2 !== null && pet3 !== null ? (
-            <AboutUs />
+            <AboutUs handleReload={handleReload} />
         ) : (
             <>
             </>
@@ -65,4 +65,4 @@ const UserInfo = ({ reload, handleReload }) => {
     )
 }
 
-export default UserInfo;
+export default PetRegister;

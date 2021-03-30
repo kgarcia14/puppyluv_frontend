@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import PetRegister from './PetRegister';
 import UserRegister from './UserRegister';
 
-const UserInfo = ({ reload, handleReload }) => {
+const UserInfo = ({handleReload, reload}) => {
     const { user } = useAuth0();
     const [uniqueId, setUniqueId] = useState([]);
     console.log("uniqueId: ", uniqueId)
@@ -29,7 +29,7 @@ const UserInfo = ({ reload, handleReload }) => {
         )}
 
         {uniqueId.about_us === null ? (
-            <PetRegister handleReload={handleReload} />
+            <PetRegister handleReload={handleReload} reload={reload}/>
         ) : (
             <>
             </>

@@ -1,7 +1,7 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import { useState } from 'react';
 
-const RegisterPet2 = ({ pet1, pet2 }) => {
+const RegisterPet2 = ({ handleReload, pet1, pet2 }) => {
     const { user } = useAuth0();
     const [userNickname, setUserNickname] = useState('');
     const [petName, setPetName] = useState('');
@@ -46,6 +46,7 @@ const RegisterPet2 = ({ pet1, pet2 }) => {
 
         if (submitResponse.status === 200) {
             console.log("submit response is 200")
+            handleReload(true)
         }
     }
 

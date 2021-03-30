@@ -61,7 +61,7 @@ const UserRegister = ({ handleReload }) => {
         console.log("submit user response is: ", submitResponse)
 
         if (submitResponse.status === 200) {
-            console.log("submit response is 200");
+            console.log("submit response is 200")
             handleReload(true);
         }
     }
