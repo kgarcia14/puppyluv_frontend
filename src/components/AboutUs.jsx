@@ -4,7 +4,7 @@ import { useState } from 'react';
 const AboutUs = () => {
     const { user } = useAuth0();
     const [userNickname, setUserNickname] = useState('');
-    const [aboutUs, setAboutUs] = useState('');
+    const [aboutUs, setAboutUs] = useState("");
 
     const _aboutUsChange = async (e) => {
         setAboutUs(e.target.value)
