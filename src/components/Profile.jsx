@@ -14,7 +14,7 @@ const Profile = () => {
 
 
     return(
-        isAuthenticated ? (
+        isAuthenticated && user.email_verified === true ? (
             <div>
                 <img src={user.picture} alt={user.name}/>
                 <h2>{user.name}</h2>

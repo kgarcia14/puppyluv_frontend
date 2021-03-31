@@ -12,7 +12,7 @@ const RegisterPet3 = ({ handleReload, pet1, pet2, pet3 }) => {
 
     const _petNameChange = async (e) => {
         setPetName(e.target.value)
-        setUserNickname(user.nickname)
+        setUserNickname(user.sub)
     }
     const _petBreedChange = async (e) => {
         setPetBreed(e.target.value)

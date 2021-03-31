@@ -12,12 +12,12 @@ const UserInfo = ({handleReload, reload}) => {
 
     useEffect(() => {
         (async () => {
-            console.log(user.nickname)
-            const apiUrl = `http://127.0.0.1:3333/users/${user.nickname}`
+            console.log(user.sub)
+            const apiUrl = `http://127.0.0.1:3333/users/${user.sub}`
             const usersData = await fetch(apiUrl).then(response => response.json());
             setUniqueId(usersData)
         })();
-    }, [user.nickname, reload])
+    }, [user.sub, reload])
 
     return (
         <>
