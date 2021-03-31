@@ -83,9 +83,10 @@ const handleClose = () => {
           </h1>
           <p>The app to bring the only pure souls in this cruel world, together.</p>
         <div>
-        <Button variant="contained" color="primary" href="#contained-buttons">
+        <Button variant="contained" color="primary" href="/user_info">
         Join PuppyLuv
         </Button>
+        <p>If you already have an account, <a className="login-here" href="/">login here</a></p>
         </div>
         <Scroll to="more-info" smooth={true}>
           <IconButton>

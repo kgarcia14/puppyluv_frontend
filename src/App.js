@@ -3,11 +3,12 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Profile from './components/Profile';
+import UserInfo from './components/UserInfo';
 import LandingPage from './components/LandingPage';
 import MoreInfo from './components/MoreInfo';
-
 import { makeStyles } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';
+
 
 
 
@@ -30,13 +31,18 @@ function App() {
     <div className={classes.root}>
       <CssBaseline/>
       <Navbar/>
-      <LandingPage/>
-      <MoreInfo/>
     <div className="App">
       <Router>
         <Switch>
           <Route exact path="/">
+            <LandingPage/>
+            <MoreInfo/>
+          </Route>
+          <Route exact path="/profile">
             <Profile />
+          </Route>
+          <Route exact path="/user_info">
+            <UserInfo />
           </Route>
         </Switch>
       </Router>
