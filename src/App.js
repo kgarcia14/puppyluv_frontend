@@ -4,9 +4,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Profile from './components/Profile';
 import UserInfo from './components/UserInfo';
-import LandingPage from './components/LandingPage';
-import MoreInfo from './components/MoreInfo';
 import Footer from './components/Footer';
+import Chatbox from './components/Chatbox';
 
 import { makeStyles } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';
@@ -33,12 +32,13 @@ function App() {
         <Switch>
           <Route exact path="/">
             <CssBaseline/>
-            <LandingPage/>
-            <MoreInfo/>
             <Profile />
           </Route>
           <Route exact path="/profile">
             <UserInfo />
+          </Route>
+          <Route exact path="/Chatbox">
+            <Chatbox component={Chatbox} />
           </Route>
         </Switch>
         <Footer/>
