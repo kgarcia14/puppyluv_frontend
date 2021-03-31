@@ -32,9 +32,8 @@ const AboutUs = ({handleReload}) => {
 
     return(
         <>
-            <h2>About Us</h2>
             <form onSubmit={_handleSubmitAboutUs}>
-                <label>About Us
+                <label>
                     <textarea 
                     rows="4" 
                     cols="30" 
