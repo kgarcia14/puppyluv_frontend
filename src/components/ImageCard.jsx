@@ -13,16 +13,16 @@ const useStyles = makeStyles({
     margin: '20px',
   },
   media: {
-    height: 440,
+    height: 400,
   },
   title: {
-    fontFamily: 'Nunito',
+    fontFamily: 'Cabin',
     fontWeight: 'bold',
     fontSize: '2rem',
     color: '#fff',
   },
   desc: {
-    fontFamily: 'Nunito',
+    fontFamily: 'Cabin',
     fontSize: '1.1rem',
     color: '#ddd',
   },

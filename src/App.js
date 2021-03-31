@@ -5,11 +5,10 @@ import Navbar from "./components/Navbar";
 import Profile from './components/Profile';
 import LandingPage from './components/LandingPage';
 import MoreInfo from './components/MoreInfo';
+import Footer from './components/Footer';
 
 import { makeStyles } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';
-
-
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,19 +27,18 @@ function App() {
   if (isLoading) return <div>Loading...</div>
   return (
     <div className={classes.root}>
-      <CssBaseline/>
-      <Navbar/>
-      <LandingPage/>
-      <MoreInfo/>
-    <div className="App">
       <Router>
+        <Navbar/>
         <Switch>
           <Route exact path="/">
+            <CssBaseline/>
+            <LandingPage/>
+            <MoreInfo/>
             <Profile />
           </Route>
         </Switch>
+        <Footer/>
       </Router>
-    </div>
     </div>
   );
 }
