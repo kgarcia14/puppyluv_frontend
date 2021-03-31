@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { AppBar, IconButton, Toolbar, Collapse } from "@material-ui/core";
-import SortIcon from '@material-ui/icons/Sort';
+import { IconButton, Collapse } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { Link as Scroll } from "react-scroll";
 import { Button } from '@material-ui/core';
-import { useAuth0 } from '@auth0/auth0-react';
-import { Typography, Switch, FormControlLabel, FormGroup, MenuItem, Menu, Link } from "@material-ui/core";
-import { MenuIcon, AccountCircle } from '@material-ui/icons/Sort';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,18 +12,6 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     height: "100vh",
     fontFamily: "Cabin",
-  },
-  appbar: {
-    background: 'none',
-    color: "#000000",
-  },
-  appbarWrapper: {
-    width: '80%',
-    margin: '0 auto',
-  },
-  appbarTitle: {
-    flexGrow: '1',
-    color: "#000000",
   },
   icon: {
     color: "#000000",
@@ -57,21 +41,10 @@ const useStyles = makeStyles((theme) => ({
 export default function LandingPage() {
   const classes = useStyles();
   const [checked, setChecked] = useState(false);
-  const { user, isAuthenticated } = useAuth0();
-  const [anchorEl, setAnchorEl] = React.useState(null);
-
 
   useEffect(() => {
     setChecked(true);
   }, []);
-
-  const handleMenu = (event) => {
-    setAnchorEl(event.currentTarget);
-};
-
-const handleClose = () => {
-    setAnchorEl(null);
-};
 
   return (
     <div className={classes.root} id="header">

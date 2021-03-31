@@ -3,13 +3,29 @@ import { useAuth0 } from '@auth0/auth0-react';
 import * as ReactBootStrap from "react-bootstrap";
 import LoginButton from './LoginButton';
 import LogoutButton from './LogoutButton';
+import { makeStyles } from "@material-ui/core/styles";
 
-const Navbar = () => {
+const useStyles = makeStyles((theme) => ({
+    root: {
+        fontFamily: "Cabin",
+    },
+    colorText: {
+        color: "#FF69B4",
+        fontFamily: "Fredoka One",
+    },
+    puppy: {
+        fontFamily: "Fredoka One",
+    },
+}));
+
+export default function Navbar() {
     const { user, isAuthenticated } = useAuth0();
+    const classes = useStyles();
 
     return (
+        <div className={classes.root}>
         <ReactBootStrap.Navbar sticky="top" collapseOnSelect expand="xl" bg="light" variant="light">
-        <ReactBootStrap.Navbar.Brand href="/">PuppyLuv 🐶</ReactBootStrap.Navbar.Brand>
+        <ReactBootStrap.Navbar.Brand href="/"><span className={classes.puppy}>Puppy</span><span className={classes.colorText}>Luv. 🐶</span></ReactBootStrap.Navbar.Brand>
         <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
         <ReactBootStrap.Nav className="mr-auto">
@@ -26,20 +42,16 @@ const Navbar = () => {
             {isAuthenticated ? (
                 <ReactBootStrap.Nav.Link href="/">Logged in as: {user.nickname}</ReactBootStrap.Nav.Link> 
             ) : (
-                <>
-                </>
-            )}
-            <ReactBootStrap.Nav.Link eventKey={1} href="/">
+                <ReactBootStrap.Nav.Link eventKey={1} href="/">
                 Have an account? <LoginButton/>
-            </ReactBootStrap.Nav.Link>
+                </ReactBootStrap.Nav.Link>
+            )}
             <ReactBootStrap.Nav.Link eventKey={2} href="/">
                 <LogoutButton/>
             </ReactBootStrap.Nav.Link>
         </ReactBootStrap.Nav>
         </ReactBootStrap.Navbar.Collapse>
         </ReactBootStrap.Navbar>
-
-        );
-    }
-
-export default Navbar;
+        </div>
+    );
+}
