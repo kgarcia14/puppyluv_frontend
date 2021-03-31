@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import JSONPretty from 'react-json-pretty';
-import Home from './Home';
 import UserInfo from './UserInfo';
+import LandingPage from './LandingPage';
+import MoreInfo from './MoreInfo';
 
 const Profile = () => {
     const { user, isAuthenticated } = useAuth0();
@@ -14,16 +15,15 @@ const Profile = () => {
 
 
     return(
-        isAuthenticated && user.email_verified === true ? (
+        isAuthenticated ? (
             <div>
-                <img src={user.picture} alt={user.name}/>
-                <h2>{user.name}</h2>
-                <p>{user.sub}</p>
-                <JSONPretty data={user} />
                 <UserInfo handleReload={handleReload} reload={reload} />
             </div>
         ) : (
-            <Home />
+            <>
+                <LandingPage />
+                <MoreInfo />
+            </>
         )
     )
 }

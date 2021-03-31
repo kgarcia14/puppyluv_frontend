@@ -178,10 +178,10 @@ const UserRegister = ({ handleReload }) => {
                         value={numbPets}
                         onChange={_numPetsChange}>
                         <option value="">Select a number</option>
-                        <option value="">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
+                        <option value="0">lost a dog</option>
                     </Select>
                 </Label>
                 <Button
