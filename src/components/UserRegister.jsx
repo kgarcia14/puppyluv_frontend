@@ -16,7 +16,7 @@ const UserRegister = ({ handleReload }) => {
 
     const _firstNameChange = async (e) => {
         setFirstName(e.target.value)
-        setUserNickname(user.nickname)
+        setUserNickname(user.sub)
     }
     const _lastNameChange = async (e) => {
         setLastName(e.target.value)
