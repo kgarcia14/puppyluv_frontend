@@ -8,7 +8,7 @@ const AboutUs = ({handleReload}) => {
 
     const _aboutUsChange = async (e) => {
         setAboutUs(e.target.value)
-        setUserNickname(user.email)
+        setUserNickname(user.sub)
     }
 
     const _handleSubmitAboutUs = async (e) => {
