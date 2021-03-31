@@ -37,7 +37,7 @@ function App() {
             <MoreInfo/>
             <Profile />
           </Route>
-          <Route exact path="/user_info">
+          <Route exact path="/profile">
             <UserInfo />
           </Route>
         </Switch>
