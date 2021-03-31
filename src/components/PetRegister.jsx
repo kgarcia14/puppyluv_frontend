@@ -28,38 +28,42 @@ const PetRegister = ({handleReload, reload}) => {
 
     return (
         <>
-        {numbPet === 1 ? (
+        {numbPet === 1 && (
             <Registerpet1 handleReload={handleReload} pet1={pet1} />
-        ) : (
-            <>
-            </>
         )}
 
-        {numbPet === 2 ? (
+        {numbPet === 2 && (
             <>
                 <Registerpet1 handleReload={handleReload} pet1={pet1} />
                 <Registerpet2 handleReload={handleReload} pet1={pet1} pet2={pet2} />
             </>
-        ) : (
-            <>
-            </>
         )}
 
-        {numbPet === 3 ? (
+        {numbPet === 3 && (
             <>
                 <Registerpet1 handleReload={handleReload} pet1={pet1} />
                 <Registerpet2 handleReload={handleReload} pet1={pet1} pet2={pet2} />
                 <Registerpet3 handleReload={handleReload} pet1={pet1} pet2={pet2} pet3={pet3} />
             </>
-        ) : (
+        )}
+
+        {numbPet === 0 && (
             <>
+                <p>sorry for you loss, please tell us about you and your lost one</p>
+                <AboutUs handleReload={handleReload} />
             </>
         )}
-        {pet1 !== null && pet2 !== null && pet3 !== null ? (
+
+        {pet1 !== null && numbPet === 1 &&(
             <AboutUs handleReload={handleReload} />
-        ) : (
-            <>
-            </>
+        )}
+
+        {pet1 !== null && pet2 !== null && numbPet === 2 && (
+            <AboutUs handleReload={handleReload} />
+        )}
+
+        {pet1 !== null && pet2 !== null && pet3 !== null && numbPet === 3 && (
+            <AboutUs handleReload={handleReload} />
         )}
         </>
     )

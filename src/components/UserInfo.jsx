@@ -23,14 +23,20 @@ const UserInfo = ({handleReload, reload}) => {
     return (
         <>
         {!!uniqueId.length ? (
+            <>
+            <h5>Please create a profile...</h5>
             <UserRegister handleReload={handleReload} />
+            </>
         ) : (
             <>
             </>
         )}
 
         {uniqueId.about_us === null ? (
+            <>
+            <h5>Please create a profile...</h5>
             <PetRegister handleReload={handleReload} reload={reload}/>
+            </>
         ) : (
             <>
             </>
