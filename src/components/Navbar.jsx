@@ -30,8 +30,8 @@ export default function Navbar() {
         <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
         <ReactBootStrap.Nav className="mr-auto">
             <ReactBootStrap.Nav.Link href="#features">Account Information</ReactBootStrap.Nav.Link>
-            <ReactBootStrap.Nav.Link href="#pricing">My Friends</ReactBootStrap.Nav.Link>
-            <ReactBootStrap.NavDropdown title="Quick Chat" id="collasible-nav-dropdown">
+            <ReactBootStrap.Nav.Link href="/Chatbox">My Messages</ReactBootStrap.Nav.Link>
+            <ReactBootStrap.NavDropdown title="Friends List" id="collasible-nav-dropdown">
                 <ReactBootStrap.NavDropdown.Item href="/">Friend 1</ReactBootStrap.NavDropdown.Item>
                 <ReactBootStrap.NavDropdown.Item href="/">Friend 2</ReactBootStrap.NavDropdown.Item>
                 <ReactBootStrap.NavDropdown.Item href="/">Friend 3</ReactBootStrap.NavDropdown.Item>

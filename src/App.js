@@ -6,6 +6,7 @@ import Profile from './components/Profile';
 import LandingPage from './components/LandingPage';
 import MoreInfo from './components/MoreInfo';
 import Footer from './components/Footer';
+import Chatbox from './components/Chatbox';
 
 import { makeStyles } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';
@@ -35,6 +36,9 @@ function App() {
             <LandingPage/>
             <MoreInfo/>
             <Profile />
+          </Route>
+          <Route exact path="/Chatbox">
+            <Chatbox component={Chatbox} />
           </Route>
         </Switch>
         <Footer/>
