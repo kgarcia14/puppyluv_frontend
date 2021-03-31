@@ -3,10 +3,8 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Profile from './components/Profile';
-import UserInfo from './components/UserInfo';
 import Footer from './components/Footer';
 import Chatbox from './components/Chatbox';
-
 import { makeStyles } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';
 
@@ -33,9 +31,6 @@ function App() {
           <Route exact path="/">
             <CssBaseline/>
             <Profile />
-          </Route>
-          <Route exact path="/profile">
-            <UserInfo />
           </Route>
           <Route exact path="/Chatbox">
             <Chatbox component={Chatbox} />

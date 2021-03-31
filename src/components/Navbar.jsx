@@ -29,7 +29,7 @@ export default function Navbar() {
         <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
         <ReactBootStrap.Nav className="mr-auto">
-            <ReactBootStrap.Nav.Link href="#features">Account Information</ReactBootStrap.Nav.Link>
+            <ReactBootStrap.Nav.Link href="/">Account Information</ReactBootStrap.Nav.Link>
             <ReactBootStrap.Nav.Link href="/Chatbox">My Messages</ReactBootStrap.Nav.Link>
             <ReactBootStrap.NavDropdown title="Friends List" id="collasible-nav-dropdown">
                 <ReactBootStrap.NavDropdown.Item href="/">Friend 1</ReactBootStrap.NavDropdown.Item>

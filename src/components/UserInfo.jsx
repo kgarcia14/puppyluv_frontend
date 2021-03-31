@@ -23,7 +23,7 @@ const UserInfo = ({handleReload, reload}) => {
         <>
         {!!uniqueId.length ? (
             <>
-            <h5>Please create a profile...</h5>
+            <h5>Please fill out information...</h5>
             <UserRegister handleReload={handleReload} />
             </>
         ) : (
@@ -33,7 +33,7 @@ const UserInfo = ({handleReload, reload}) => {
 
         {uniqueId.about_us === null ? (
             <>
-            <h5>Please create a profile...</h5>
+            <h5>Please fill out information...</h5>
             <PetRegister handleReload={handleReload} reload={reload}/>
             </>
         ) : (
