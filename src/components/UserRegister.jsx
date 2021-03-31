@@ -1,5 +1,41 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import { useState } from 'react';
+import Styled from 'styled-components';
+import { Button } from '@material-ui/core';
+
+const H2 = Styled.h2`
+text-align: center;
+margin-top: 15px;
+`;
+
+const Form = Styled.form`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
+const Label = Styled.label`
+    display: flex;
+    flex-direction: column;
+`;
+
+const Input = Styled.input`
+    width: 350px;
+    height: 35px;
+    border: 1px solid #333;
+    border-radius: 4px;
+`;
+
+const Select = Styled.select`
+    width: 350px;
+    height: 35px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background-color: #fff;
+`;
+
+
+
 
 const UserRegister = ({ handleReload }) => {
     const { user } = useAuth0();
@@ -16,7 +52,7 @@ const UserRegister = ({ handleReload }) => {
 
     const _firstNameChange = async (e) => {
         setFirstName(e.target.value)
-        setUserNickname(user.nickname)
+        setUserNickname(user.sub)
     }
     const _lastNameChange = async (e) => {
         setLastName(e.target.value)
@@ -68,28 +104,28 @@ const UserRegister = ({ handleReload }) => {
 
     return(
         <>
-            <h2>User Info</h2>
-            <form onSubmit={_handleSubmitUserInfo}>
-            <label>First Name
-                    <input
+            <H2>User Info</H2>
+            <Form onSubmit={_handleSubmitUserInfo}>
+                <Label>First Name
+                    <Input
                         required
                         type="text"
                         name="first_name"
                         value={firstName}
                         onChange={_firstNameChange}
                         placeholder="Enter First Name"/>
-                </label>
-                <label>Last Name
-                    <input
+                </Label>
+                <Label>Last Name
+                    <Input
                         required
                         type="text"
                         name="last_name"
                         value={lastName}
                         onChange={_lastNameChange}
                         placeholder="Enter Last Name"/>
-                </label>
-                <label>Age
-                    <input
+                </Label>
+                <Label>Age
+                    <Input
                         required
                         type="number"
                         name="age"
@@ -97,9 +133,9 @@ const UserRegister = ({ handleReload }) => {
                         max="120"
                         value={age}
                         onChange={_ageChange}/>
-                </label>
-                <label>Gender
-                    <select 
+                </Label>
+                <Label>Gender
+                    <Select 
                         required
                         name="gender"
                         value={gender}
@@ -108,51 +144,54 @@ const UserRegister = ({ handleReload }) => {
                         <option value="female">Female</option>
                         <option value="male">Male</option>
                         <option value="other">Other</option>
-                    </select>
-                </label>
-                <label>
-                    City
-                    <select
+                    </Select>
+                </Label>
+                <Label>City
+                    <Select
                         required
                         name="city"
                         value={city}
                         onChange={_cityChange}>
                             <option value="">Choose One</option>
                             <option value="Atlanta">Atlanta</option>
-                        </select>
-                </label>
-                <label>Zip Code 
-                    <input 
+                        </Select>
+                </Label>
+                <Label>Zip Code 
+                    <Input 
                         type="integer"
                         placeholder="Enter Zip Code"
                         value={zipCode}
                         onChange={_zipCodeChange}/>
-                </label>
-                <label>picture of you
-                    <input 
+                </Label>
+                <Label>picture of you
+                    <Input 
                     type="file"
                     name="pet_img"
                     value={userImg}
                     onChange={_userImgChange}
                     />
-                </label>
-                <label>How many dogs do you have?
-                    <select
+                </Label>
+                <Label>How many dogs do you have?
+                    <Select
                         required
                         name="numb_pets"
                         value={numbPets}
                         onChange={_numPetsChange}>
                         <option value="">Select a number</option>
+                        <option value="">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
-                    </select>
-                </label>
-                <button 
+                    </Select>
+                </Label>
+                <Button
+                    className="user-register-button"
+                    variant="contained" 
+                    color="primary" 
                     type="submit">
                         Submit
-                </button>
-            </form>
+                </Button>
+            </Form>
         </>
     )
 }

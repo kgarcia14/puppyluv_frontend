@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { AppBar, IconButton, Toolbar, Collapse } from "@material-ui/core";
-import SortIcon from '@material-ui/icons/Sort';
+import { IconButton, Collapse } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { Link as Scroll } from "react-scroll";
 import { Button } from '@material-ui/core';
 import { useAuth0 } from '@auth0/auth0-react';
-import LoginButton from './LoginButton';
-import { Typography, Switch, FormControlLabel, FormGroup, MenuItem, Menu, Link } from "@material-ui/core";
-import { MenuIcon, AccountCircle } from '@material-ui/icons/Sort';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,26 +12,18 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     height: "100vh",
-    fontFamily: "Nunito",
-  },
-  appbar: {
-    background: 'none',
-    color: "#000000",
-  },
-  appbarWrapper: {
-    width: '80%',
-    margin: '0 auto',
-  },
-  appbarTitle: {
-    flexGrow: '1',
-    color: "#000000",
+    fontFamily: "Cabin",
   },
   icon: {
     color: "#000000",
     fontSize: "2rem",
   },
+  puppy: {
+    fontFamily: "Fredoka One",
+  },
   colorText: {
     color: "#FF69B4",
+    fontFamily: "Fredoka One",
   },
   container: {
     textAlign: "center",
@@ -43,6 +31,7 @@ const useStyles = makeStyles((theme) => ({
   title: {
     color: "#000000",
     fontSize: "4.5rem",
+    fontFamily: "Nunito",
   },
   goDown: {
     color: "#FF69B4",
@@ -53,21 +42,11 @@ const useStyles = makeStyles((theme) => ({
 export default function LandingPage() {
   const classes = useStyles();
   const [checked, setChecked] = useState(false);
-  const { user, isAuthenticated } = useAuth0();
-  const [anchorEl, setAnchorEl] = React.useState(null);
-
+  const { loginWithRedirect, isAuthenticated } = useAuth0()
 
   useEffect(() => {
     setChecked(true);
   }, []);
-
-  const handleMenu = (event) => {
-    setAnchorEl(event.currentTarget);
-};
-
-const handleClose = () => {
-    setAnchorEl(null);
-};
 
   return (
     <div className={classes.root} id="header">
@@ -78,12 +57,11 @@ const handleClose = () => {
       >
         <div className={classes.container}>
           <h1 className={classes.title}>
-            Welcome to <br />
-            Puppy<span className={classes.colorText}>Luv.</span>
+            <span className={classes.puppy}>Puppy</span><span className={classes.colorText}>Luv.</span>
           </h1>
-          <p>The app to bring the only pure souls in this cruel world, together.</p>
+          <p>The paw-fect dating app to bring the only pure souls in this cruel cold world, together.</p>
         <div>
-        <Button variant="contained" color="primary" href="#contained-buttons">
+        <Button variant="contained" color="primary" onClick={() => loginWithRedirect()}>
         Join PuppyLuv
         </Button>
         </div>

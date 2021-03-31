@@ -16,7 +16,7 @@ const PetRegister = ({handleReload, reload}) => {
 
     useEffect(() => {
         (async () => {
-            const apiUrl = `http://127.0.0.1:3333/users/${user.nickname}`
+            const apiUrl = `http://127.0.0.1:3333/users/${user.sub}`
             const usersData = await fetch(apiUrl).then(response => response.json());
             setNumbPet(usersData.numb_pets)
             setPet1(usersData.pet_name1)
@@ -24,7 +24,7 @@ const PetRegister = ({handleReload, reload}) => {
             setPet3(usersData.pet_name3)
               
         })();
-    }, [user.nickname, reload])
+    }, [user.sub, reload])
 
     return (
         <>

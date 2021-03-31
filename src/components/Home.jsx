@@ -2,7 +2,7 @@ const Home = () => {
 
   return (
       <header className="App-header">
-          <p>The app to bring the only pure souls in this cruel world, together.</p>
+          <p>Thank you for signing up. Please verify your email address before proceeding.</p>
       </header>
   )
 };
