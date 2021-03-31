@@ -2,6 +2,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { useState, useEffect } from 'react';
 import PetRegister from './PetRegister';
 import UserRegister from './UserRegister';
+import Profile from './Profile';
 
 const UserInfo = ({handleReload, reload}) => {
     const { user } = useAuth0();
@@ -36,7 +37,7 @@ const UserInfo = ({handleReload, reload}) => {
         )}
         {uniqueId !== 'No data returned from the query.' && uniqueId.about_us !== null ? (
             <p>
-                UsersProfile will go here
+                <Profile handleReload={handleReload} reload={reload} />
             </p>
         ) : (
             <>   

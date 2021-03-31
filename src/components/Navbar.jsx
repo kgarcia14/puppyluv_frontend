@@ -30,7 +30,12 @@ const Navbar = () => {
                 <>
                 </>
             )}
-            <ReactBootStrap.Nav.Link href="/">About The Developers</ReactBootStrap.Nav.Link>
+            <ReactBootStrap.Nav.Link href="/">Developers</ReactBootStrap.Nav.Link>
+            <p>Kurtis Garcia</p>
+            <p>Sean Maceachern</p>
+            <p>Hilda Robles</p>
+            <p>Susan Yun</p>
+            <p>Terrence Childs</p>
             <ReactBootStrap.Nav.Link eventKey={1} href="/">
                 <LoginButton />
             </ReactBootStrap.Nav.Link>
