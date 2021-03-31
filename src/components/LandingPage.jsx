@@ -4,6 +4,7 @@ import { IconButton, Collapse } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { Link as Scroll } from "react-scroll";
 import { Button } from '@material-ui/core';
+import { useAuth0 } from '@auth0/auth0-react';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -41,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
 export default function LandingPage() {
   const classes = useStyles();
   const [checked, setChecked] = useState(false);
+  const { loginWithRedirect, isAuthenticated } = useAuth0()
 
   useEffect(() => {
     setChecked(true);
@@ -59,7 +61,7 @@ export default function LandingPage() {
           </h1>
           <p>The paw-fect dating app to bring the only pure souls in this cruel cold world, together.</p>
         <div>
-        <Button variant="contained" color="primary" href="#contained-buttons">
+        <Button variant="contained" color="primary" onClick={() => loginWithRedirect()}>
         Join PuppyLuv
         </Button>
         </div>
