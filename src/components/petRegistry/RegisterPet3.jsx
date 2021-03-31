@@ -1,7 +1,7 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import { useState } from 'react';
 
-const RegisterPet3 = ({ pet1, pet2, pet3 }) => {
+const RegisterPet3 = ({ handleReload, pet1, pet2, pet3 }) => {
     const { user } = useAuth0();
     const [userNickname, setUserNickname] = useState('');
     const [petName, setPetName] = useState('');
@@ -35,17 +35,18 @@ const RegisterPet3 = ({ pet1, pet2, pet3 }) => {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ 
                 user_nickname: userNickname,
-                pet_name: petName, 
-                pet_breed: petBreed, 
-                pet_age: petAge, 
-                pet_personality: petPersonality, 
-                pet_img: petImg 
+                pet_name3: petName, 
+                pet_breed3: petBreed, 
+                pet_age3: petAge, 
+                pet_personality3: petPersonality, 
+                pet_img3: petImg 
             })
         }).then((response) => response);
         console.log("submit pet response is: ", submitResponse)
 
         if (submitResponse.status === 200) {
             console.log("submit response is 200")
+            handleReload(true)
         }
     }
 

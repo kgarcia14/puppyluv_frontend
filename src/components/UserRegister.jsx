@@ -1,7 +1,7 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import { useState } from 'react';
 
-const UserRegister = () => {
+const UserRegister = ({ handleReload }) => {
     const { user } = useAuth0();
 
     const [userNickname, setUserNickname] = useState('');
@@ -62,6 +62,7 @@ const UserRegister = () => {
 
         if (submitResponse.status === 200) {
             console.log("submit response is 200")
+            handleReload(true);
         }
     }
 
@@ -137,7 +138,9 @@ const UserRegister = () => {
                 </label>
                 <label>How many dogs do you have?
                     <select
-                    required
+                        required
+                        name="numb_pets"
+                        value={numbPets}
                         onChange={_numPetsChange}>
                         <option value="">Select a number</option>
                         <option value="1">1</option>

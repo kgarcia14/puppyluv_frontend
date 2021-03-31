@@ -5,30 +5,31 @@ import Registerpet2 from './petRegistry/RegisterPet2';
 import Registerpet3 from './petRegistry/RegisterPet3';
 import AboutUs from './AboutUs';
 
-const UserInfo = () => {
+const PetRegister = ({handleReload, reload}) => {
     const { user } = useAuth0();
     const [numbPet, setNumbPet] = useState('');
     const [pet1, setPet1] = useState('');
     const [pet2, setPet2] = useState('');
     const [pet3, setPet3] = useState('');
-    console.log('number of pets is:', numbPet)
+    console.log("we are here")
+    console.log('numbPet is:', numbPet)
 
     useEffect(() => {
         (async () => {
-            console.log(user.nickname)
             const apiUrl = `http://127.0.0.1:3333/users/${user.nickname}`
             const usersData = await fetch(apiUrl).then(response => response.json());
             setNumbPet(usersData.numb_pets)
             setPet1(usersData.pet_name1)
             setPet2(usersData.pet_name2)
-            setPet3(usersData.pet_name3)  
+            setPet3(usersData.pet_name3)
+              
         })();
-    }, [user.nickname])
+    }, [user.nickname, reload])
 
     return (
         <>
         {numbPet === 1 ? (
-            <Registerpet1 pet1={pet1} />
+            <Registerpet1 handleReload={handleReload} pet1={pet1} />
         ) : (
             <>
             </>
@@ -36,8 +37,8 @@ const UserInfo = () => {
 
         {numbPet === 2 ? (
             <>
-                <Registerpet1 pet1={pet1} />
-                <Registerpet2 pet1={pet1} pet2={pet2} />
+                <Registerpet1 handleReload={handleReload} pet1={pet1} />
+                <Registerpet2 handleReload={handleReload} pet1={pet1} pet2={pet2} />
             </>
         ) : (
             <>
@@ -46,16 +47,16 @@ const UserInfo = () => {
 
         {numbPet === 3 ? (
             <>
-                <Registerpet1 pet1={pet1} />
-                <Registerpet2 pet1={pet1} pet2={pet2} />
-                <Registerpet3 pet1={pet1} pet2={pet2} pet3={pet3} />
+                <Registerpet1 handleReload={handleReload} pet1={pet1} />
+                <Registerpet2 handleReload={handleReload} pet1={pet1} pet2={pet2} />
+                <Registerpet3 handleReload={handleReload} pet1={pet1} pet2={pet2} pet3={pet3} />
             </>
         ) : (
             <>
             </>
         )}
         {pet1 !== null && pet2 !== null && pet3 !== null ? (
-            <AboutUs />
+            <AboutUs handleReload={handleReload} />
         ) : (
             <>
             </>
@@ -64,4 +65,4 @@ const UserInfo = () => {
     )
 }
 
-export default UserInfo;
+export default PetRegister;
