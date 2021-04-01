@@ -1,11 +1,10 @@
 const Home = () => {
 
-    return (
-        <header className="App-header">
-            <h1>PuppyLuv</h1>
-            <p>The app to bring the only pure souls in this cruel world, together.</p>
-        </header>
-    )
+  return (
+      <header className="App-header">
+          <p>Thank you for signing up. Please verify your email address before proceeding.</p>
+      </header>
+  )
 };
 
 export default Home;

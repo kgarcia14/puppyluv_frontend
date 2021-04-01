@@ -4,7 +4,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 180px;
+  min-height: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,5 +19,30 @@
   align-content: space-between;
   margin-right: 6px;
   margin-left: 15px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label{
+  display: block;
+}
+
+.user-register-button {
+  width: 350px;
+  height: 35px;
+}
+
+.title {
+  border: black
+}
+
+@media screen and (min-width: 370px) {
+  .user-thumb-card {
+    width: 100px;
+  }
 }
 
