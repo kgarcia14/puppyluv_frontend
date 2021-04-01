@@ -1,8 +1,8 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import { useState, useEffect } from 'react';
-import Registerpet1 from './petRegistry/RegisterPet1';
-import Registerpet2 from './petRegistry/RegisterPet2';
-import Registerpet3 from './petRegistry/RegisterPet3';
+import Registerpet1 from './RegisterPet1';
+import Registerpet2 from './RegisterPet2';
+import Registerpet3 from './RegisterPet3';
 import AboutUs from './AboutUs';
 
 const PetRegister = ({handleReload, reload}) => {

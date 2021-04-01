@@ -1,8 +1,8 @@
 import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import * as ReactBootStrap from "react-bootstrap";
-import LoginButton from './LoginButton';
-import LogoutButton from './LogoutButton';
+import LoginButton from './profileStuff/LoginButton';
+import LogoutButton from './profileStuff/LogoutButton';
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
@@ -29,7 +29,7 @@ export default function Navbar() {
         <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
         <ReactBootStrap.Nav className="mr-auto">
-            <ReactBootStrap.Nav.Link href="#features">Account Information</ReactBootStrap.Nav.Link>
+            <ReactBootStrap.Nav.Link href="/Profile">Account Information</ReactBootStrap.Nav.Link>
             <ReactBootStrap.Nav.Link href="/Chatbox">My Messages</ReactBootStrap.Nav.Link>
             <ReactBootStrap.NavDropdown title="Friends List" id="collasible-nav-dropdown">
                 <ReactBootStrap.NavDropdown.Item href="/">Friend 1</ReactBootStrap.NavDropdown.Item>
