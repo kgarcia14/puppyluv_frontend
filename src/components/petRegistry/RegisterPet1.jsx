@@ -88,7 +88,7 @@ const RegisterPet1 = ({ handleReload, pet1 }) => {
         <>
         {pet1 === null ? (
             <>
-            <H2>Pet #1</H2>
+            <H2>Dog 1</H2>
             <Form onSubmit={_handleSubmitPetInfo}>
                 <Label>Dog Name
                     <Input
