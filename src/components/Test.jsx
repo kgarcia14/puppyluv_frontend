@@ -9,8 +9,8 @@ import MoreIcon from '@material-ui/icons/MoreVert';
 import MenuIcon from '@material-ui/icons/Menu';
 
 import { useAuth0 } from '@auth0/auth0-react';
-import LoginButton from './LoginButton';
-import LogoutButton from './LogoutButton';
+import LoginButton from './profileStuff/LoginButton';
+import LogoutButton from './profileStuff/LogoutButton';
 
 const useStyles = makeStyles((theme) => ({
     root: {
