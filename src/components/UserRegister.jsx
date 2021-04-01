@@ -35,8 +35,6 @@ const Select = Styled.select`
 `;
 
 
-
-
 const UserRegister = ({ handleReload }) => {
     const { user } = useAuth0();
 

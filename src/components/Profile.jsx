@@ -12,7 +12,6 @@ const Profile = () => {
         setReload(status => !status );
     }
 
-
     return(
         isAuthenticated ? (
             <div>

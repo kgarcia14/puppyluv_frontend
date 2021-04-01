@@ -2,6 +2,7 @@ import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import Test from "./components/Test";
 import Profile from './components/Profile';
 import Footer from './components/Footer';
 import Chatbox from './components/Chatbox';
@@ -26,7 +27,7 @@ function App() {
   return (
     <div className={classes.root}>
       <Router>
-        <Navbar/>
+        <Test/>
         <Switch>
           <Route exact path="/">
             <CssBaseline/>
