@@ -1,6 +1,7 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import { useState, useEffect } from 'react';
-import PetRegister from './PetRegister';
+import PossibleConnections from '../nonConnectedUsers/PossibleConnections';
+import PetRegister from '../petRegistry/PetRegister';
 import UserRegister from './UserRegister';
 
 const UserInfo = ({handleReload, reload}) => {
@@ -40,13 +41,8 @@ const UserInfo = ({handleReload, reload}) => {
             <>
             </>
         )}
-        {uniqueId !== 'No data returned from the query.' && uniqueId.about_us !== null ? (
-            <p>
-                UsersProfile will go here
-            </p>
-        ) : (
-            <>   
-            </>
+        {uniqueId !== 'No data returned from the query.' && uniqueId.about_us !== null && (
+            <PossibleConnections />
         )}
         </>
     )
