@@ -1,21 +1,19 @@
 import { useState, useEffect } from 'react'
 import Styled from 'styled-components';
 import UserThumbCard from './UserThumbCard';
-import {
-    fontSize,
-    gray2,
-    gray5,
-    accent1
-} from './styles/Styles'
+import {fontSize, gray2, gray5, accent1} from './styles/Styles';
 
 const Container = Styled.div`
-  width: 400px;
+  width: 100%;
   margin: 30px auto;
   font-size: ${fontSize};
   color: ${gray2};
 `;
 
 const List = Styled.ul`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   list-style: none;
   padding: 0px 20px;
   background-color: #fff;
@@ -26,12 +24,20 @@ const List = Styled.ul`
 `;
 
 const ListItem = Styled.li`
-  display: flex;
-  flex-direction: column;
   padding: 10px 0px;
+  width: 260px;
   border-top: 1px solid ${gray5};
   :first-of-type {
     border-top: none;
+  }
+  @media (min-width: 370px) {
+    width: 315px;
+  }
+  @media (min-width: 410px) {
+    width: 345px;
+  }
+  @media (min-width: 750px) {
+    width: 445px;
   }
 `;
 
@@ -47,13 +53,13 @@ const PossibleConnections = () => {
     },[])
     return (
         <Container>
-        <List>
-            {allUsers.map((allUser, index) => (
-                <ListItem key={index}>
-                    <UserThumbCard allUser={allUser} />
-                </ListItem>
-            ))}
-        </List>
+          <List>
+              {allUsers.map((allUser, index) => (
+                  <ListItem key={index}>
+                      <UserThumbCard allUser={allUser} />
+                  </ListItem>
+              ))}
+          </List>
         </Container>
     )
 }

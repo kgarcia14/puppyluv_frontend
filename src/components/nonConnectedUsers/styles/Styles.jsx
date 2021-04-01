@@ -11,3 +11,5 @@ export const accent1 = "#FF69B4";
 // Fonts
 export const fontFamily = "'Segoe UI', 'Helvetica Neue',sansserif";
 export const fontSize = "15px";
+
+
