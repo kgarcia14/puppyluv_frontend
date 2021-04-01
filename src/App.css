@@ -31,7 +31,18 @@ label{
   display: block;
 }
 
+.user-register-button {
+  width: 350px;
+  height: 35px;
+}
+
 .title {
   border: black
+}
+
+@media screen and (min-width: 370px) {
+  .user-thumb-card {
+    width: 100px;
+  }
 }
 

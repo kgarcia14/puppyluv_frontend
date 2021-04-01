@@ -87,7 +87,7 @@ const RegisterPet2 = ({ handleReload, pet1, pet2 }) => {
         <>
         {pet1 !== null && pet2 === null ? (
             <>
-            <H2>Pet #2</H2>
+            <H2>Dog 2</H2>
             <Form onSubmit={_handleSubmitPetInfo}>
                 <Label>Dog Name
                     <Input

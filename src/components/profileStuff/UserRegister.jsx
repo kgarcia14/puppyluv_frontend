@@ -104,7 +104,7 @@ const UserRegister = ({ handleReload }) => {
 
     return(
         <>
-            <H2>User Info</H2>
+            <H2>User Information</H2>
             <Form onSubmit={_handleSubmitUserInfo}>
                 <Label>First Name
                     <Input
