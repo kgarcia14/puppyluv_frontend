@@ -1,4 +1,6 @@
 import React from 'react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
@@ -45,13 +47,21 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-const UserThumbCard = ({ allUser }) => {
+const UserThumbCard = ({ allUser, handleOtherUserId }) => {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
+  const [showMenu, setShowMenu] = useState(false);
+  console.log(allUser.user_nickname);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+
+  const handleMenuClick = async (event) => {
+    event.preventDefault();
+    setShowMenu(!showMenu);
+    console.log(allUser.user_nickname);
+  }
 
   return (
     <Card className={classes.root}>
@@ -64,7 +74,7 @@ const UserThumbCard = ({ allUser }) => {
             }
             action={
               <IconButton aria-label="settings">
-                <MoreVertIcon />
+                <MoreVertIcon onClick={handleMenuClick}/>
               </IconButton>
             }
             title={allUser.first_name} 
@@ -80,7 +90,7 @@ const UserThumbCard = ({ allUser }) => {
             }
             action={
               <IconButton aria-label="settings">
-                <MoreVertIcon />
+                <MoreVertIcon onClick={handleMenuClick} />
               </IconButton>
             }
             title={allUser.first_name} 
@@ -96,13 +106,19 @@ const UserThumbCard = ({ allUser }) => {
             }
             action={
               <IconButton aria-label="settings">
-                <MoreVertIcon />
+                <MoreVertIcon onClick={handleMenuClick} />
               </IconButton>
             }
             title={allUser.first_name} 
             subheader={allUser.last_name}
           />
         )}
+        {showMenu && (
+          <Link to={`/full_profile/${allUser.id}`}>View Full Profile</Link>
+        )
+        }
+        
+
       <CardMedia
         className={classes.media}
         image="/static/images/cards/paella.jpg"

@@ -41,8 +41,9 @@ const ListItem = Styled.li`
   }
 `;
 
-const PossibleConnections = () => {
+const PossibleConnections = ({ handleOtherUserId }) => {
     const [allUsers, setAllUsers] = useState([]);
+
 
     useEffect(() => {
         (async () => {
@@ -56,7 +57,7 @@ const PossibleConnections = () => {
           <List>
               {allUsers.map((allUser, index) => (
                   <ListItem key={index}>
-                      <UserThumbCard allUser={allUser} />
+                      <UserThumbCard allUser={allUser} handleOtherUserId={handleOtherUserId}/>
                   </ListItem>
               ))}
           </List>

@@ -49,7 +49,7 @@ const PetRegister = ({handleReload, reload}) => {
 
         {numbPet === 0 && (
             <>
-                <p>sorry for you loss, please tell us about you and your lost one</p>
+                <p>We are sincerely sorry for you loss, please tell us about you and your lost pup</p>
                 <AboutUs handleReload={handleReload} />
             </>
         )}
