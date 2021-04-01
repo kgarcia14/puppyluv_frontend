@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Profile from './components/profileStuff/Profile';
@@ -7,6 +8,8 @@ import Footer from './components/Footer';
 import Chatbox from './components/Chatbox';
 import { makeStyles } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';
+import FullProfile from './components/profileStuff/FullProfile';
+import PossibleConnections from './components/nonConnectedUsers/PossibleConnections';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,6 +24,11 @@ const useStyles = makeStyles((theme) => ({
 function App() {
   const { isLoading } = useAuth0();
   const classes = useStyles();
+  const [otherUserId, setotherUserId] = useState('');
+
+  const _handleOtherUserId = (otherUserId) => {
+    setotherUserId(otherUserId);
+  }
 
   if (isLoading) return <div>Loading...</div>
   return (
@@ -34,6 +42,12 @@ function App() {
           </Route>
           <Route exact path="/Chatbox">
             <Chatbox component={Chatbox} />
+          </Route>
+          <Route exact path="/possible_connections">
+            <PossibleConnections handleOtherUserId={_handleOtherUserId}/>
+          </Route>
+          <Route exact path="/full_profile/:otherUserId">
+            <FullProfile otherUserId={otherUserId}/>
           </Route>
         </Switch>
         <Footer/>
