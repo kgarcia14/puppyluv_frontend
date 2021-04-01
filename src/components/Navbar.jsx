@@ -24,7 +24,7 @@ export default function Navbar() {
 
     return (
         <div className={classes.root}>
-        <ReactBootStrap.Navbar sticky="top" collapseOnSelect expand="xl" bg="light" variant="light">
+        <ReactBootStrap.Navbar sticky="top" collapseOnSelect expand="xl" bg="none" variant="light">
         <ReactBootStrap.Navbar.Brand href="/"><span className={classes.puppy}>Puppy</span><span className={classes.colorText}>Luv. 🐶</span></ReactBootStrap.Navbar.Brand>
         <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
