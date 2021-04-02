@@ -40,7 +40,7 @@ function App() {
             <CssBaseline/>
             <Profile />
           </Route>
-          <Route exact path="/Chatbox">
+          <Route exact path="/chatbox">
             <Chatbox component={Chatbox} />
           </Route>
           <Route exact path="/possible_connections">
