@@ -14,6 +14,7 @@ const useStyles = makeStyles({
   },
   media: {
     height: 400,
+    display: 'flex',
   },
   title: {
     fontFamily: 'Cabin',

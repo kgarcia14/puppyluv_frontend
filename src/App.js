@@ -49,6 +49,9 @@ function App() {
           <Route exact path="/full_profile/:otherUserId">
             <FullProfile otherUserId={otherUserId}/>
           </Route>
+          <Route exact path="/full_profile/:otherUserId">
+            <FullProfile otherUserId={otherUserId}/>
+          </Route>
         </Switch>
         <Footer/>
       </Router>

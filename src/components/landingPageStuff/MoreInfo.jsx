@@ -6,7 +6,7 @@ import useWindowPosition from "../../hook/useWindowPosition";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    minHeight: "100vh",
+    maxHeight: "1600vh",
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: 'pink',
@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     textAlign: 'center',
     paddingTop: '30px',
+    paddingBottom: '30px',
   },
   cards: {
     display: "flex",
