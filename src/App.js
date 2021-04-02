@@ -13,11 +13,11 @@ import PossibleConnections from './components/nonConnectedUsers/PossibleConnecti
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    minHeight: '100vh',
+    maxHeight: '120vh',
     backgroundImage: `url('https://i.pinimg.com/originals/f2/72/fe/f272fe97a657045cabb4dddb911cf4ae.jpg')`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
-    backgroundAttachment: 'fixed',
+    backgroundAttachment: 'flex',
   },
 }))
 
