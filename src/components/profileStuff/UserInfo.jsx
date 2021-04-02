@@ -1,5 +1,6 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import { useState, useEffect } from 'react';
+import Filter from '../multiLevelSelect/Filter';
 import PossibleConnections from '../nonConnectedUsers/PossibleConnections';
 import PetRegister from '../petRegistry/PetRegister';
 import UserRegister from './UserRegister';
@@ -51,7 +52,10 @@ const UserInfo = ({handleReload, reload}) => {
             </>
         )}
         {uniqueId !== 'No data returned from the query.' && uniqueId.about_us !== null && (
+            <>
+            <Filter handleReload={handleReload}/>
             <PossibleConnections />
+            </>
         )}
         </>
     )
