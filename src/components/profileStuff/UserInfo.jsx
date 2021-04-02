@@ -3,8 +3,19 @@ import { useState, useEffect } from 'react';
 import PossibleConnections from '../nonConnectedUsers/PossibleConnections';
 import PetRegister from '../petRegistry/PetRegister';
 import UserRegister from './UserRegister';
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        fontFamily: "Cabin",
+    },
+}));
 
 const UserInfo = ({handleReload, reload}) => {
+    const classes = useStyles();
     const { user } = useAuth0();
     const [uniqueId, setUniqueId] = useState([]);
     console.log("uniqueId: ", uniqueId)
@@ -24,7 +35,7 @@ const UserInfo = ({handleReload, reload}) => {
         <>
         {!!uniqueId.length ? (
             <>
-            <h5>Please fill out information...</h5>
+            <h3 className={classes.root}>Welcome! Who are you?</h3>
             <UserRegister handleReload={handleReload} />
             </>
         ) : (
@@ -34,7 +45,7 @@ const UserInfo = ({handleReload, reload}) => {
 
         {uniqueId.about_us === null ? (
             <>
-            <h5>Please fill out information...</h5>
+            <h3 className={classes.root}>Who is your dog?</h3>
             <PetRegister handleReload={handleReload} reload={reload}/>
             </>
         ) : (

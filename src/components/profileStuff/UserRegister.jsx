@@ -2,6 +2,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { useState } from 'react';
 import Styled from 'styled-components';
 import { Button } from '@material-ui/core';
+import { makeStyles } from "@material-ui/core/styles";
 
 const H2 = Styled.h2`
 text-align: center;
@@ -34,9 +35,15 @@ const Select = Styled.select`
     background-color: #fff;
 `;
 
+const useStyles = makeStyles((theme) => ({
+    root: {
+        fontFamily: "Cabin",
+    },
+}));
 
 const UserRegister = ({ handleReload }) => {
     const { user } = useAuth0();
+    const classes = useStyles();
 
     const [userNickname, setUserNickname] = useState('');
     const [firstName, setFirstName] = useState('');
@@ -101,7 +108,7 @@ const UserRegister = ({ handleReload }) => {
     }
 
     return(
-        <>
+        <div className={classes.root}>
             <H2>User Information</H2>
             <Form onSubmit={_handleSubmitUserInfo}>
                 <Label>First Name
@@ -152,7 +159,7 @@ const UserRegister = ({ handleReload }) => {
                         onChange={_cityChange}>
                             <option value="">Choose One</option>
                             <option value="Atlanta">Atlanta</option>
-                        </Select>
+                    </Select>
                 </Label>
                 <Label>Zip Code 
                     <Input 
@@ -161,7 +168,7 @@ const UserRegister = ({ handleReload }) => {
                         value={zipCode}
                         onChange={_zipCodeChange}/>
                 </Label>
-                <Label>picture of you
+                <Label>Profile Picture
                     <Input 
                     type="file"
                     name="pet_img"
@@ -175,11 +182,11 @@ const UserRegister = ({ handleReload }) => {
                         name="numb_pets"
                         value={numbPets}
                         onChange={_numPetsChange}>
-                        <option value="">Select a number</option>
+                        <option value="">Select a Number</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
-                        <option value="0">lost a dog</option>
+                        <option value="0">Lost a Dog</option>
                     </Select>
                 </Label>
                 <Button
@@ -190,7 +197,7 @@ const UserRegister = ({ handleReload }) => {
                         Submit
                 </Button>
             </Form>
-        </>
+        </div>
     )
 }
 

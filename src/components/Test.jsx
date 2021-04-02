@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { AppBar, IconButton, Toolbar, Menu, MenuItem } from '@material-ui/core';
+import { AppBar, IconButton, Toolbar, Menu, MenuItem, Link } from '@material-ui/core';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import Badge from '@material-ui/core/Badge';
-import MoreIcon from '@material-ui/icons/MoreVert';
 import MenuIcon from '@material-ui/icons/Menu';
+import PetsIcon from '@material-ui/icons/Pets';
 
 import { useAuth0 } from '@auth0/auth0-react';
 import LoginButton from './profileStuff/LoginButton';
@@ -100,7 +100,7 @@ export default function Test() {
             <MenuItem className={classes.luv} onClick={handleClose}>My account</MenuItem>
             <MenuItem className={classes.luv} onClick={handleClose}><LogoutButton/></MenuItem>
         </Menu>
-    )
+    );
 
     const mobileMenuId = 'primary-search-account-menu-mobile';
     const renderMobileMenu = (
@@ -143,12 +143,21 @@ export default function Test() {
         </Menu>
     );
 
+    const preventDefault = (event) => event.preventDefault();
+
     return (
         <div className={classes.root}>
             <AppBar className={classes.appbar} elevation={0} position="static" sticky="top">
                 <Toolbar>
                     <h5 className={classes.appbarTitle}>
-                        <span className={classes.puppy}>Puppy</span><span className={classes.colorText}>Luv. 🐶</span>
+                        <span className={classes.puppy}>Puppy</span><span className={classes.colorText}>Luv.</span>
+                        {isAuthenticated ? (
+                        <></>
+                        ) : (
+                        <IconButton href='/' color="primary" fontSize="small">
+                            <PetsIcon/>
+                        </IconButton>
+                        )}
                     </h5>
                     {isAuthenticated ? (
                         <div>
