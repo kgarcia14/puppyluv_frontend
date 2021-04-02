@@ -2,10 +2,12 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { useState } from 'react';
 import Styled from 'styled-components';
 import { Button } from '@material-ui/core';
+import { makeStyles } from "@material-ui/core/styles";
 
 const H2 = Styled.h2`
 text-align: center;
 margin-top: 15px;
+color: #333;
 `;
 
 const Form = Styled.form`
@@ -17,26 +19,55 @@ const Form = Styled.form`
 const Label = Styled.label`
     display: flex;
     flex-direction: column;
+    color: #333;
 `;
 
 const Input = Styled.input`
-    width: 350px;
-    height: 35px;
-    border: 1px solid #333;
+    width: 300px;
+    height: 30px;
+    border: 1px solid #857c81;
     border-radius: 4px;
+    @media (min-width: 370px) {
+        width: 325px;
+        height: 35px;
+    }
+    @media (min-width: 410px) {
+        width: 350px;
+    }
+    @media (min-width: 750px) {
+        width: 500px;
+        height: 40px;
+    }
 `;
 
 const Select = Styled.select`
-    width: 350px;
+    width: 300px;
     height: 35px;
-    border: 1px solid #333;
+    border: 1px solid #857c81;
     border-radius: 4px;
     background-color: #fff;
+    @media (min-width: 370px) {
+        width: 325px;
+        height: 35px;
+    }
+    @media (min-width: 410px) {
+        width: 350px;
+    }
+    @media (min-width: 750px) {
+        width: 500px;
+        height: 40px;
+    }
 `;
 
+const useStyles = makeStyles((theme) => ({
+    root: {
+        fontFamily: "Cabin",
+    },
+}));
 
 const UserRegister = ({ handleReload }) => {
     const { user } = useAuth0();
+    const classes = useStyles();
 
     const [userNickname, setUserNickname] = useState('');
     const [firstName, setFirstName] = useState('');
@@ -101,7 +132,7 @@ const UserRegister = ({ handleReload }) => {
     }
 
     return(
-        <>
+        <div className={classes.root}>
             <H2>User Information</H2>
             <Form onSubmit={_handleSubmitUserInfo}>
                 <Label>First Name
@@ -111,7 +142,7 @@ const UserRegister = ({ handleReload }) => {
                         name="first_name"
                         value={firstName}
                         onChange={_firstNameChange}
-                        placeholder="Enter First Name"/>
+                        placeholder=""/>
                 </Label>
                 <Label>Last Name
                     <Input
@@ -120,7 +151,7 @@ const UserRegister = ({ handleReload }) => {
                         name="last_name"
                         value={lastName}
                         onChange={_lastNameChange}
-                        placeholder="Enter Last Name"/>
+                        placeholder=""/>
                 </Label>
                 <Label>Age
                     <Input
@@ -138,7 +169,7 @@ const UserRegister = ({ handleReload }) => {
                         name="gender"
                         value={gender}
                         onChange={_genderChange}>
-                        <option value="">Choose One</option>
+                        <option value=""></option>
                         <option value="female">Female</option>
                         <option value="male">Male</option>
                         <option value="other">Other</option>
@@ -150,18 +181,18 @@ const UserRegister = ({ handleReload }) => {
                         name="city"
                         value={city}
                         onChange={_cityChange}>
-                            <option value="">Choose One</option>
+                            <option value=""></option>
                             <option value="Atlanta">Atlanta</option>
-                        </Select>
+                    </Select>
                 </Label>
                 <Label>Zip Code 
                     <Input 
                         type="integer"
-                        placeholder="Enter Zip Code"
+                        placeholder=""
                         value={zipCode}
                         onChange={_zipCodeChange}/>
                 </Label>
-                <Label>picture of you
+                <Label>Profile Picture
                     <Input 
                     type="file"
                     name="pet_img"
@@ -175,11 +206,12 @@ const UserRegister = ({ handleReload }) => {
                         name="numb_pets"
                         value={numbPets}
                         onChange={_numPetsChange}>
-                        <option value="">Select a number</option>
+
+                        <option value=""></option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
-                        <option value="0">lost a dog</option>
+                        <option value="0">Lost a Dog</option>
                     </Select>
                 </Label>
                 <Button
@@ -190,7 +222,7 @@ const UserRegister = ({ handleReload }) => {
                         Submit
                 </Button>
             </Form>
-        </>
+        </div>
     )
 }
 
