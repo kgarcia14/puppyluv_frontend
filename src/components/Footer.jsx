@@ -52,7 +52,7 @@ export default function Footer() {
     <Grid container spacing={0} className={classNames(classes.footerText, classes.footerSections)}>
         <Grid item xs={12} sm={4}>
             <div>
-            <span property="name">Digital Crafts Inc.</span>
+            <span property="name">Puppy Luv Inc.</span>
             <div property="address" typeof="PostalAddress">
             <span property="streetAddress">10101 Cookie Coder St.</span>
             <span property="addressLocality" style={{ display: 'block' }}>Atlanta, Georgia{''}</span>
@@ -89,7 +89,7 @@ export default function Footer() {
             variant="subheading"
             component={'span'}
         >
-            © {currentYear} Digital Crafts Inc.
+            © {currentYear} PuppyLuv Inc.
         </Typography>
         </Grid>
     </div>
