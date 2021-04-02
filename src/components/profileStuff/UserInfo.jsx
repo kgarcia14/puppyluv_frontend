@@ -35,7 +35,6 @@ const UserInfo = ({handleReload, reload}) => {
         <>
         {!!uniqueId.length ? (
             <>
-            <h3 className={classes.root}>Welcome! Who are you?</h3>
             <UserRegister handleReload={handleReload} />
             </>
         ) : (
@@ -45,7 +44,6 @@ const UserInfo = ({handleReload, reload}) => {
 
         {uniqueId.about_us === null ? (
             <>
-            <h3 className={classes.root}>Who is your dog?</h3>
             <PetRegister handleReload={handleReload} reload={reload}/>
             </>
         ) : (
