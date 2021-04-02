@@ -13,7 +13,8 @@ const useStyles = makeStyles((theme) => ({
         fontFamily: 'Cabin',
         fontSize: '10px',
         bottom: 0,
-        width: '100%',  
+        width: '100%',
+        textAlign: 'center',
     },
     footerSections: {
         margin: '0 16px',
@@ -50,7 +51,7 @@ export default function Footer() {
     return (
     <div className={classes.root}>
     <Grid container spacing={0} className={classNames(classes.footerText, classes.footerSections)}>
-        <Grid item xs={12} sm={4}>
+        <Grid item xs>
             <div>
             <span property="name">Puppy Luv Inc.</span>
             <div property="address" typeof="PostalAddress">
@@ -59,7 +60,7 @@ export default function Footer() {
             </div>
             </div>
         </Grid>
-        <Grid item xs={12} sm={4}>
+        <Grid item xs>
             <ul style={{ listStyle: 'none', margin: 0 }}>
             <li>
                 <Link prefetch={true} as="/github"
@@ -82,7 +83,7 @@ export default function Footer() {
             </ul>
         </Grid>
     </Grid>
-        
+
         <Grid className={classes.subFooter} item xs={12}>
         <Typography
             className={classes.white}

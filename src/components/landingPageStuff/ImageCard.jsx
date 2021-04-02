@@ -8,7 +8,7 @@ import { Collapse } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 600,
+    maxWidth: 500,
     background: 'rgba(0,0,0,0.5)',
     margin: '20px',
   },
@@ -18,13 +18,15 @@ const useStyles = makeStyles({
   title: {
     fontFamily: 'Cabin',
     fontWeight: 'bold',
-    fontSize: '2rem',
+    fontSize: '1.8rem',
     color: '#fff',
+    textAlign: 'center',
   },
   desc: {
     fontFamily: 'Cabin',
-    fontSize: '1.1rem',
+    fontSize: '1rem',
     color: '#ddd',
+    textAlign: 'justify',
   },
 });
 
