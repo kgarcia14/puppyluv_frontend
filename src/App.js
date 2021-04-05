@@ -11,6 +11,7 @@ import { CssBaseline } from '@material-ui/core';
 import FullProfile from './components/profileStuff/FullProfile';
 import PossibleConnections from './components/nonConnectedUsers/PossibleConnections';
 import MyProfile from './components/profileStuff/MyProfile';
+import UserInfo from './components/profileStuff/UserInfo';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -50,8 +51,11 @@ function App() {
           <Route exact path="/full_profile/:otherUserId">
             <FullProfile otherUserId={otherUserId}/>
           </Route>
-          <Route exact path='/my_profile/:user'>
+          <Route exact path='/my_profile'>
             <MyProfile/>
+          </Route>
+          <Route exact path='/home'>
+            <UserInfo/>
           </Route>
         </Switch>
         <Footer/>

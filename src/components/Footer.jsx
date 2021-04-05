@@ -5,7 +5,6 @@ import classNames from 'classnames'
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        marginTop: 40,
         backgroundColor: 'rgba(0,0,0,0.5)',
         borderTop: 'solid 3px #998643',
         paddingTop: '12px',

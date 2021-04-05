@@ -5,6 +5,10 @@ import PossibleConnections from '../nonConnectedUsers/PossibleConnections';
 import PetRegister from '../petRegistry/PetRegister';
 import UserRegister from './UserRegister';
 import { makeStyles } from "@material-ui/core/styles";
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import Icon from '@material-ui/core/Icon';
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -12,7 +16,22 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "center",
         alignItems: "center",
         fontFamily: "Cabin",
+        backgroundColor: 'pink',
+        marginLeft: '30px',
+        marginRight: '30px',
+        marginBottom: '30px',
     },
+    formControl: {
+        margin: theme.spacing(1),
+        minWidth: 120,
+    },
+    selectEmpty: {
+        marginTop: theme.spacing(2),
+    },
+    form: {
+        textAlign: 'center',
+        marginTop: '30px',
+    }
 }));
 
 const UserInfo = ({handleReload, reload}) => {
@@ -21,13 +40,14 @@ const UserInfo = ({handleReload, reload}) => {
     const [filter, setFilter] = useState('')
     const [filterBy, setFilterBy] = useState('')
     const [filteredUsers, setFilteredUsers] = useState([])
+    const classes = useStyles();
     
     console.log("uniqueId: ", uniqueId)
 
     const _handleFilterChange = (e) => {
         setFilter(e.target.value);
-      };
-      const _handleFilterByChange = (e) => {
+    };
+    const _handleFilterByChange = (e) => {
         setFilterBy(e.target.value)   
     }
 
@@ -49,7 +69,7 @@ const UserInfo = ({handleReload, reload}) => {
     }, [user.sub, reload])
 
     return (
-        <>
+        <div className={classes.root}>
         {!!uniqueId.length ? (
             <>
             <UserRegister handleReload={handleReload} />
@@ -68,113 +88,170 @@ const UserInfo = ({handleReload, reload}) => {
             </>
         )}
         {uniqueId !== 'No data returned from the query.' && uniqueId.about_us !== null && (
-            <>
-            <p>Filter</p>
-            <select
+            <div className={classes.form}>
+            <FormControl>
+            <h4>Let's find puppies to play with!</h4>
+            <Select
             value={filter}
             dropdownStyle={{ maxHeight: 400, overflow: 'auto' }}
-            placeholder="Please select"
+            placeholder="Please Select"
+            displayEmpty
+            className={classes.selectEmpty}
+            inputProps={{ 'aria-label': 'Without label' }}
+            autoWidth
             onChange={_handleFilterChange}>
-                <option value="">please choose</option>
+                <option value="">Please Select</option>
                 <option value="age">Age</option>
                 <option value="city">City</option>
                 <option value="gender">Gender</option>
                 <option value="numb_pets">Number of Pets</option>
                 <option value="pet_personality">Pet Personality</option>
-            </select>
+            </Select>
             {filter === 'age' && (
             <form onSubmit={_handleFilterSubmit}>
-                <select
+                <Select
                 value={filterBy}
                 dropdownStyle={{ maxHeight: 400, overflow: 'auto' }}
-                placeholder="Please select"
+                placeholder="Please Select"
+                displayEmpty
+                autoWidth
+                className={classes.selectEmpty}
+                inputProps={{ 'aria-label': 'Without label' }}
                 onChange={_handleFilterByChange}>
-                    <option value="">please choose</option>
+                    <option value="">Please Select</option>
                     <option value="1820">18 - 20</option>
                     <option value="2025">20 - 25</option>
                     <option value="2530">25 - 30</option>
                     <option value="3035">30 - 35</option>
                     <option value="3540">35 - 40</option>
-                </select>
-                <button
-                    type="submit">
+                </Select>
+                <div className={classes.formControl}>
+                <Button
+                    size="small"
+                    variant="outlined"
+                    color="primary"
+                    className={classes.button}
+                    endIcon={<Icon>send</Icon>}
+                    type='submit'
+                >
                     Submit
-                </button>
+                </Button>
+                </div>
             </form>
         )}
         {filter === 'gender' && (
             <form onSubmit={_handleFilterSubmit}>
-                <select
+                <Select
                 value={filterBy}
                 dropdownStyle={{ maxHeight: 400, overflow: 'auto' }}
-                placeholder="Please select"
+                placeholder="Please Select"
+                displayEmpty
+                autoWidth
+                className={classes.selectEmpty}
+                inputProps={{ 'aria-label': 'Without label' }}
                 onChange={_handleFilterByChange}>
-                    <option value="">please choose</option>
+                    <option value="">Please Select</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                     <option value="other">Other</option>
-                </select>
-                <button
-                    type="submit">
+                </Select>
+                <div className={classes.formControl}>
+                <Button
+                    size="small"
+                    variant="outlined"
+                    color="primary"
+                    className={classes.button}
+                    endIcon={<Icon>send</Icon>}
+                    type='submit'
+                >
                     Submit
-                </button>
+                </Button>
+                </div>
             </form>
         )}
         {filter === 'city' && (
             <form onSubmit={_handleFilterSubmit}>
-                <select
+                <Select
                 value={filterBy}
                 dropdownStyle={{ maxHeight: 400, overflow: 'auto' }}
-                placeholder="Please select"
+                placeholder="Please Select"
+                displayEmpty
+                autoWidth
+                className={classes.selectEmpty}
+                inputProps={{ 'aria-label': 'Without label' }}
                 onChange={_handleFilterByChange}>
-                    <option value="">please choose</option>
+                    <option value="">Please Select</option>
                     <option value="Atlanta">Atlanta</option>
-                </select>
-                <button
-                    type="submit">
+                </Select>
+                <div className={classes.formControl}>
+                <Button
+                    size="small"
+                    variant="outlined"
+                    color="primary"
+                    className={classes.button}
+                    endIcon={<Icon>send</Icon>}
+                    type='submit'
+                >
                     Submit
-                </button>
+                </Button>
+                </div>
             </form>
         )}
         {filter === 'numb_pets' && (
             <form onSubmit={_handleFilterSubmit}>
-                <select
+                <Select
                 value={filterBy}
-                dropdownStyle={{ maxHeight: 400, overflow: 'auto' }}
-                placeholder="Please select"
+                dropdownStyle={{ maxHeight: 400, overflow: 'auto', justifyContent: 'center' }}
+                placeholder="Please Select"
                 onChange={_handleFilterByChange}>
-                    <option value="">please choose</option>
+                    <option value="">Please Select</option>
                     <option value="0">No Pets</option>
                     <option value="1">1 Pet</option>
                     <option value="2">2 Pets</option>
                     <option value="3">3 Pets</option>
                     <option value="4">3+ Pets</option>
-                </select>
-                <button
-                    type="submit">
+                </Select>
+                <div className={classes.formControl}>
+                <Button
+                    size="small"
+                    variant="outlined"
+                    color="primary"
+                    className={classes.button}
+                    endIcon={<Icon>send</Icon>}
+                    type='submit'
+                >
                     Submit
-                </button>
+                </Button>
+                </div>
             </form>
         )}
         {filter === 'pet_personality' && (
             <form onSubmit={_handleFilterSubmit}>
-                <select
+                <Select
                 value={filterBy}
                 dropdownStyle={{ maxHeight: 400, overflow: 'auto' }}
-                placeholder="Please select"
+                placeholder="Please Select"
                 onChange={_handleFilterByChange}>
-                    <option value="">please choose</option>
+                    <option value="">Please Select</option>
                     <option value="playful">Playful</option>
                     <option value="outgoing">Outgoing</option>
                     <option value="mellow">Mellow</option>
                     <option value="independent">Independent</option>
                     <option value="adaptable">Adaptable</option>
                     <option value="grumpy">Grumpy</option>
-                </select>
-                <button
-                    type="submit">
+                </Select>
+                <div className={classes.formControl}>
+                <Button
+                    size="small"
+                    variant="outlined"
+                    color="primary"
+                    className={classes.button}
+                    endIcon={<Icon>send</Icon>}
+                    type='submit'
+                >
                     Submit
-                </button>
+                </Button>
+                </div>
             </form>
         )}
         {!!filteredUsers.length ? (
@@ -182,9 +259,10 @@ const UserInfo = ({handleReload, reload}) => {
         ) : (
             <PossibleConnections />
         )}
-            </>
+            </FormControl>
+            </div>
         )}
-        </>
+        </div>
     )
 }
 

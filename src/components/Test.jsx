@@ -99,9 +99,12 @@ export default function Test() {
         >
             <MenuItem className={classes.luv} onClick={(e) => {
                 e.preventDefault();
-                window.location.href = '/my_profile/:user';
+                window.location.href = '/my_profile';
             }}>My Profile</MenuItem>
-            <MenuItem className={classes.luv} onClick={handleClose}>My account</MenuItem>
+            <MenuItem className={classes.luv} onClick={(e) => {
+                e.preventDefault();
+                window.location.href = '/home';
+            }}>Home</MenuItem>
             <MenuItem className={classes.luv} onClick={handleClose}><LogoutButton /></MenuItem>
         </Menu>
     );
@@ -159,7 +162,9 @@ export default function Test() {
                     <h5 className={classes.appbarTitle}>
                         <span className={classes.puppy}>Puppy</span><span className={classes.colorText}>Luv.</span>
                         {isAuthenticated ? (
-                            <></>
+                            <IconButton href='/home' color="primary" fontSize="small">
+                                <PetsIcon />
+                            </IconButton>
                         ) : (
                             <IconButton href='/' color="primary" fontSize="small">
                                 <PetsIcon />
