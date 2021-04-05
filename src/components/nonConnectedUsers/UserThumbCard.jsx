@@ -17,8 +17,6 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import QuestionAnswerRoundedIcon from '@material-ui/icons/QuestionAnswerRounded';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-import Styled from 'styled-components';
-
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -75,8 +73,8 @@ const UserThumbCard = ({ allUser, handleOtherUserId }) => {
               </Avatar>
             }
             action={
-              <IconButton aria-label="settings" onClick={handleMenuClick}>
-                <MoreVertIcon/>
+              <IconButton aria-label="settings">
+                <MoreVertIcon onClick={handleMenuClick}/>
               </IconButton>
             }
             title={allUser.first_name} 
@@ -91,8 +89,8 @@ const UserThumbCard = ({ allUser, handleOtherUserId }) => {
               </Avatar>
             }
             action={
-              <IconButton aria-label="settings" onClick={handleMenuClick}>
-                <MoreVertIcon />
+              <IconButton aria-label="settings">
+                <MoreVertIcon onClick={handleMenuClick} />
               </IconButton>
             }
             title={allUser.first_name} 
@@ -107,8 +105,8 @@ const UserThumbCard = ({ allUser, handleOtherUserId }) => {
               </Avatar>
             }
             action={
-              <IconButton aria-label="settings" onClick={handleMenuClick}>
-                <MoreVertIcon />
+              <IconButton aria-label="settings">
+                <MoreVertIcon onClick={handleMenuClick} />
               </IconButton>
             }
             title={allUser.first_name} 
@@ -116,7 +114,7 @@ const UserThumbCard = ({ allUser, handleOtherUserId }) => {
           />
         )}
         {showMenu && (
-          <Link to={`/full_profile/${allUser.id}`} style={{paddingLeft: 12, textDecoration: 'none', color: '#3f51b5'}}>View Full Profile</Link>
+          <Link to={`/full_profile/${allUser.id}`}>View Full Profile</Link>
         )
         }
         

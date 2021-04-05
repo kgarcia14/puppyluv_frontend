@@ -8,7 +8,7 @@ const FullProfile = () => {
 
     useEffect(() => {
         (async () => {
-            const apiUrl = `http://127.0.0.1:3333/user_id/${otherUserId}`;
+            const apiUrl = `http://127.0.0.1:3333/users/${otherUserId}`;
             const fullProfileData = await fetch(apiUrl).then(response => response.json());
             setFullProfile(fullProfileData)
         })();
@@ -16,30 +16,7 @@ const FullProfile = () => {
 
     return (
         <>
-            <h4>{fullProfile.first_name} {fullProfile.last_name}</h4><p>Number of dogs: {fullProfile.numb_pets}</p>
-            {fullProfile.numb_pets === 1 && (
-                <>
-                    <p>{fullProfile.pet_name1}</p>
-                    <p>{fullProfile.about_us}</p>
-                </>
-            )}
-
-            {fullProfile.numb_pets === 2 && (
-                <>
-                    <p>{fullProfile.pet_name1}</p>
-                    <p>{fullProfile.pet_name2}</p>
-                    <p>About us: {fullProfile.about_us}</p>
-                </>
-            )}
-
-            {fullProfile.numb_pets === 3 && (
-                <>
-                    <p>{fullProfile.pet_name1}</p>
-                    <p>{fullProfile.pet_name2}</p>
-                    <p>{fullProfile.pet_name3}</p>
-                    <p>{fullProfile.about_us}</p>
-                </>
-            )}
+            <p>{fullProfile.first_name}</p>
         </>
     )
 }
