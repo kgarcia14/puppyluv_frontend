@@ -96,9 +96,12 @@ export default function Test() {
             open={open}
             onClose={handleClose}
         >
-            <MenuItem className={classes.luv} onClick={handleClose}>Profile</MenuItem>
+            <MenuItem className={classes.luv} onClick={(e) => {
+                e.preventDefault();
+                window.location.href = '/full_profile/:otherUserId';
+            }}>My Profile</MenuItem>
             <MenuItem className={classes.luv} onClick={handleClose}>My account</MenuItem>
-            <MenuItem className={classes.luv} onClick={handleClose}><LogoutButton/></MenuItem>
+            <MenuItem className={classes.luv} onClick={handleClose}><LogoutButton /></MenuItem>
         </Menu>
     );
 
