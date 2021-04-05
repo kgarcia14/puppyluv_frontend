@@ -7,6 +7,7 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import Badge from '@material-ui/core/Badge';
 import MenuIcon from '@material-ui/icons/Menu';
 import PetsIcon from '@material-ui/icons/Pets';
+import FullProfile from './profileStuff/FullProfile'
 
 import { useAuth0 } from '@auth0/auth0-react';
 import LoginButton from './profileStuff/LoginButton';
@@ -36,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
     luv: {
         color: "#585459",
         fontFamily: 'Cabin',
-        
+
     },
     menuButton: {
         marginRight: theme.spacing(2),
@@ -96,9 +97,12 @@ export default function Test() {
             open={open}
             onClose={handleClose}
         >
-            <MenuItem className={classes.luv} onClick={handleClose}>Profile</MenuItem>
+            <MenuItem className={classes.luv} onClick={(e) => {
+                e.preventDefault();
+                window.location.href = '/my_profile/:user';
+            }}>My Profile</MenuItem>
             <MenuItem className={classes.luv} onClick={handleClose}>My account</MenuItem>
-            <MenuItem className={classes.luv} onClick={handleClose}><LogoutButton/></MenuItem>
+            <MenuItem className={classes.luv} onClick={handleClose}><LogoutButton /></MenuItem>
         </Menu>
     );
 
@@ -114,7 +118,10 @@ export default function Test() {
             onClose={handleMobileMenuClose}
         >
             <MenuItem>
-                <IconButton aria-label="show 4 new mails" color="primary">
+                <IconButton aria-label="show 4 new mails" color="primary" onClick={(e) => {
+                    e.preventDefault();
+                    window.location.href = '/Chatbox';
+                }}>
                     <Badge badgeContent={4} color="secondary">
                         <MailIcon />
                     </Badge>
@@ -152,18 +159,21 @@ export default function Test() {
                     <h5 className={classes.appbarTitle}>
                         <span className={classes.puppy}>Puppy</span><span className={classes.colorText}>Luv.</span>
                         {isAuthenticated ? (
-                        <></>
+                            <></>
                         ) : (
-                        <IconButton href='/' color="primary" fontSize="small">
-                            <PetsIcon/>
-                        </IconButton>
+                            <IconButton href='/' color="primary" fontSize="small">
+                                <PetsIcon />
+                            </IconButton>
                         )}
                     </h5>
                     {isAuthenticated ? (
                         <div>
                             <div className={classes.sectionDesktop}>
                                 <span className={classes.luv}>Logged in as: {user.nickname}</span>
-                                <IconButton aria-label="show 4 new mails" color="primary">
+                                <IconButton aria-label="show 4 new mails" color="primary" onClick={(e) => {
+                                    e.preventDefault();
+                                    window.location.href = '/Chatbox';
+                                }}>
                                     <Badge badgeContent={4} color="secondary">
                                         <MailIcon />
                                     </Badge>
@@ -192,10 +202,10 @@ export default function Test() {
                                     onClick={handleMobileMenuOpen}
                                     color="primary"
                                 >
-                                    <MenuIcon/>
+                                    <MenuIcon />
                                 </IconButton>
                             </div>
-                            
+
                         </div>
                     ) : (
                         <>
