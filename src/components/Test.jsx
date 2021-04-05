@@ -117,7 +117,10 @@ export default function Test() {
             onClose={handleMobileMenuClose}
         >
             <MenuItem>
-                <IconButton aria-label="show 4 new mails" color="primary">
+                <IconButton aria-label="show 4 new mails" color="primary" onClick={(e) => {
+                    e.preventDefault();
+                    window.location.href = '/Chatbox';
+                }}>
                     <Badge badgeContent={4} color="secondary">
                         <MailIcon />
                     </Badge>
