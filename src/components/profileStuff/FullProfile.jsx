@@ -18,13 +18,17 @@ const FullProfile = () => {
         <>
             <h4>{fullProfile.first_name} {fullProfile.last_name}</h4><p>Number of dogs: {fullProfile.numb_pets}</p>
             {fullProfile.numb_pets === 1 && (
-                <p>{fullProfile.pet_name1}</p>
+                <>
+                    <p>{fullProfile.pet_name1}</p>
+                    <p>{fullProfile.about_us}</p>
+                </>
             )}
 
             {fullProfile.numb_pets === 2 && (
                 <>
                     <p>{fullProfile.pet_name1}</p>
                     <p>{fullProfile.pet_name2}</p>
+                    <p>About us: {fullProfile.about_us}</p>
                 </>
             )}
 
@@ -33,6 +37,7 @@ const FullProfile = () => {
                     <p>{fullProfile.pet_name1}</p>
                     <p>{fullProfile.pet_name2}</p>
                     <p>{fullProfile.pet_name3}</p>
+                    <p>{fullProfile.about_us}</p>
                 </>
             )}
         </>
