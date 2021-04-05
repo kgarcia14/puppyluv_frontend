@@ -9,17 +9,18 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import Icon from '@material-ui/core/Icon';
 import Button from '@material-ui/core/Button';
+import React from 'react';
 
 const useStyles = makeStyles((theme) => ({
     root: {
         display: "flex",
         justifyContent: "center",
-        alignItems: "center",
         fontFamily: "Cabin",
         backgroundColor: 'pink',
         marginLeft: '30px',
         marginRight: '30px',
         marginBottom: '30px',
+        marginTop: '30px',
     },
     formControl: {
         margin: theme.spacing(1),
@@ -31,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     form: {
         textAlign: 'center',
         marginTop: '30px',
-    }
+    },
 }));
 
 const UserInfo = ({handleReload, reload}) => {
@@ -94,31 +95,27 @@ const UserInfo = ({handleReload, reload}) => {
             <Select
             value={filter}
             dropdownStyle={{ maxHeight: 400, overflow: 'auto' }}
-            placeholder="Please Select"
+            placeholder="Please Select Category"
             displayEmpty
             className={classes.selectEmpty}
-            inputProps={{ 'aria-label': 'Without label' }}
-            autoWidth
             onChange={_handleFilterChange}>
-                <option value="">Please Select</option>
+                <option value="">Please Select Category</option>
                 <option value="age">Age</option>
                 <option value="city">City</option>
                 <option value="gender">Gender</option>
                 <option value="numb_pets">Number of Pets</option>
                 <option value="pet_personality">Pet Personality</option>
             </Select>
-            {filter === 'age' && (
+        {filter === 'age' && (
             <form onSubmit={_handleFilterSubmit}>
                 <Select
                 value={filterBy}
                 dropdownStyle={{ maxHeight: 400, overflow: 'auto' }}
-                placeholder="Please Select"
+                placeholder="Please Select Age"
                 displayEmpty
-                autoWidth
                 className={classes.selectEmpty}
-                inputProps={{ 'aria-label': 'Without label' }}
                 onChange={_handleFilterByChange}>
-                    <option value="">Please Select</option>
+                    <option value="">Please Select Age</option>
                     <option value="1820">18 - 20</option>
                     <option value="2025">20 - 25</option>
                     <option value="2530">25 - 30</option>
@@ -144,16 +141,14 @@ const UserInfo = ({handleReload, reload}) => {
                 <Select
                 value={filterBy}
                 dropdownStyle={{ maxHeight: 400, overflow: 'auto' }}
-                placeholder="Please Select"
+                placeholder="Please Select Gender"
                 displayEmpty
-                autoWidth
                 className={classes.selectEmpty}
-                inputProps={{ 'aria-label': 'Without label' }}
                 onChange={_handleFilterByChange}>
-                    <option value="">Please Select</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="other">Other</option>
+                    <option value="">Please Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
                 </Select>
                 <div className={classes.formControl}>
                 <Button
@@ -174,13 +169,11 @@ const UserInfo = ({handleReload, reload}) => {
                 <Select
                 value={filterBy}
                 dropdownStyle={{ maxHeight: 400, overflow: 'auto' }}
-                placeholder="Please Select"
+                placeholder="Please Select City"
                 displayEmpty
-                autoWidth
                 className={classes.selectEmpty}
-                inputProps={{ 'aria-label': 'Without label' }}
                 onChange={_handleFilterByChange}>
-                    <option value="">Please Select</option>
+                    <option value="">Please Select City</option>
                     <option value="Atlanta">Atlanta</option>
                 </Select>
                 <div className={classes.formControl}>
@@ -201,10 +194,12 @@ const UserInfo = ({handleReload, reload}) => {
             <form onSubmit={_handleFilterSubmit}>
                 <Select
                 value={filterBy}
-                dropdownStyle={{ maxHeight: 400, overflow: 'auto', justifyContent: 'center' }}
-                placeholder="Please Select"
+                dropdownStyle={{ maxHeight: 400, overflow: 'auto' }}
+                placeholder="Please Select Number of Pets"
+                displayEmpty
+                className={classes.selectEmpty}
                 onChange={_handleFilterByChange}>
-                    <option value="">Please Select</option>
+                    <option value="">Please Select Number of Pets</option>
                     <option value="0">No Pets</option>
                     <option value="1">1 Pet</option>
                     <option value="2">2 Pets</option>
@@ -230,15 +225,17 @@ const UserInfo = ({handleReload, reload}) => {
                 <Select
                 value={filterBy}
                 dropdownStyle={{ maxHeight: 400, overflow: 'auto' }}
-                placeholder="Please Select"
+                placeholder="Please Select Pet Personality"
+                displayEmpty
+                className={classes.selectEmpty}
                 onChange={_handleFilterByChange}>
-                    <option value="">Please Select</option>
-                    <option value="playful">Playful</option>
-                    <option value="outgoing">Outgoing</option>
-                    <option value="mellow">Mellow</option>
-                    <option value="independent">Independent</option>
-                    <option value="adaptable">Adaptable</option>
-                    <option value="grumpy">Grumpy</option>
+                    <option value="">Please Select Pet Personality</option>
+                    <option value="Playful">Playful</option>
+                    <option value="Outgoing">Outgoing</option>
+                    <option value="Mellow">Mellow</option>
+                    <option value="Independent">Independent</option>
+                    <option value="Adaptable">Adaptable</option>
+                    <option value="Grumpy">Grumpy</option>
                 </Select>
                 <div className={classes.formControl}>
                 <Button

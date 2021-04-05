@@ -7,7 +7,6 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import Badge from '@material-ui/core/Badge';
 import MenuIcon from '@material-ui/icons/Menu';
 import PetsIcon from '@material-ui/icons/Pets';
-import FullProfile from './profileStuff/FullProfile'
 
 import { useAuth0 } from '@auth0/auth0-react';
 import LoginButton from './profileStuff/LoginButton';
@@ -120,7 +119,10 @@ export default function Test() {
             open={isMobileMenuOpen}
             onClose={handleMobileMenuClose}
         >
-            <MenuItem>
+            <MenuItem onClick={(e) => {
+                e.preventDefault();
+                window.location.href = '/Chatbox';
+            }}>
                 <IconButton aria-label="show 4 new mails" color="primary" onClick={(e) => {
                     e.preventDefault();
                     window.location.href = '/Chatbox';
@@ -152,8 +154,6 @@ export default function Test() {
             </MenuItem>
         </Menu>
     );
-
-    const preventDefault = (event) => event.preventDefault();
 
     return (
         <div className={classes.root}>
