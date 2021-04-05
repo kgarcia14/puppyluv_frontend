@@ -3,6 +3,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import UserInfo from './UserInfo';
 import LandingPage from '../landingPageStuff/LandingPage';
 import MoreInfo from '../landingPageStuff/MoreInfo';
+import HowItWorks from '../landingPageStuff/HowItWorks';
 
 const Profile = () => {
     const { user, isAuthenticated } = useAuth0();
@@ -11,7 +12,6 @@ const Profile = () => {
     const handleReload = (status) => {
         setReload(status => !status );
     }
-
 
     return(
         isAuthenticated ? (
@@ -22,6 +22,7 @@ const Profile = () => {
             <>
                 <LandingPage />
                 <MoreInfo />
+                <HowItWorks/>
             </>
         )
     )

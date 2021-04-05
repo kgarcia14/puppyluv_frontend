@@ -4,8 +4,9 @@ import { Button } from '@material-ui/core';
 import Styled from 'styled-components';
 
 const H2 = Styled.h2`
-text-align: center;
-margin-top: 15px;
+    text-align: center;
+    margin-top: 15px;
+    color: #333;
 `;
 
 const Form = Styled.form`
@@ -17,19 +18,20 @@ const Form = Styled.form`
 const Label = Styled.label`
     display: flex;
     flex-direction: column;
+    color: #333;
 `;
 
 const Input = Styled.input`
     width: 350px;
     height: 35px;
-    border: 1px solid #333;
+    border: 1px solid #857c81;
     border-radius: 4px;
 `;
 
 const Select = Styled.select`
     width: 350px;
     height: 35px;
-    border: 1px solid #333;
+    border: 1px solid #857c81;
     border-radius: 4px;
     background-color: #fff;
 `;
@@ -97,7 +99,7 @@ const RegisterPet1 = ({ handleReload, pet1 }) => {
                         name="pet_name"
                         value={petName}
                         onChange={_petNameChange}
-                        placeholder="Enter Dog Name"/>
+                        placeholder=""/>
                 </Label>
                 <Label>Dog Breed
                     <Input
@@ -106,7 +108,7 @@ const RegisterPet1 = ({ handleReload, pet1 }) => {
                         name="pet_breed"
                         value={petBreed}
                         onChange={_petBreedChange}
-                        placeholder="Enter Dog Breed"/>
+                        placeholder=""/>
                 </Label>
                 <Label>Dog Age
                     <Input
@@ -125,7 +127,7 @@ const RegisterPet1 = ({ handleReload, pet1 }) => {
                         name="pet_personality"
                         value={petPersonality}
                         onChange={_petPersonalityChange}>
-                        <option value="">Choose One</option>
+                        <option value=""></option>
                         <option value="playful">Playful</option>
                         <option value="outgoing">Outgoing</option>
                         <option value="mellow">Mellow</option>

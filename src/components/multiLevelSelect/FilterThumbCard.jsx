@@ -49,11 +49,11 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-const UserThumbCard = ({ allUser, handleOtherUserId }) => {
+const FilterThumbCard = ({ fUser }) => {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
   const [showMenu, setShowMenu] = useState(false);
-  console.log(allUser.user_nickname);
+  console.log(fUser.user_nickname);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -62,16 +62,16 @@ const UserThumbCard = ({ allUser, handleOtherUserId }) => {
   const handleMenuClick = async (event) => {
     event.preventDefault();
     setShowMenu(!showMenu);
-    console.log(allUser.user_nickname);
+    console.log(fUser.user_nickname);
   }
 
   return (
     <Card className={classes.root}>
-        {allUser.gender === 'male' && (
+        {fUser.gender === 'male' && (
             <CardHeader
             avatar={
               <Avatar aria-label="recipe" className={classes.avatarM}>
-                {allUser.user_img}
+                {fUser.user_img}
               </Avatar>
             }
             action={
@@ -79,15 +79,15 @@ const UserThumbCard = ({ allUser, handleOtherUserId }) => {
                 <MoreVertIcon/>
               </IconButton>
             }
-            title={allUser.first_name} 
-            subheader={allUser.last_name}
+            title={fUser.first_name} 
+            subheader={fUser.last_name}
           />
         )}
-        {allUser.gender === 'female' && (
+        {fUser.gender === 'female' && (
             <CardHeader
             avatar={
               <Avatar aria-label="recipe" className={classes.avatarF}>
-                {allUser.user_img}
+                {fUser.user_img}
               </Avatar>
             }
             action={
@@ -95,15 +95,15 @@ const UserThumbCard = ({ allUser, handleOtherUserId }) => {
                 <MoreVertIcon />
               </IconButton>
             }
-            title={allUser.first_name} 
-            subheader={allUser.last_name}
+            title={fUser.first_name} 
+            subheader={fUser.last_name}
           />
         )}
-        {allUser.gender === 'other' && (
+        {fUser.gender === 'other' && (
             <CardHeader
             avatar={
               <Avatar aria-label="recipe" className={classes.avatarO}>
-                {allUser.user_img}
+                {fUser.user_img}
               </Avatar>
             }
             action={
@@ -111,12 +111,12 @@ const UserThumbCard = ({ allUser, handleOtherUserId }) => {
                 <MoreVertIcon />
               </IconButton>
             }
-            title={allUser.first_name} 
-            subheader={allUser.last_name}
+            title={fUser.first_name} 
+            subheader={fUser.last_name}
           />
         )}
         {showMenu && (
-          <Link to={`/full_profile/${allUser.id}`} style={{paddingLeft: 12, textDecoration: 'none', color: '#3f51b5'}}>View Full Profile</Link>
+          <Link to={`/full_profile/${fUser.id}`} style={{paddingLeft: 12, textDecoration: 'none', color: '#3f51b5'}}>View Full Profile</Link>
         )
         }
         
@@ -148,10 +148,10 @@ const UserThumbCard = ({ allUser, handleOtherUserId }) => {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>{allUser.about_us}</Typography>
+          <Typography paragraph>{fUser.about_us}</Typography>
         </CardContent>
       </Collapse>
     </Card>
   );
 }
-export default UserThumbCard;
+export default FilterThumbCard;
