@@ -5,16 +5,6 @@ import Styled from 'styled-components';
 
 const Textarea = Styled.textarea`
     border-radius: 4px;
-    width: 300px;
-    @media (min-width: 370px) {
-        width: 350px;
-    }
-    @media (min-width: 410px) {
-        width: 350px;
-    }
-    @media (min-width: 750px) {
-        width: 500px;
-    }
 `;
 
 const Form = Styled.form`
@@ -26,6 +16,21 @@ const Form = Styled.form`
 const Label = Styled.label`
     display: flex;
     flex-direction: column;
+`;
+
+const Input = Styled.input`
+    width: 350px;
+    height: 35px;
+    border: 1px solid #333;
+    border-radius: 4px;
+`;
+
+const Select = Styled.select`
+    width: 350px;
+    height: 35px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background-color: #fff;
 `;
 
 const AboutUs = ({handleReload}) => {

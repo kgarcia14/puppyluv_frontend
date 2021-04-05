@@ -4,14 +4,6 @@ import Registerpet1 from './RegisterPet1';
 import Registerpet2 from './RegisterPet2';
 import Registerpet3 from './RegisterPet3';
 import AboutUs from './AboutUs';
-import { makeStyles } from "@material-ui/core/styles";
-
-
-const useStyles = makeStyles((theme) => ({
-    root: {
-        fontFamily: "Cabin",
-    },
-}));
 
 const PetRegister = ({handleReload, reload}) => {
     const { user } = useAuth0();
@@ -30,14 +22,12 @@ const PetRegister = ({handleReload, reload}) => {
             setPet1(usersData.pet_name1)
             setPet2(usersData.pet_name2)
             setPet3(usersData.pet_name3)
-            
+              
         })();
     }, [user.sub, reload])
 
-    const classes = useStyles();
-    
     return (
-        <div className={classes.root}>
+        <>
         {numbPet === 1 && (
             <Registerpet1 handleReload={handleReload} pet1={pet1} />
         )}
@@ -75,7 +65,7 @@ const PetRegister = ({handleReload, reload}) => {
         {pet1 !== null && pet2 !== null && pet3 !== null && numbPet === 3 && (
             <AboutUs handleReload={handleReload} />
         )}
-        </div>
+        </>
     )
 }
 
