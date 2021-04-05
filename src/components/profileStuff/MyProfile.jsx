@@ -42,6 +42,7 @@ const MyProfile = ({handleReload, reload}) => {
                 <h1>{uniqueId.first_name} {uniqueId.last_name}</h1>
                 <p>{uniqueId.age} {uniqueId.gender} {uniqueId.city}</p>
                 <p>{uniqueId.about_us}</p>
+                <p>hehe</p>
             </header>
         </div>
     );
