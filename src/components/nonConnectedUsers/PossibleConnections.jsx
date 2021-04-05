@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react'
+import { useAuth0 } from '@auth0/auth0-react';
 import Styled from 'styled-components';
 import UserThumbCard from './UserThumbCard';
 import {fontSize, gray2, gray5, accent1} from './styles/Styles';
+
 
 const Container = Styled.div`
   width: 100%;
@@ -43,15 +45,16 @@ const ListItem = Styled.li`
 
 const PossibleConnections = ({ handleOtherUserId }) => {
     const [allUsers, setAllUsers] = useState([]);
+    const { user } = useAuth0();
 
 
     useEffect(() => {
         (async () => {
-            const apiUrl = `http://127.0.0.1:3333/users`;
+            const apiUrl = `http://127.0.0.1:3333/pConnections/${user.sub}`;
             const allUsersData = await fetch(apiUrl).then(response => response.json());
             setAllUsers(allUsersData)
         })();
-    },[])
+    },[user.sub])
     return (
         <Container>
           <List>
