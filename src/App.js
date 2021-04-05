@@ -2,11 +2,15 @@ import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Profile from './components/Profile';
-import UserInfo from './components/UserInfo';
+import Profile from './components/profileStuff/Profile';
+import UserInfo from './components/profileStuff/UserInfo';
 import Footer from './components/Footer';
+import Chatbox from './components/Chatbox';
 import { makeStyles } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';
+import UploadPhoto from './components/UploadPhoto';
+
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,24 +25,31 @@ const useStyles = makeStyles((theme) => ({
 function App() {
   const { isLoading } = useAuth0();
   const classes = useStyles();
+ 
 
   if (isLoading) return <div>Loading...</div>
   return (
+    
+   
+
     <div className={classes.root}>
       <Router>
         <Navbar/>
+        
         <Switch>
           <Route exact path="/">
             <CssBaseline/>
             <Profile />
+            <UploadPhoto />
           </Route>
-          <Route exact path="/profile">
-            <UserInfo />
+          <Route exact path="/Chatbox">
+            <Chatbox component={Chatbox} />
           </Route>
         </Switch>
         <Footer/>
       </Router>
-    </div>
+      </div>
+   
   );
 }
 

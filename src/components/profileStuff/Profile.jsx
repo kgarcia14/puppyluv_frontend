@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
-import JSONPretty from 'react-json-pretty';
 import UserInfo from './UserInfo';
-import LandingPage from './LandingPage';
-import MoreInfo from './MoreInfo';
+import LandingPage from '../landingPageStuff/LandingPage';
+import MoreInfo from '../landingPageStuff/MoreInfo';
 
 const Profile = () => {
     const { user, isAuthenticated } = useAuth0();
@@ -18,6 +17,7 @@ const Profile = () => {
         isAuthenticated ? (
             <div>
                 <UserInfo handleReload={handleReload} reload={reload} />
+                
             </div>
         ) : (
             <>

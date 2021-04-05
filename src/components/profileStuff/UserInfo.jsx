@@ -1,6 +1,7 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import { useState, useEffect } from 'react';
-import PetRegister from './PetRegister';
+import PossibleConnections from '../nonConnectedUsers/PossibleConnections';
+import PetRegister from '../petRegistry/PetRegister';
 import UserRegister from './UserRegister';
 import Profile from './Profile';
 
@@ -24,7 +25,7 @@ const UserInfo = ({handleReload, reload}) => {
         <>
         {!!uniqueId.length ? (
             <>
-            <h5>Please create a profile...</h5>
+            <h5>Please fill out information...</h5>
             <UserRegister handleReload={handleReload} />
             </>
         ) : (
@@ -34,20 +35,15 @@ const UserInfo = ({handleReload, reload}) => {
 
         {uniqueId.about_us === null ? (
             <>
-            <h5>Please create a profile...</h5>
+            <h5>Please fill out information...</h5>
             <PetRegister handleReload={handleReload} reload={reload}/>
             </>
         ) : (
             <>
             </>
         )}
-        {uniqueId !== 'No data returned from the query.' && uniqueId.about_us !== null ? (
-            <p>
-                
-            </p>
-        ) : (
-            <>   
-            </>
+        {uniqueId !== 'No data returned from the query.' && uniqueId.about_us !== null && (
+            <PossibleConnections />
         )}
         </>
     )
