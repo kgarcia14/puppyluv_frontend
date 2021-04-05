@@ -19,12 +19,12 @@ const UploadPhoto = ({ handleReload })=> {
       }
       return (
           <>
-          <h3>Add Profile Photo</h3>
-          <h2>{user_img}</h2>
+          {/* <h3>Edit Profile Photo</h3> */}
+         
 
-          <button type="button" className="submit" onClick={() => uploadPhoto(user_img)}>
+          {/* <button type="button" className="submit" onClick={() => uploadPhoto(user_img)}>
 
-          </button>
+          </button> */}
           </>
       )
 }

@@ -12,6 +12,7 @@ import UploadPhoto from './components/UploadPhoto';
 
 
 
+
 const useStyles = makeStyles((theme) => ({
   root: {
     minHeight: '100vh',
@@ -41,6 +42,7 @@ function App() {
             <CssBaseline/>
             <Profile />
             <UploadPhoto />
+           
           </Route>
           <Route exact path="/Chatbox">
             <Chatbox component={Chatbox} />
