@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "center",
         alignItems: "center",
         fontFamily: "Cabin",
+        height: '50vh',
     },
 }));
 
@@ -33,8 +34,9 @@ const MyProfile = ({handleReload, reload}) => {
     }, [user.sub, reload])
 
     return (
-        <div>
-            <h1>yeeee</h1>
+        <div className={classes.root}>
+            <h1>{uniqueId.first_name} {uniqueId.last_name}</h1>
+                <p>lezgetitttt</p>
         </div>
     );
 };
