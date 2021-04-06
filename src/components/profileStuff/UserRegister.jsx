@@ -23,16 +23,18 @@ const Label = Styled.label`
 `;
 
 const Input = Styled.input`
-    width: 300px;
+    width: 275px;
     height: 30px;
     border: 1px solid #857c81;
     border-radius: 4px;
+
     @media (min-width: 370px) {
         width: 325px;
         height: 35px;
     }
     @media (min-width: 410px) {
         width: 350px;
+        height: 35px;
     }
     @media (min-width: 750px) {
         width: 500px;
@@ -41,17 +43,19 @@ const Input = Styled.input`
 `;
 
 const Select = Styled.select`
-    width: 300px;
-    height: 35px;
+    width: 275px;
+    height: 30px;
     border: 1px solid #857c81;
     border-radius: 4px;
     background-color: #fff;
+
     @media (min-width: 370px) {
         width: 325px;
         height: 35px;
     }
     @media (min-width: 410px) {
         width: 350px;
+        height: 35px;
     }
     @media (min-width: 750px) {
         width: 500px;

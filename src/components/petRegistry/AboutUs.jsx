@@ -6,6 +6,7 @@ import Styled from 'styled-components';
 const Textarea = Styled.textarea`
     border-radius: 4px;
     width: 300px;
+    
     @media (min-width: 370px) {
         width: 350px;
     }

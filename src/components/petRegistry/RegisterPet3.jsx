@@ -12,6 +12,7 @@ const H2 = Styled.h2`
 const Form = Styled.form`
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
 `;
 
@@ -22,18 +23,45 @@ const Label = Styled.label`
 `;
 
 const Input = Styled.input`
-    width: 350px;
-    height: 35px;
-    border: 1px solid #857c81;
-    border-radius: 4px;
-`;
-
-const Select = Styled.select`
-    width: 350px;
-    height: 35px;
+    width: 275px;
+    height: 30px;
     border: 1px solid #857c81;
     border-radius: 4px;
     background-color: #fff;
+
+    @media (min-width: 370px) {
+        width: 325px;
+        height: 35px;
+    }
+    @media (min-width: 410px) {
+        width: 350px;
+        height: 35px;
+    }
+    @media (min-width: 750px) {
+        width: 500px;
+        height: 40px;
+    }
+`;
+
+const Select = Styled.select`
+    width: 275px;
+    height: 30px;
+    border: 1px solid #857c81;
+    border-radius: 4px;
+    background-color: #fff;
+
+    @media (min-width: 370px) {
+        width: 325px;
+        height: 35px;
+    }
+    @media (min-width: 410px) {
+        width: 350px;
+        height: 35px;
+    }
+    @media (min-width: 750px) {
+        width: 500px;
+        height: 40px;
+    }
 `;
 
 const RegisterPet3 = ({ handleReload, pet1, pet2, pet3 }) => {
