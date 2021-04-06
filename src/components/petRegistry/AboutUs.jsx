@@ -1,5 +1,32 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import { useState } from 'react';
+import { Button } from '@material-ui/core';
+import Styled from 'styled-components';
+
+const Textarea = Styled.textarea`
+    border-radius: 4px;
+    width: 300px;
+    @media (min-width: 370px) {
+        width: 350px;
+    }
+    @media (min-width: 410px) {
+        width: 350px;
+    }
+    @media (min-width: 750px) {
+        width: 500px;
+    }
+`;
+
+const Form = Styled.form`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
+const Label = Styled.label`
+    display: flex;
+    flex-direction: column;
+`;
 
 const AboutUs = ({handleReload}) => {
     const { user } = useAuth0();
@@ -32,21 +59,24 @@ const AboutUs = ({handleReload}) => {
 
     return(
         <>
-            <form onSubmit={_handleSubmitAboutUs}>
-                <label>
-                    <textarea 
-                    rows="4" 
-                    cols="30" 
+            <Form onSubmit={_handleSubmitAboutUs}>
+                <Label>
+                    <Textarea 
+                    rows="5" 
+                    cols="47" 
                     name="about_us"
                     value={aboutUs}
                     onChange={_aboutUsChange}
-                    placeholder="Tell us about you and your doggy..."></textarea>
-                </label>
-                <button 
+                    placeholder="Tell us about you and your doggy..."></Textarea>
+                </Label>
+                <Button 
+                    className="user-register-button"
+                    variant="contained" 
+                    color="primary"
                     type="submit">
                         Submit
-                </button>
-            </form>
+                </Button>
+            </Form>
         </>
     )
 }

@@ -1,5 +1,40 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import { useState } from 'react';
+import { Button } from '@material-ui/core';
+import Styled from 'styled-components';
+
+const H2 = Styled.h2`
+    text-align: center;
+    margin-top: 15px;
+    color: #333;
+`;
+
+const Form = Styled.form`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
+const Label = Styled.label`
+    display: flex;
+    flex-direction: column;
+    color: #333;
+`;
+
+const Input = Styled.input`
+    width: 350px;
+    height: 35px;
+    border: 1px solid #857c81;
+    border-radius: 4px;
+`;
+
+const Select = Styled.select`
+    width: 350px;
+    height: 35px;
+    border: 1px solid #857c81;
+    border-radius: 4px;
+    background-color: #fff;
+`;
 
 const RegisterPet2 = ({ handleReload, pet1, pet2 }) => {
     const { user } = useAuth0();
@@ -54,28 +89,28 @@ const RegisterPet2 = ({ handleReload, pet1, pet2 }) => {
         <>
         {pet1 !== null && pet2 === null ? (
             <>
-            <h2>Pet #2</h2>
-            <form onSubmit={_handleSubmitPetInfo}>
-                <label>Dog Name
-                    <input
+            <H2>Dog 2</H2>
+            <Form onSubmit={_handleSubmitPetInfo}>
+                <Label>Dog Name
+                    <Input
                         required
                         type="text"
                         name="pet_name"
                         value={petName}
                         onChange={_petNameChange}
-                        placeholder="Enter Dog Name"/>
-                </label>
-                <label>Dog Breed
-                    <input
+                        placeholder=""/>
+                </Label>
+                <Label>Dog Breed
+                    <Input
                         required
                         type="text"
                         name="pet_breed"
                         value={petBreed}
                         onChange={_petBreedChange}
-                        placeholder="Enter Dog Breed"/>
-                </label>
-                <label>Dog Age
-                    <input
+                        placeholder=""/>
+                </Label>
+                <Label>Dog Age
+                    <Input
                         required
                         type="number"
                         name="age"
@@ -84,35 +119,38 @@ const RegisterPet2 = ({ handleReload, pet1, pet2 }) => {
                         value={petAge}
                         onChange={_petAgeChange}
                         placeholder=""/>
-                </label>
-                <label>Dog Personality
-                    <select 
+                </Label>
+                <Label>Dog Personality
+                    <Select 
                         required
                         name="pet_personality"
                         value={petPersonality}
                         onChange={_petPersonalityChange}>
-                        <option value="">Choose One</option>
+                        <option value=""></option>
                         <option value="playful">Playful</option>
                         <option value="outgoing">Outgoing</option>
                         <option value="mellow">Mellow</option>
                         <option value="independent">Independent</option>
                         <option value="adaptable">Adaptable</option>
                         <option value="grumpy">Grumpy</option>
-                    </select>
-                </label>
-                <label>picture of you and your dog
-                    <input 
+                    </Select>
+                </Label>
+                <Label>picture of you and your dog
+                    <Input 
                     type="file"
                     name="pet_img"
                     value={petImg}
                     onChange={_petImgChange}
                     />
-                </label>
-                <button 
+                </Label>
+                <Button
+                    className="user-register-button"
+                    variant="contained" 
+                    color="primary" 
                     type="submit">
                         Submit
-                </button>
-            </form>
+                </Button>
+            </Form>
             </>
         ) : (
             <>

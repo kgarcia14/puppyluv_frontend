@@ -31,7 +31,14 @@ label{
   display: block;
 }
 
+
 .title {
   border: black
+}
+
+@media screen and (min-width: 370px) {
+  .user-thumb-card {
+    width: 100px;
+  }
 }
 
