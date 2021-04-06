@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
@@ -53,7 +53,7 @@ const UserThumbCard = ({ allUser, handleOtherUserId }) => {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
   const [showMenu, setShowMenu] = useState(false);
-  const [liked_users, setLikedUsers] = useState("");
+  const { id } = useParams();
   console.log(allUser.user_nickname);
 
   const handleExpandClick = () => {
@@ -66,16 +66,16 @@ const UserThumbCard = ({ allUser, handleOtherUserId }) => {
     console.log(allUser.user_nickname);
   }
 
-  //ADD FAVORITES
+  //favorites
   const _handleSubmitFavorites = async (e) => {
     e.preventDefault();
     const apiUrl = 'http://127.0.0.1:3333/favorites/add';
     const submitResponse = await fetch(apiUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ liked_users })
+        body: JSON.stringify({ id })
     }).then((response) => response);
-    console.log("FAVORITES IS ADDING WOOHOO: ", submitResponse)
+    console.log("FAVORITES 123 IS ADDING WOOHOO: ", submitResponse)
 
     if (submitResponse.status === 200) {
         console.log("submit response is 200")

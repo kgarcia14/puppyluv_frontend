@@ -10,7 +10,6 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import { useAuth0 } from '@auth0/auth0-react';
 
-
 const useStyles = makeStyles((theme) => ({
     root: {
         overflowX: 'hidden',
@@ -74,7 +73,6 @@ export default function Footer() {
     const [value, setValue] = React.useState(0);
     const { user, isAuthenticated } = useAuth0();
 
-
     return (
         <div className={classes.root} position="static" sticky="bottom">
             <div className={classes.sectionDesktop}>
@@ -134,7 +132,10 @@ export default function Footer() {
                     className={classes.bottomNav}
                 >
                     <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
-                    <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
+                    <BottomNavigationAction label="Favorites" onClick={(e) => {
+                        e.preventDefault();
+                        window.location.href = '/my_favorites';
+                        }} icon={<FavoriteIcon />} />
                     <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} />
                 </BottomNavigation>
             </div>
@@ -142,6 +143,6 @@ export default function Footer() {
             <>
             </>
             )}
-        </div>
-    );
-};
+            </div>
+    )
+}
