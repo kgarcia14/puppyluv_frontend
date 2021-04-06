@@ -2,6 +2,9 @@ import React, {useState} from 'react';
 import { storage } from '../../firebase';
 import styled from 'styled-components';
 import {Button } from '@material-ui/core';
+import { useAuth0 } from '@auth0/auth0-react';
+import { SentimentSatisfiedAlt } from '@material-ui/icons';
+
 const Upload = styled.div`
     display: flex;
     flex-direction: column;
@@ -11,58 +14,26 @@ const Upload = styled.div`
         margin: 0 auto;
     }
 `;
-const UploadPhoto = ({user, setUser, setProfilePicture, setUpdateProfilePicture}) => {
+const UploadPhoto = () => {
+    const { user } = useAuth0();
     const [image, setImage] = useState(null);
+    const [error, setError] = useState(null);
+
+    const types = ['image/png', 'image/jpeg'];
+
     const handleChange = async (e) => {
-        if (e.target.files[0]) {
+        let selected = e.target.files[0];
+
+        if (selected && types.includes(selected.type)) {
             setImage(e.target.files[0]);
+        } else {
+            setImage(null);
+            setError('Please select an image file of (png or jpeg)')
         }
-    };
-    const handleUpload = async () => { 
-        const uploadTask = storage.ref(`images/${image.name}`).put(image);
-        uploadTask.on(
-            'state_changed',
-            (snapshot) => {},
-            (error) => {
-            },
-            () => {
-                storage
-                    .ref('images')
-                    .child(image.name)
-                    .getDownloadURL()
-                    .then(async function(url) {
-                        const response = await fetch(
-                            `${process.env.REACT_APP_SERVER_URL}/user/update/${user._id}`,
-                            {
-                                method: 'PUT',
-                                headers: { 'Content-Type': 'application/json' },
-                                body: JSON.stringify({
-                                    avatarUrl: url
-                                }),
-                            }
-                        );
-                        const resdata = await response.json();
-                        setUser(resdata);
-                        setProfilePicture(resdata.avatarUrl);
-                        setUpdateProfilePicture(false);
-                    })  
-                })
-            };
+    }; 
+
     return (
-        <Upload>
-            {!!image ? (<Button onClick={handleUpload}>Click to Upload</Button>) : (<Button
-                component="label"
-                >
-                Add File to Upload
-                <input
-                    type="file"
-                    style={{ display: "none" }}
-                    accept="image/png, image/jpeg"
-                    onChange={handleChange}
-                />
-                </Button>)
-            }
-        </Upload>
+        <p>input will go here</p>
     )
 }
-export default UploadPhoto
+export default UploadPhoto;
