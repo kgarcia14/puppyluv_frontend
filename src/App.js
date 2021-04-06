@@ -11,6 +11,7 @@ import { CssBaseline } from '@material-ui/core';
 import FullProfile from './components/profileStuff/FullProfile';
 import PossibleConnections from './components/nonConnectedUsers/PossibleConnections';
 import MyProfile from './components/profileStuff/MyProfile';
+import MyFavorites from './components/profileStuff/MyFavorites';
 import UserInfo from './components/profileStuff/UserInfo';
 
 const useStyles = makeStyles((theme) => ({
@@ -56,6 +57,9 @@ function App() {
           </Route>
           <Route exact path='/home'>
             <UserInfo/>
+          </Route>
+          <Route exact path='/my_favorites'>
+            <MyFavorites/>
           </Route>
         </Switch>
         <Footer/>
