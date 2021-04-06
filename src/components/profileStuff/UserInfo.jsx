@@ -5,7 +5,6 @@ import PossibleConnections from '../nonConnectedUsers/PossibleConnections';
 import PetRegister from '../petRegistry/PetRegister';
 import UserRegister from './UserRegister';
 import { makeStyles } from "@material-ui/core/styles";
-import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import Icon from '@material-ui/core/Icon';
 import Button from '@material-ui/core/Button';
@@ -17,10 +16,7 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "center",
         fontFamily: "Cabin",
         backgroundColor: 'pink',
-        marginLeft: '30px',
-        marginRight: '30px',
-        marginBottom: '30px',
-        marginTop: '30px',
+        paddingTop: '10px',
     },
     formControl: {
         margin: theme.spacing(1),

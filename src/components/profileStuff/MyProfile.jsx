@@ -2,6 +2,9 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { useState, useEffect } from "react";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
+import AddIcon from '@material-ui/icons/Add';
+import Fab from '@material-ui/core/Fab';
+import Tooltip from '@material-ui/core/Tooltip';
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
@@ -51,6 +54,10 @@ const MyProfile = ({ handleReload, reload }) => {
         })();
     }, [user.sub, reload]);
 
+    //delete pets
+
+    //editing page
+
     return (
         <div className={classes.root}>
             <div className={classes.header}>
@@ -65,7 +72,7 @@ const MyProfile = ({ handleReload, reload }) => {
             </div>
             <h4>My Pets</h4>
             <div className={classes.profile}>
-                    {!!uniqueId.pet_name1 ? (
+                {!!uniqueId.pet_name1 && uniqueId.pet_name2 === null ? (
                     <Grid container spacing={3}>
                         <Grid item xs>
                             <Paper className={classes.paper}>
@@ -75,12 +82,12 @@ const MyProfile = ({ handleReload, reload }) => {
                             </Paper>
                         </Grid>
                     </Grid>
-                    ) : (
-                        <>
-                        </>
-                    )}
+                ) : (
+                    <>
+                    </>
+                )}
 
-                    {!!uniqueId.pet_name2 ? (
+                {!!uniqueId.pet_name2 && uniqueId.pet_name3 === null ? (
                     <Grid container spacing={3}>
                         <Grid item xs>
                             <Paper className={classes.paper}>
@@ -97,12 +104,12 @@ const MyProfile = ({ handleReload, reload }) => {
                             </Paper>
                         </Grid>
                     </Grid>
-                    ) : (
-                        <>
-                        </>
-                    )}
+                ) : (
+                    <>
+                    </>
+                )}
 
-                    {!!uniqueId.pet_name3 ? (
+                {!!uniqueId.pet_name3 ? (
                     <Grid container spacing={3}>
                         <Grid item xs>
                             <Paper className={classes.paper}>
@@ -126,10 +133,10 @@ const MyProfile = ({ handleReload, reload }) => {
                             </Paper>
                         </Grid>
                     </Grid>
-                    ) : (
-                        <>
-                        </>
-                    )}
+                ) : (
+                    <>
+                    </>
+                )}
             </div>
         </div>
     );

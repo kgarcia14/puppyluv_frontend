@@ -13,6 +13,7 @@ import PossibleConnections from './components/nonConnectedUsers/PossibleConnecti
 import MyProfile from './components/profileStuff/MyProfile';
 import MyFavorites from './components/profileStuff/MyFavorites';
 import UserInfo from './components/profileStuff/UserInfo';
+import RegisterPet2 from './components/petRegistry/RegisterPet2'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -60,6 +61,9 @@ function App() {
           </Route>
           <Route exact path='/my_favorites'>
             <MyFavorites/>
+          </Route>
+          <Route exact path='/pet2register'>
+            <RegisterPet2/>
           </Route>
         </Switch>
         <Footer/>
