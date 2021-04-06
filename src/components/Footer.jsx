@@ -8,6 +8,8 @@ import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import RestoreIcon from '@material-ui/icons/Restore';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
+import { useAuth0 } from '@auth0/auth0-react';
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -70,9 +72,11 @@ export default function Footer() {
     const classes = useStyles();
     const currentYear = new Date().getFullYear()
     const [value, setValue] = React.useState(0);
+    const { user, isAuthenticated } = useAuth0();
+
 
     return (
-        <div className={classes.root}>
+        <div className={classes.root} position="static" sticky="bottom">
             <div className={classes.sectionDesktop}>
                 <Grid container spacing={0} className={classNames(classes.footerText, classes.footerSections)}>
                     <Grid item xs>
@@ -119,6 +123,7 @@ export default function Footer() {
                 </Grid>
             </div>
 
+            {isAuthenticated ? (
             <div className={classes.sectionMobile}>
                 <BottomNavigation
                     value={value}
@@ -133,6 +138,10 @@ export default function Footer() {
                     <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} />
                 </BottomNavigation>
             </div>
-            </div>
-    )
-}
+            ) : (
+            <>
+            </>
+            )}
+        </div>
+    );
+};

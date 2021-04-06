@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: "30px",
         marginTop: "30px",
         paddingBottom: '30px',
-        minHeight: '100px',
+        minHeight: '80vh',
     },
     header: {
         paddingTop: "30px",

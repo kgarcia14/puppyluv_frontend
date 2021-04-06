@@ -53,6 +53,7 @@ const UserThumbCard = ({ allUser, handleOtherUserId }) => {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
   const [showMenu, setShowMenu] = useState(false);
+  const [liked_users, setLikedUsers] = useState("");
   console.log(allUser.user_nickname);
 
   const handleExpandClick = () => {
@@ -64,6 +65,24 @@ const UserThumbCard = ({ allUser, handleOtherUserId }) => {
     setShowMenu(!showMenu);
     console.log(allUser.user_nickname);
   }
+
+  //ADD FAVORITES
+  const _handleSubmitFavorites = async (e) => {
+    e.preventDefault();
+    const apiUrl = 'http://127.0.0.1:3333/favorites/add';
+    const submitResponse = await fetch(apiUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ liked_users })
+    }).then((response) => response);
+    console.log("FAVORITES IS ADDING WOOHOO: ", submitResponse)
+
+    if (submitResponse.status === 200) {
+        console.log("submit response is 200")
+        
+    }
+  }
+  //
 
   return (
     <Card className={classes.root}>
@@ -130,7 +149,7 @@ const UserThumbCard = ({ allUser, handleOtherUserId }) => {
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
+          <FavoriteIcon onClick={_handleSubmitFavorites}/>
         </IconButton>
         <IconButton aria-label="start a chat">
           <QuestionAnswerRoundedIcon />
@@ -154,4 +173,5 @@ const UserThumbCard = ({ allUser, handleOtherUserId }) => {
     </Card>
   );
 }
+
 export default UserThumbCard;

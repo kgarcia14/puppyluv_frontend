@@ -17,10 +17,7 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "center",
         fontFamily: "Cabin",
         backgroundColor: 'pink',
-        marginLeft: '30px',
-        marginRight: '30px',
-        marginBottom: '30px',
-        marginTop: '30px',
+        minHeight: '85vh',
     },
     formControl: {
         margin: theme.spacing(1),
@@ -168,7 +165,6 @@ const UserInfo = ({handleReload, reload}) => {
             <form onSubmit={_handleFilterSubmit}>
                 <Select
                 value={filterBy}
-                dropdownStyle={{ maxHeight: 400, overflow: 'auto' }}
                 placeholder="Please Select City"
                 displayEmpty
                 className={classes.selectEmpty}
