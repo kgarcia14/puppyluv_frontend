@@ -5,7 +5,6 @@ import PossibleConnections from '../nonConnectedUsers/PossibleConnections';
 import PetRegister from '../petRegistry/PetRegister';
 import UserRegister from './UserRegister';
 import { makeStyles } from "@material-ui/core/styles";
-import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import Icon from '@material-ui/core/Icon';
 import Button from '@material-ui/core/Button';
@@ -17,10 +16,7 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "center",
         fontFamily: "Cabin",
         backgroundColor: 'pink',
-        marginLeft: '30px',
-        marginRight: '30px',
-        marginBottom: '30px',
-        marginTop: '30px',
+        paddingTop: '10px',
     },
     formControl: {
         margin: theme.spacing(1),
@@ -90,7 +86,6 @@ const UserInfo = ({handleReload, reload}) => {
         )}
         {uniqueId !== 'No data returned from the query.' && uniqueId.about_us !== null && (
             <div className={classes.form}>
-            <FormControl>
             <h4>Let's find puppies to play with!</h4>
             <Select
             value={filter}
@@ -122,7 +117,7 @@ const UserInfo = ({handleReload, reload}) => {
                     <option value="3035">30 - 35</option>
                     <option value="3540">35 - 40</option>
                 </Select>
-                <div className={classes.formControl}>
+                <div>
                 <Button
                     size="small"
                     variant="outlined"
@@ -146,11 +141,11 @@ const UserInfo = ({handleReload, reload}) => {
                 className={classes.selectEmpty}
                 onChange={_handleFilterByChange}>
                     <option value="">Please Select Gender</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                    <option value="Other">Other</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
                 </Select>
-                <div className={classes.formControl}>
+                <div>
                 <Button
                     size="small"
                     variant="outlined"
@@ -230,12 +225,12 @@ const UserInfo = ({handleReload, reload}) => {
                 className={classes.selectEmpty}
                 onChange={_handleFilterByChange}>
                     <option value="">Please Select Pet Personality</option>
-                    <option value="Playful">Playful</option>
-                    <option value="Outgoing">Outgoing</option>
-                    <option value="Mellow">Mellow</option>
-                    <option value="Independent">Independent</option>
-                    <option value="Adaptable">Adaptable</option>
-                    <option value="Grumpy">Grumpy</option>
+                    <option value="playful">Playful</option>
+                    <option value="outgoing">Outgoing</option>
+                    <option value="mellow">Mellow</option>
+                    <option value="independent">Independent</option>
+                    <option value="adaptable">Adaptable</option>
+                    <option value="grumpy">Grumpy</option>
                 </Select>
                 <div className={classes.formControl}>
                 <Button
@@ -256,7 +251,6 @@ const UserInfo = ({handleReload, reload}) => {
         ) : (
             <PossibleConnections />
         )}
-            </FormControl>
             </div>
         )}
         </div>
