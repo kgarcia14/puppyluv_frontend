@@ -173,4 +173,5 @@ const UserThumbCard = ({ allUser, handleOtherUserId }) => {
     </Card>
   );
 }
+
 export default UserThumbCard;

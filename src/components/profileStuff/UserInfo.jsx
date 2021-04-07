@@ -163,7 +163,6 @@ const UserInfo = ({handleReload, reload}) => {
             <form onSubmit={_handleFilterSubmit}>
                 <Select
                 value={filterBy}
-                dropdownStyle={{ maxHeight: 400, overflow: 'auto' }}
                 placeholder="Please Select City"
                 displayEmpty
                 className={classes.selectEmpty}

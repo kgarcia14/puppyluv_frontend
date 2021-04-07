@@ -74,7 +74,7 @@ export default function Footer() {
     const { user, isAuthenticated } = useAuth0();
 
     return (
-        <div className={classes.root}>
+        <div className={classes.root} position="static" sticky="bottom">
             <div className={classes.sectionDesktop}>
                 <Grid container spacing={0} className={classNames(classes.footerText, classes.footerSections)}>
                     <Grid item xs>

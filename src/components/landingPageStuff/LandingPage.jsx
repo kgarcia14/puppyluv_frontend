@@ -27,6 +27,8 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     textAlign: "center",
+    whiteSpace: 'pre-wrap',
+
   },
   title: {
     color: "#000000",
