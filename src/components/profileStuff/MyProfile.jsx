@@ -62,11 +62,11 @@ const MyProfile = ({ handleReload, reload }) => {
         <div className={classes.root}>
             <div className={classes.header}>
                 <div>{uniqueId.user_img}</div>
-                <h1>
+                <h2>
                     {uniqueId.first_name} {uniqueId.last_name}
-                </h1>
+                </h2>
                 <p>
-                    {uniqueId.age} {uniqueId.gender} {uniqueId.city}
+                    {uniqueId.age} {uniqueId.gender}, {uniqueId.city}
                 </p>
                 <p>{uniqueId.about_us}</p>
             </div>
