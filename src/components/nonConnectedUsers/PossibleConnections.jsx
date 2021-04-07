@@ -31,6 +31,10 @@ const ListItem = Styled.li`
   border-top: 1px solid ${gray5};
   :first-of-type {
     border-top: none;
+    margin-top: 15px;
+  }
+  :last-of-type {
+    margin-bottom: 15px;
   }
   @media (min-width: 370px) {
     width: 315px;

@@ -9,7 +9,6 @@ import FilterThumbCard from './FilterThumbCard';
 import { useAuth0 } from '@auth0/auth0-react';
 
 const Container = Styled.div`
-width: 100%;
 margin: 30px auto;
 font-size: ${fontSize};
 color: ${gray2};

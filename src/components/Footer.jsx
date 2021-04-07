@@ -91,19 +91,19 @@ export default function Footer() {
                             <li>
                                 <Link prefetch={true} as="/github"
                                     href="https://github.com/kgarcia14/puppyluv_frontend">
-                                    <a className={classes.white} style={{ fontWeight: 400 }}>GitHub</a>
+                                    <a href="#" className={classes.white} style={{ fontWeight: 400 }}>GitHub</a>
                                 </Link>
                             </li>
                             <li>
                                 <Link prefetch={true} as="/thewriteupthingamajiggg"
                                     href="/page?type=aboutPages&id=ferpa">
-                                    <a className={classes.white} style={{ fontWeight: 400 }}>Documentation</a>
+                                    <a href="#" className={classes.white} style={{ fontWeight: 400 }}>Documentation</a>
                                 </Link>
                             </li>
                             <li>
                                 <Link prefetch={true} as="/directions-and-attractions"
                                     href="/page?type=aboutPages&id=directions-and-attractions">
-                                    <a className={classes.white} style={{ fontWeight: 400 }}>About Us</a>
+                                    <a href="#" className={classes.white} style={{ fontWeight: 400 }}>About Us</a>
                                 </Link>
                             </li>
                         </ul>
