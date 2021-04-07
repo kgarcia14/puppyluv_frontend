@@ -60,7 +60,7 @@ export default function HowItWorks() {
                     <div>
                     <FaceIcon/>
                     </div>
-                    <span className={classes.number}>1. </span><span>Login and Register!</span>
+                    <span className={classes.number}>1. </span><span>Register and Login!</span>
                     </h4>
                     <p>Login the easy way using our safe and secure system. Fill in some basic information and let us, and all the wonderful people out there, WHO YOU ARE and WHO YOUR PET IS.</p>
                     </Paper>
