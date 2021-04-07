@@ -6,7 +6,6 @@ import Profile from './components/profileStuff/Profile';
 import Test from "./components/Test";
 import Footer from './components/Footer';
 import Chatbox from './components/Chatbox';
-import { makeStyles } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';
 import FullProfile from './components/profileStuff/FullProfile';
 import PossibleConnections from './components/nonConnectedUsers/PossibleConnections';

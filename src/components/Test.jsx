@@ -9,7 +9,6 @@ import PetsIcon from '@material-ui/icons/Pets';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import Tooltip from '@material-ui/core/Tooltip';
-
 import { useAuth0 } from '@auth0/auth0-react';
 import LoginButton from './profileStuff/LoginButton';
 import LogoutButton from './profileStuff/LogoutButton';
@@ -188,10 +187,12 @@ export default function Test() {
                                 }}>
                                     <ForumIcon/>
                                 </IconButton>
-                                <IconButton color="primary" onClick={(e) => {
+                                </Tooltip>
+                                <Tooltip onClick={(e) => {
                                     e.preventDefault();
                                     window.location.href = '/my_favorites';
                                 }}>
+                                <IconButton color="primary">
                                     <Badge color="secondary">
                                         <FavoriteIcon />
                                     </Badge>

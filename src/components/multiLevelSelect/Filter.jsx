@@ -51,7 +51,6 @@ const Filter = ({ filteredUsers }) => {
         
     return(
         <>
-
         {!!filteredUsers ? (
             <Container>
                 <List>
