@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { AppBar, IconButton, Toolbar, Menu, MenuItem, MailIcon, Link } from '@material-ui/core';
+import { AppBar, IconButton, Toolbar, Menu, MenuItem, MailIcon } from '@material-ui/core';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import ForumIcon from '@material-ui/icons/Forum';
 import Badge from '@material-ui/core/Badge';
