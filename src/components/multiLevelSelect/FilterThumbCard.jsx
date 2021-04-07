@@ -17,7 +17,6 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import QuestionAnswerRoundedIcon from '@material-ui/icons/QuestionAnswerRounded';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-import Styled from 'styled-components';
 
 
 const useStyles = makeStyles((theme) => ({
