@@ -53,7 +53,7 @@ const FullProfile = () => {
             const fullProfileData = await fetch(apiUrl).then(response => response.json());
             setFullProfile(fullProfileData)
         })();
-    },[])
+    },[otherUserId])
 
     return (
         <div className={classes.root}>

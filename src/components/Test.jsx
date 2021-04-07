@@ -175,22 +175,26 @@ export default function Test() {
                         <div>
                             <div className={classes.sectionDesktop}>
                                 <span className={classes.luv}>Logged in as: {user.nickname}</span>
-                                <IconButton aria-label="show 4 new mails" color="primary" onClick={(e) => {
+                                <div onClick={(e) => {
                                     e.preventDefault();
                                     window.location.href = '/Chatbox';
                                 }}>
+                                <IconButton aria-label="show 4 new mails" color="primary">
                                     <Badge badgeContent={4} color="secondary">
                                         <MailIcon />
                                     </Badge>
                                 </IconButton>
-                                <IconButton color="primary" onClick={(e) => {
+                                </div>
+                                <div onClick={(e) => {
                                     e.preventDefault();
                                     window.location.href = '/my_favorites';
                                 }}>
+                                <IconButton color="primary">
                                     <Badge color="secondary">
                                         <FavoriteIcon />
                                     </Badge>
                                 </IconButton>
+                                </div>
                                 <IconButton
                                     edge="end"
                                     aria-label="account of current user"

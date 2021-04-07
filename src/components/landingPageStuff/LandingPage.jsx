@@ -61,7 +61,7 @@ export default function LandingPage() {
           <h1 className={classes.title}>
             <span className={classes.puppy}>Puppy</span><span className={classes.colorText}>Luv.</span>
           </h1>
-          <p>The paw-fect dating app to bring the only pure souls in this cruel cold world, together.</p>
+          <p>The paw-fect app to bring the only pure souls in this cruel cold world, together.</p>
         <div>
         <Button variant="contained" color="primary" onClick={() => loginWithRedirect()}>
         Join PuppyLuv

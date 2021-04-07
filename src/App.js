@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundImage: `url('https://i.pinimg.com/originals/f2/72/fe/f272fe97a657045cabb4dddb911cf4ae.jpg')`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
+    backgroundPosition: 'center',
     backgroundAttachment: 'flex',
   },
 }))
