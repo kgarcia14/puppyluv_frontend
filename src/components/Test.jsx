@@ -7,6 +7,8 @@ import Badge from '@material-ui/core/Badge';
 import MenuIcon from '@material-ui/icons/Menu';
 import PetsIcon from '@material-ui/icons/Pets';
 import FavoriteIcon from '@material-ui/icons/Favorite';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
+import Tooltip from '@material-ui/core/Tooltip';
 
 import { useAuth0 } from '@auth0/auth0-react';
 import LoginButton from './profileStuff/LoginButton';
@@ -123,24 +125,20 @@ export default function Test() {
                 e.preventDefault();
                 window.location.href = '/Chatbox';
             }}>
-                <IconButton aria-label="show 4 new mails" color="primary" onClick={(e) => {
+                <IconButton color="primary" onClick={(e) => {
                     e.preventDefault();
                     window.location.href = '/Chatbox';
                 }}>
-                    <Badge badgeContent={4} color="secondary">
-                        <ForumIcon/>
-                    </Badge>
+                    <ForumIcon/>
                 </IconButton>
                 <p>Messages</p>
             </MenuItem>
             <MenuItem>
-                <IconButton aria-label="show 17 new notifications" color="primary">
-                    <Badge badgeContent={17} color="secondary">
+                <IconButton color="secondary">
                         <FavoriteIcon onClick={(e) => {
                         e.preventDefault();
                         window.location.href = '/my_favorites';
                         }}/>
-                    </Badge>
                 </IconButton>
                 <p>Favorites</p>
             </MenuItem>
@@ -165,35 +163,48 @@ export default function Test() {
                     <h5 className={classes.appbarTitle}>
                         <span className={classes.puppy}>Puppy</span><span className={classes.colorText}>Luv.</span>
                         {isAuthenticated ? (
+                        <Tooltip title="Home">
                             <IconButton href='/home' color="primary" fontSize="small">
                                 <PetsIcon />
                             </IconButton>
+                        </Tooltip>
                         ) : (
+                        <Tooltip title="Home">
                             <IconButton href='/' color="primary" fontSize="small">
                                 <PetsIcon />
                             </IconButton>
+                        </Tooltip>
                         )}
                     </h5>
                     {isAuthenticated ? (
                         <div>
                             <div className={classes.sectionDesktop}>
                                 <span className={classes.luv}>Logged in as: {user.nickname}</span>
-                                <IconButton aria-label="show 4 new mails" color="primary" onClick={(e) => {
+                                <Tooltip title="Chat">
+                                <IconButton color="primary" onClick={(e) => {
                                     e.preventDefault();
                                     window.location.href = '/Chatbox';
                                 }}>
-                                    <Badge badgeContent={4} color="secondary">
-                                        <ForumIcon/>
-                                    </Badge>
+                                    <ForumIcon/>
                                 </IconButton>
-                                <IconButton aria-label="show 17 new notifications" color="primary">
-                                    <Badge badgeContent={17} color="secondary">
+                                </Tooltip>
+                                <Tooltip title="My Favorites">
+                                <IconButton color="secondary">
                                         <FavoriteIcon onClick={(e) => {
                                         e.preventDefault();
                                         window.location.href = '/my_favorites';
                                         }}/>
-                                    </Badge>
                                 </IconButton>
+                                </Tooltip>
+                                <Tooltip title="Nearby Parks">
+                                <IconButton color="primary">
+                                    <LocationOnIcon onClick={(e) => {
+                                    e.preventDefault();
+                                    window.location.href = '/nearbyparks';
+                                    }}/>
+                                </IconButton>
+                                </Tooltip>
+                                <Tooltip title="My Account">
                                 <IconButton
                                     edge="end"
                                     aria-label="account of current user"
@@ -204,6 +215,7 @@ export default function Test() {
                                 >
                                     <AccountCircle />
                                 </IconButton>
+                                </Tooltip>
                             </div>
                             <div className={classes.sectionMobile}>
                                 <IconButton

@@ -16,19 +16,8 @@ import UserInfo from './components/profileStuff/UserInfo';
 import RegisterPet2 from './components/petRegistry/RegisterPet2'
 import NearbyParksStatic from './components/mapStuff/NearbyParksStatic';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    maxHeight: '120vh',
-    backgroundImage: `url('https://i.pinimg.com/originals/f2/72/fe/f272fe97a657045cabb4dddb911cf4ae.jpg')`,
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
-    backgroundAttachment: 'flex',
-  },
-}))
-
 function App() {
   const { isLoading } = useAuth0();
-  const classes = useStyles();
   const [otherUserId, setotherUserId] = useState('');
 
   const _handleOtherUserId = (otherUserId) => {
@@ -37,7 +26,6 @@ function App() {
 
   if (isLoading) return <div>Loading...</div>
   return (
-    <div className={classes.root}>
       <Router>
         <Test/>
         <Switch>
@@ -72,7 +60,6 @@ function App() {
         </Switch>
         <Footer/>
       </Router>
-    </div>
   );
 }
 

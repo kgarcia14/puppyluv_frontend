@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
     },
     sectionMobile: {
         display: 'flex',
-        backgroundColor: '#ffb6c1',
+        backgroundColor: 'transparent',
         [theme.breakpoints.up('md')]: {
             display: 'none',
         },
@@ -137,11 +137,11 @@ export default function Footer() {
                     <BottomNavigationAction label="Favorites" onClick={(e) => {
                         e.preventDefault();
                         window.location.href = '/my_favorites';
-                        }} icon={<FavoriteIcon />} />
-                    <BottomNavigationAction label="Nearby" onClick={(e) => {
+                        }} icon={<FavoriteIcon color="secondary"/>} />
+                    <BottomNavigationAction label="Nearby Parks" onClick={(e) => {
                         e.preventDefault();
                         window.location.href = '/nearbyparks';
-                        }} icon={<LocationOnIcon />} />
+                        }} icon={<LocationOnIcon color="primary"/>} />
                 </BottomNavigation>
             </div>
             ) : (
