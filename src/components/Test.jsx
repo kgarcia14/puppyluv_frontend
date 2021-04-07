@@ -2,11 +2,11 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { AppBar, IconButton, Toolbar, Menu, MenuItem, Link } from '@material-ui/core';
 import AccountCircle from '@material-ui/icons/AccountCircle';
-import MailIcon from '@material-ui/icons/Mail';
-import NotificationsIcon from '@material-ui/icons/Notifications';
+import ForumIcon from '@material-ui/icons/Forum';
 import Badge from '@material-ui/core/Badge';
 import MenuIcon from '@material-ui/icons/Menu';
 import PetsIcon from '@material-ui/icons/Pets';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 
 import { useAuth0 } from '@auth0/auth0-react';
 import LoginButton from './profileStuff/LoginButton';
@@ -128,7 +128,7 @@ export default function Test() {
                     window.location.href = '/Chatbox';
                 }}>
                     <Badge badgeContent={4} color="secondary">
-                        <MailIcon />
+                        <ForumIcon/>
                     </Badge>
                 </IconButton>
                 <p>Messages</p>
@@ -136,10 +136,13 @@ export default function Test() {
             <MenuItem>
                 <IconButton aria-label="show 17 new notifications" color="primary">
                     <Badge badgeContent={17} color="secondary">
-                        <NotificationsIcon />
+                        <FavoriteIcon onClick={(e) => {
+                        e.preventDefault();
+                        window.location.href = '/my_favorites';
+                        }}/>
                     </Badge>
                 </IconButton>
-                <p>Notifications</p>
+                <p>Favorites</p>
             </MenuItem>
             <MenuItem onClick={handleMenu}>
                 <IconButton
@@ -180,12 +183,15 @@ export default function Test() {
                                     window.location.href = '/Chatbox';
                                 }}>
                                     <Badge badgeContent={4} color="secondary">
-                                        <MailIcon />
+                                        <ForumIcon/>
                                     </Badge>
                                 </IconButton>
                                 <IconButton aria-label="show 17 new notifications" color="primary">
                                     <Badge badgeContent={17} color="secondary">
-                                        <NotificationsIcon />
+                                        <FavoriteIcon onClick={(e) => {
+                                        e.preventDefault();
+                                        window.location.href = '/my_favorites';
+                                        }}/>
                                     </Badge>
                                 </IconButton>
                                 <IconButton

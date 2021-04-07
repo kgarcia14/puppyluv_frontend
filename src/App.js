@@ -14,6 +14,7 @@ import MyProfile from './components/profileStuff/MyProfile';
 import MyFavorites from './components/profileStuff/MyFavorites';
 import UserInfo from './components/profileStuff/UserInfo';
 import RegisterPet2 from './components/petRegistry/RegisterPet2'
+import NearbyParksStatic from './components/mapStuff/NearbyParksStatic';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -64,6 +65,9 @@ function App() {
           </Route>
           <Route exact path='/pet2register'>
             <RegisterPet2/>
+          </Route>
+          <Route exact path='/nearbyparks'>
+            <NearbyParksStatic/>
           </Route>
         </Switch>
         <Footer/>

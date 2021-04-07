@@ -62,7 +62,7 @@ export default function HowItWorks() {
                     </div>
                     <span className={classes.number}>1. </span><span>Login and Register!</span>
                     </h4>
-                    <p>Login the easy way using our safe and secure system. Fill in some basic information and let us, and all the wonderful people out there, WHO YOU ARE and WHO YOUR PET IS.</p>
+                    <p>Login the easy way using our safe and secure system. Fill in some basic information and let us, and all the wonderful people out there, know WHO YOU ARE and WHO YOUR PET IS.</p>
                     </Paper>
                 </Grid>
                 <Grid item xs>
@@ -73,7 +73,7 @@ export default function HowItWorks() {
                     </div>
                     <span className={classes.number}>2. </span><span>Search and Select!</span>
                     </h4>
-                    <p>Login the easy way using our safe and secure system. Fill in some basic information and let us, and all the wonderful people out there, WHO YOU ARE and WHO YOUR PET IS.</p>
+                    <p>Search for other people and pets using our DYNAMIC and DIGITAL system to </p>
                     </Paper>
                 </Grid>
                 <Grid item xs>
