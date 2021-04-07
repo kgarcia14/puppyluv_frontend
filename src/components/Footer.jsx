@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from "react-router-dom";
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
 import { Typography, Link } from "@material-ui/core";
@@ -56,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
     },
     sectionMobile: {
         display: 'flex',
-        backgroundColor: '#ffb6c1',
+        backgroundColor: 'transparent',
         [theme.breakpoints.up('md')]: {
             display: 'none',
         },
@@ -72,6 +73,7 @@ export default function Footer() {
     const currentYear = new Date().getFullYear()
     const [value, setValue] = React.useState(0);
     const { user, isAuthenticated } = useAuth0();
+    const history = useHistory();
 
     return (
         <div className={classes.root} position="static" sticky="bottom">
@@ -131,12 +133,15 @@ export default function Footer() {
                     showLabels
                     className={classes.bottomNav}
                 >
-                    <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
+                    <BottomNavigationAction label="Back" onClick={() => history.goBack()} icon={<RestoreIcon />} />
                     <BottomNavigationAction label="Favorites" onClick={(e) => {
                         e.preventDefault();
                         window.location.href = '/my_favorites';
-                        }} icon={<FavoriteIcon />} />
-                    <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} />
+                        }} icon={<FavoriteIcon color="secondary"/>} />
+                    <BottomNavigationAction label="Nearby Parks" onClick={(e) => {
+                        e.preventDefault();
+                        window.location.href = '/nearbyparks';
+                        }} icon={<LocationOnIcon color="primary"/>} />
                 </BottomNavigation>
             </div>
             ) : (
