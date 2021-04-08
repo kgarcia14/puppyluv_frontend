@@ -25,7 +25,8 @@ const UploadPhoto = () => {
         let selected = e.target.files[0];
 
         if (selected && types.includes(selected.type)) {
-            setImage(e.target.files[0]);
+            setImage(selected);
+            setError('')
         } else {
             setImage(null);
             setError('Please select an image file of (png or jpeg)')
@@ -33,7 +34,16 @@ const UploadPhoto = () => {
     }; 
 
     return (
-        <p>input will go here</p>
+        <form>
+            <input 
+                type="file" 
+                onChange={handleChange} />
+            <div 
+                className="output">
+                {error && <div className="error">{ error }</div> }
+                { image && <div>{ image.name }</div> }
+            </div>
+        </form>
     )
 }
 export default UploadPhoto;
