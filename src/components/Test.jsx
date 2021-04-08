@@ -178,39 +178,39 @@ export default function Test() {
                                     e.preventDefault();
                                     window.location.href = '/Chatbox';
                                 }}>
-                                <IconButton aria-label="show 4 new mails" color="primary">
-                                    <Badge badgeContent={4} color="secondary">
-                                        <MailIcon />
-                                    </Badge>
-                                </IconButton>
+                                    <IconButton aria-label="show 4 new mails" color="primary">
+                                        <Badge badgeContent={4} color="secondary">
+                                            <MailIcon />
+                                        </Badge>
+                                    </IconButton>
                                 </div>
                                 <div onClick={(e) => {
                                     e.preventDefault();
                                     window.location.href = '/my_favorites';
                                 }}>
-                                <IconButton color="primary">
-                                    <Badge color="secondary">
-                                        <FavoriteIcon />
-                                    </Badge>
-                                </IconButton>
+                                    <IconButton color="primary">
+                                        <Badge color="secondary">
+                                            <FavoriteIcon />
+                                        </Badge>
+                                    </IconButton>
                                 </div>
-                                <IconButton
-                                    edge="end"
-                                    aria-label="account of current user"
-                                    aria-controls={menuId}
-                                    aria-haspopup="true"
-                                    onClick={handleMenu}
-                                    color="primary"
-                                >
-                                    <AccountCircle />
-                                </IconButton>
+                                <div onClick={handleMenu}>
+                                    <IconButton
+                                        edge="end"
+                                        aria-label="account of current user"
+                                        aria-controls={menuId}
+                                        aria-haspopup="true"
+                                        color="primary"
+                                    >
+                                        <AccountCircle />
+                                    </IconButton>
+                                </div>
                             </div>
-                            <div className={classes.sectionMobile}>
+                            <div className={classes.sectionMobile} onClick={handleMobileMenuOpen}>
                                 <IconButton
                                     aria-label="show more"
                                     aria-controls={mobileMenuId}
                                     aria-haspopup="true"
-                                    onClick={handleMobileMenuOpen}
                                     color="primary"
                                 >
                                     <MenuIcon />
