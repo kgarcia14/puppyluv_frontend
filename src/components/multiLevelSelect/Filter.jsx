@@ -48,12 +48,10 @@ border-top: 1px solid ${gray5};
 
 const Filter = ({ filteredUsers }) => {
   const { user } = useAuth0();
-    console.log("filtered users are: ", filteredUsers);
         
     return(
         <>
-
-        {!!filteredUsers ? (
+        {!!filteredUsers && (
             <Container>
                 <List>
                 {filteredUsers.filter(fUser => fUser.user_nickname !== user.sub).map((fUser, index) => (
@@ -63,9 +61,6 @@ const Filter = ({ filteredUsers }) => {
                 ))}
                 </List>
             </Container>
-            
-        ) : (
-            <p>here will lie the filtered list</p>
         )}
         </>
     )

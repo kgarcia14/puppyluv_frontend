@@ -5,7 +5,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 
 const ProfImage = ({ setSelectedImg }) => {
     const { user } = useAuth0();
-    const { docs } = useFirestore('prof '+ user.email)
+    const { docs } = useFirestore('prof '+ user.sub)
     console.log(docs);
 
     return(

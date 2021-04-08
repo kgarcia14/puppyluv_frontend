@@ -1,15 +1,14 @@
 import React from 'react';
 import useFirestore from '../../hook/useFirestore'
 import { motion } from 'framer-motion';
-import { useAuth0 } from '@auth0/auth0-react';
 
-const PetImageGrid = ({ setSelectedImg }) => {
-    const { user } = useAuth0();
-    const { docs } = useFirestore('pets '+ user.sub)
+
+const OthersProfImage = ({ setSelectedImg,  fullProfile}) => {
+    const { docs } = useFirestore('prof '+ fullProfile.user_nickname)
     console.log(docs);
 
     return(
-        <div className="img-grid">
+        <div className="Prof-img">
             { docs && docs.map(doc => (
                 <motion.div 
                     className="img-wrap" 
@@ -29,4 +28,4 @@ const PetImageGrid = ({ setSelectedImg }) => {
     )
 }
 
-export default PetImageGrid;
+export default OthersProfImage;

@@ -82,8 +82,8 @@ const UserRegister = ({ handleReload }) => {
     const [gender, setGender] = useState('');
     const [city, setCity] = useState('');
     const [zipCode, setZipCode] = useState('');
-    const [userImg, setUserImg] = useState('');
     const [numbPets, setNumbPets] = useState('');
+    const [userImg, setUserImg] = useState(null)
 
     const _firstNameChange = async (e) => {
         setFirstName(e.target.value)
@@ -104,10 +104,8 @@ const UserRegister = ({ handleReload }) => {
     const _zipCodeChange = async (e) => {
         setZipCode(e.target.value)
     }
-    const _userImgChange = async (e) => {
-        setUserImg(e.target.value)
-    }
-    const _numPetsChange = async (e) => {
+    const _numbPetsChange = async (e) => {
+        console.log("number of pets: ", e.target.value)
         setNumbPets(e.target.value)
     }
 
@@ -124,8 +122,9 @@ const UserRegister = ({ handleReload }) => {
                 gender: gender, 
                 city: city, 
                 zipcode: zipCode,
+                user_img: userImg,
                 user_nickname: userNickname,
-                numb_pets: numbPets,    
+                numb_pets: numbPets 
             })
         }).then((response) => response);
         console.log("submit user response is: ", submitResponse)
@@ -197,13 +196,13 @@ const UserRegister = ({ handleReload }) => {
                         value={zipCode}
                         onChange={_zipCodeChange}/>
                 </Label>
-                <ProfPhotoUpload />
+                
                 <Label>How many dogs do you have?
                     <Select
                         required
                         name="numb_pets"
                         value={numbPets}
-                        onChange={_numPetsChange}>
+                        onChange={_numbPetsChange}>
 
                         <option value=""></option>
                         <option value="1">1</option>

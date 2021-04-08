@@ -129,7 +129,11 @@ export default function Footer() {
                     className={classes.bottomNav}
                 >
                     <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
-                    <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
+                    <BottomNavigationAction label="Favorites" 
+                    onClick={(e) => {
+                        e.preventDefault();
+                        window.location.href = '/my_favorites';
+                        }} icon={<FavoriteIcon />} />
                     <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} />
                 </BottomNavigation>
             </div>

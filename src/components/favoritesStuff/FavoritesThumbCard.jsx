@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-const FilterThumbCard = ({ fUser }) => {
+const FavoritesThumbCard = ({ favorite }) => {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
   const [showMenu, setShowMenu] = useState(false);
@@ -63,16 +63,16 @@ const FilterThumbCard = ({ fUser }) => {
   const handleMenuClick = async (event) => {
     event.preventDefault();
     setShowMenu(!showMenu);
-    console.log(fUser.user_nickname);
+    console.log(favorite.user_nickname);
   };
 
   return (
     <Card className={classes.root}>
-        {fUser.gender === 'male' && (
+        {favorite.gender === 'male' && (
             <CardHeader
             avatar={
               <Avatar aria-label="recipe" className={classes.avatarM}>
-                {fUser.user_img}
+                {favorite.user_img}
               </Avatar>
             }
             action={
@@ -80,15 +80,15 @@ const FilterThumbCard = ({ fUser }) => {
                 <MoreVertIcon/>
               </IconButton>
             }
-            title={fUser.first_name} 
-            subheader={fUser.last_name}
+            title={favorite.first_name} 
+            subheader={favorite.last_name}
           />
         )}
-        {fUser.gender === 'female' && (
+        {favorite.gender === 'female' && (
             <CardHeader
             avatar={
               <Avatar aria-label="recipe" className={classes.avatarF}>
-                {fUser.user_img}
+                {favorite.user_img}
               </Avatar>
             }
             action={
@@ -96,15 +96,15 @@ const FilterThumbCard = ({ fUser }) => {
                 <MoreVertIcon />
               </IconButton>
             }
-            title={fUser.first_name} 
-            subheader={fUser.last_name}
+            title={favorite.first_name} 
+            subheader={favorite.last_name}
           />
         )}
-        {fUser.gender === 'other' && (
+        {favorite.gender === 'other' && (
             <CardHeader
             avatar={
               <Avatar aria-label="recipe" className={classes.avatarO}>
-                {fUser.user_img}
+                {favorite.user_img}
               </Avatar>
             }
             action={
@@ -112,12 +112,12 @@ const FilterThumbCard = ({ fUser }) => {
                 <MoreVertIcon />
               </IconButton>
             }
-            title={fUser.first_name} 
-            subheader={fUser.last_name}
+            title={favorite.first_name} 
+            subheader={favorite.last_name}
           />
         )}
         {showMenu && (
-          <Link to={`/full_profile/${fUser.id}`} style={{paddingLeft: 12, textDecoration: 'none', color: '#3f51b5'}}>View Full Profile</Link>
+          <Link to={`/full_profile/${favorite.id}`} style={{paddingLeft: 12, textDecoration: 'none', color: '#3f51b5'}}>View Full Profile</Link>
         )}
         
       <CardMedia
@@ -144,10 +144,10 @@ const FilterThumbCard = ({ fUser }) => {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>{fUser.about_us}</Typography>
+          <Typography paragraph>{favorite.about_us}</Typography>
         </CardContent>
       </Collapse>
     </Card>
   );
 }
-export default FilterThumbCard;
+export default FavoritesThumbCard;

@@ -10,7 +10,7 @@ const useStorage = (image) => {
 
     useEffect(() => {
         const storageRef = storage.ref(image.name);
-        const collectionRef = firestore.collection('pets ' + user.email)
+        const collectionRef = firestore.collection('pets ' + user.sub)
         storageRef.put(image).on('state_changed', (snap) => {
             let percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
             setProgress(percentage);
@@ -22,7 +22,7 @@ const useStorage = (image) => {
             collectionRef.add({ url, createdAt });
             setUrl(url);
         })
-    }, [image, user.email]);
+    }, [image, user.sub]);
     return { progress, url, error }
 }
 

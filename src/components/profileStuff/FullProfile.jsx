@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import OthersProfImage from '../profPhotoStuff/OthersProfImage'
 
 const FullProfile = () => {
     const [fullProfile, setFullProfile] = useState([]);
@@ -16,6 +17,7 @@ const FullProfile = () => {
 
     return (
         <>
+            <OthersProfImage fullProfile={fullProfile} />
             <h4>{fullProfile.first_name} {fullProfile.last_name}</h4><p>Number of dogs: {fullProfile.numb_pets}</p>
             {fullProfile.numb_pets === 1 && (
                 <>

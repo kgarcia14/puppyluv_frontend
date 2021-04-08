@@ -12,6 +12,8 @@ import FullProfile from './components/profileStuff/FullProfile';
 import PossibleConnections from './components/nonConnectedUsers/PossibleConnections';
 import MyProfile from './components/profileStuff/MyProfile';
 import UserInfo from './components/profileStuff/UserInfo';
+import MyFavorites from './components/favoritesStuff/MyFavorites';
+import RegisterPet2 from './components/petRegistry/RegisterPet2';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -56,6 +58,9 @@ function App() {
           </Route>
           <Route exact path='/home'>
             <UserInfo/>
+          </Route>
+          <Route exact path='/my_favorites'>
+            <MyFavorites />
           </Route>
         </Switch>
         <Footer/>
