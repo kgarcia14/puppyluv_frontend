@@ -181,11 +181,11 @@ export default function Test() {
                         <div>
                             <div className={classes.sectionDesktop}>
                                 <span className={classes.luv}>Logged in as: {user.nickname}</span>
-                                <Tooltip title="Chat">
-                                <IconButton color="primary" onClick={(e) => {
+                                <Tooltip title="Chat" onClick={(e) => {
                                     e.preventDefault();
                                     window.location.href = '/Chatbox';
                                 }}>
+                                <IconButton color="primary">
                                     <ForumIcon/>
                                 </IconButton>
                                 </Tooltip>
@@ -199,21 +199,20 @@ export default function Test() {
                                     </Badge>
                                 </IconButton>
                                 </Tooltip>
-                                <Tooltip title="Nearby Parks">
-                                <IconButton color="primary">
-                                    <LocationOnIcon onClick={(e) => {
+                                <Tooltip title="Nearby Parks"  onClick={(e) => {
                                     e.preventDefault();
                                     window.location.href = '/nearbyparks';
-                                    }}/>
+                                    }}>
+                                <IconButton color="primary">
+                                    <LocationOnIcon />
                                 </IconButton>
                                 </Tooltip>
-                                <Tooltip title="My Account">
+                                <Tooltip title="My Account" onClick={handleMenu}>
                                 <IconButton
                                     edge="end"
                                     aria-label="account of current user"
                                     aria-controls={menuId}
                                     aria-haspopup="true"
-                                    onClick={handleMenu}
                                     color="primary"
                                 >
                                     <AccountCircle />
