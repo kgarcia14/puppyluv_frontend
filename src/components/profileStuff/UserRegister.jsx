@@ -6,6 +6,10 @@ import { makeStyles } from "@material-ui/core/styles";
 import ProfPhotoUpload from '../profPhotoStuff/ProfPhotoUpload'
 import ProfImage from '../profPhotoStuff/ProfImage';
 
+const Div = Styled.div`
+    margin-bottom: 50px;
+`;
+
 const H2 = Styled.h2`
 text-align: center;
 margin-top: 15px;
@@ -222,8 +226,10 @@ const UserRegister = ({ handleReload }) => {
                         Submit
                 </Button>
             </Form>
-            <ProfPhotoUpload />
-            <ProfImage />
+            <Div>
+                <ProfPhotoUpload />
+                <ProfImage />
+            </Div>
         </div>
     )
 }

@@ -62,7 +62,7 @@ const NearbyParksStatic = () => {
         e.preventDefault();
         const apiKey = process.env.REACT_APP_G_MAP_API_KEY
         console.log('pplace:', pplace);
-        const apiUrl = `https://maps.googleapis.com/maps/api/place/textsearch/json?radius=10000&language=en&type=park&query=parks+in+${pplace}&key=${apiKey}`
+        const apiUrl = `https://maps.googleapis.com/maps/api/place/textsearch/json?radius=10000&language=en&type=park&query=parks+in+${pplace}&key=AIzaSyB-fRn8azkVPcHlDIJekteuVleYKApmuFI`
         const submitResponse = await fetch(apiUrl, {
             method: "GET",
             headers: { "Content-Type": "application/json" },

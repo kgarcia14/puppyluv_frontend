@@ -10,6 +10,7 @@ import RestoreIcon from '@material-ui/icons/Restore';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import { useAuth0 } from '@auth0/auth0-react';
+import { FixedHeightMessage } from 'stream-chat-react';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -63,12 +64,13 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     bottomNav: {
-        backgroundColor: "transparent",
         width: '100%',
+        position: 'fixed',
+        bottom: 0,
     }
 }));
 
-export default function Footer() {
+const Footer = () => {
     const classes = useStyles();
     const currentYear = new Date().getFullYear()
     const [value, setValue] = React.useState(0);
@@ -151,3 +153,5 @@ export default function Footer() {
             </div>
     )
 }
+
+export default Footer;
