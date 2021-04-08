@@ -98,13 +98,17 @@ export default function Test() {
             open={open}
             onClose={handleClose}
         >
-            <MenuItem className={classes.luv} onClick={(e) => {
-                e.preventDefault();
-                window.location.href = '/my_profile';
+            <MenuItem 
+                className={classes.luv} 
+                onClick={(e) => {
+                    e.preventDefault();
+                    window.location.href = '/my_profile';
             }}>My Profile</MenuItem>
-            <MenuItem className={classes.luv} onClick={(e) => {
-                e.preventDefault();
-                window.location.href = '/home';
+            <MenuItem 
+                className={classes.luv} 
+                onClick={(e) => {
+                    e.preventDefault();
+                    window.location.href = '/home';
             }}>Home</MenuItem>
             <MenuItem className={classes.luv} onClick={handleClose}><LogoutButton /></MenuItem>
         </Menu>
@@ -121,9 +125,10 @@ export default function Test() {
             open={isMobileMenuOpen}
             onClose={handleMobileMenuClose}
         >
-            <MenuItem onClick={(e) => {
-                e.preventDefault();
-                window.location.href = '/Chatbox';
+            <MenuItem 
+                onClick={(e) => {
+                    e.preventDefault();
+                    window.location.href = '/Chatbox';
             }}>
                 <IconButton aria-label="show 4 new mails" color="primary">
                     <Badge badgeContent={4} color="secondary">
@@ -132,7 +137,8 @@ export default function Test() {
                 </IconButton>
                 <p>Messages</p>
             </MenuItem>
-            <MenuItem onClick={(e) => {
+            <MenuItem 
+                onClick={(e) => {
                     e.preventDefault();
                     window.location.href = '/my_favorites';
                 }}>
@@ -181,17 +187,21 @@ export default function Test() {
                         <div>
                             <div className={classes.sectionDesktop}>
                                 <span className={classes.luv}>Logged in as: {user.nickname}</span>
-                                <Tooltip title="Chat">
-                                <IconButton color="primary" onClick={(e) => {
-                                    e.preventDefault();
-                                    window.location.href = '/Chatbox';
+                                <Tooltip 
+                                    title="Chat"  
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        window.location.href = '/Chatbox';
                                 }}>
+                                <IconButton color="primary">
                                     <ForumIcon/>
                                 </IconButton>
                                 </Tooltip>
-                                <Tooltip onClick={(e) => {
-                                    e.preventDefault();
-                                    window.location.href = '/my_favorites';
+                                <Tooltip 
+                                    title="Favorites" 
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        window.location.href = '/my_favorites';
                                 }}>
                                 <IconButton color="primary">
                                     <Badge color="secondary">
@@ -199,33 +209,33 @@ export default function Test() {
                                     </Badge>
                                 </IconButton>
                                 </Tooltip>
-                                <Tooltip title="Nearby Parks">
+                                <Tooltip 
+                                    title="Nearby Parks"
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        window.location.href = '/nearbyparks';
+                                    }}>
                                 <IconButton color="primary">
-                                    <LocationOnIcon onClick={(e) => {
-                                    e.preventDefault();
-                                    window.location.href = '/nearbyparks';
-                                    }}/>
+                                    <LocationOnIcon/>
                                 </IconButton>
                                 </Tooltip>
-                                <Tooltip title="My Account">
+                                <Tooltip title="My Account" onClick={handleMenu}>
                                 <IconButton
                                     edge="end"
                                     aria-label="account of current user"
                                     aria-controls={menuId}
                                     aria-haspopup="true"
-                                    onClick={handleMenu}
                                     color="primary"
                                 >
                                     <AccountCircle />
                                 </IconButton>
                                 </Tooltip>
                             </div>
-                            <div className={classes.sectionMobile}>
+                            <div className={classes.sectionMobile} onClick={handleMobileMenuOpen}>
                                 <IconButton
                                     aria-label="show more"
                                     aria-controls={mobileMenuId}
                                     aria-haspopup="true"
-                                    onClick={handleMobileMenuOpen}
                                     color="primary"
                                 >
                                     <MenuIcon />

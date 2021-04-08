@@ -2,9 +2,6 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
-import AddIcon from '@material-ui/icons/Add';
-import Fab from '@material-ui/core/Fab';
-import Tooltip from '@material-ui/core/Tooltip';
 import { makeStyles } from "@material-ui/core/styles";
 import OthersProfImage from '../profPhotoStuff/OthersProfImage';
 

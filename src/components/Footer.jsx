@@ -72,7 +72,7 @@ export default function Footer() {
     const classes = useStyles();
     const currentYear = new Date().getFullYear()
     const [value, setValue] = React.useState(0);
-    const { user, isAuthenticated } = useAuth0();
+    const { isAuthenticated } = useAuth0();
     const history = useHistory();
 
     return (

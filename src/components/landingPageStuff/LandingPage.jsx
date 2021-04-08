@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
 export default function LandingPage() {
   const classes = useStyles();
   const [checked, setChecked] = useState(false);
-  const { loginWithRedirect, isAuthenticated } = useAuth0()
+  const { loginWithRedirect } = useAuth0()
 
   useEffect(() => {
     setChecked(true);
