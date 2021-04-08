@@ -3,6 +3,8 @@ import { useState } from 'react';
 import Styled from 'styled-components';
 import { Button } from '@material-ui/core';
 import { makeStyles } from "@material-ui/core/styles";
+import ProfPhotoUpload from '../profPhotoStuff/ProfPhotoUpload'
+import ProfImage from '../profPhotoStuff/ProfImage';
 
 const H2 = Styled.h2`
 text-align: center;
@@ -122,7 +124,6 @@ const UserRegister = ({ handleReload }) => {
                 gender: gender, 
                 city: city, 
                 zipcode: zipCode,
-                user_img: userImg,
                 user_nickname: userNickname,
                 numb_pets: numbPets,    
             })
@@ -196,14 +197,7 @@ const UserRegister = ({ handleReload }) => {
                         value={zipCode}
                         onChange={_zipCodeChange}/>
                 </Label>
-                <Label>Profile Picture
-                    <Input 
-                    type="file"
-                    name="pet_img"
-                    value={userImg}
-                    onChange={_userImgChange}
-                    />
-                </Label>
+                <ProfPhotoUpload />
                 <Label>How many dogs do you have?
                     <Select
                         required
@@ -226,6 +220,7 @@ const UserRegister = ({ handleReload }) => {
                         Submit
                 </Button>
             </Form>
+            <ProfImage />
         </div>
     )
 }
