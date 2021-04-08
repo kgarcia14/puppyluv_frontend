@@ -14,6 +14,7 @@ const Form = Styled.form`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-height: 77vh;
 `;
 
 const Label = Styled.label`

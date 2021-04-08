@@ -61,17 +61,11 @@ const NearbyParksStatic = () => {
     const _handleSubmit = async (e) => {
         e.preventDefault();
         console.log('pplace:', pplace);
-        const apiUrl = `https://maps.googleapis.com/maps/api/place/textsearch/json?radius=10000&language=en&type=park&query=parks+in+${pplace}&key=AIzaSyB-fRn8azkVPcHlDIJekteuVleYKApmuFI`
-        const submitResponse = await fetch(apiUrl, {
-            method: "GET",
-            headers: { "Content-Type": "application/json" },
-        })
-            .then((response) => response.json())
-            .catch((e) => {
-                console.log(e);
-            });
-        console.log("park data is: ", submitResponse);
-        setParks(submitResponse.results);
+        const apiUrl = `https://127.0.0.1:3333/proxy/${pplace}`;
+        console.log('api:', apiUrl)
+        const parksData = await fetch(apiUrl).then(response => response.json());
+        console.log("park data is: ", parksData);
+        setParks(parksData);
     }
 
     const _handlePPlaceChange = (e) => {
