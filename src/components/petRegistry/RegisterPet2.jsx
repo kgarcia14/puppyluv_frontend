@@ -70,7 +70,6 @@ const RegisterPet2 = ({ handleReload, pet1, pet2 }) => {
     const [petBreed, setPetBreed] = useState('');
     const [petAge, setPetAge] = useState('');
     const [petPersonality, setPetPersonality] = useState('');
-    const [petImg, setPetImg] = useState('');
 
     const _petNameChange = async (e) => {
         setPetName(e.target.value)
@@ -85,9 +84,6 @@ const RegisterPet2 = ({ handleReload, pet1, pet2 }) => {
     const _petPersonalityChange = async (e) => {
         setPetPersonality(e.target.value)
     }
-    const _petImgChange = async (e) => {
-        setPetImg(e.target.value)
-    }
 
     const _handleSubmitPetInfo = async (e) => {
         e.preventDefault();
@@ -100,11 +96,9 @@ const RegisterPet2 = ({ handleReload, pet1, pet2 }) => {
                 pet_name2: petName, 
                 pet_breed2: petBreed, 
                 pet_age2: petAge, 
-                pet_personality2: petPersonality, 
-                pet_img2: petImg 
+                pet_personality2: petPersonality
             })
         }).then((response) => response);
-        console.log("submit pet response is: ", submitResponse)
 
         if (submitResponse.status === 200) {
             console.log("submit response is 200")
@@ -161,14 +155,6 @@ const RegisterPet2 = ({ handleReload, pet1, pet2 }) => {
                         <option value="adaptable">Adaptable</option>
                         <option value="grumpy">Grumpy</option>
                     </Select>
-                </Label>
-                <Label>picture of you and your dog
-                    <Input 
-                    type="file"
-                    name="pet_img"
-                    value={petImg}
-                    onChange={_petImgChange}
-                    />
                 </Label>
                 <Button
                     className="user-register-button"

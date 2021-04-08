@@ -2,6 +2,8 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { useState } from 'react';
 import { Button } from '@material-ui/core';
 import Styled from 'styled-components';
+import PetPhotoUpload from '../petPhotoStuff/PetPhotoUpload';
+import PetImageGrid from '../petPhotoStuff/PetImageGrid';
 
 const Textarea = Styled.textarea`
     border-radius: 4px;
@@ -68,8 +70,11 @@ const AboutUs = ({handleReload}) => {
                     name="about_us"
                     value={aboutUs}
                     onChange={_aboutUsChange}
-                    placeholder="Tell us about you and your doggy..."></Textarea>
+                    placeholder="Tell us about you and your doggy..."
+                    required></Textarea>
                 </Label>
+                <PetPhotoUpload />
+                
                 <Button 
                     className="user-register-button"
                     variant="contained" 
@@ -78,6 +83,7 @@ const AboutUs = ({handleReload}) => {
                         Submit
                 </Button>
             </Form>
+            <PetImageGrid />
         </>
     )
 }

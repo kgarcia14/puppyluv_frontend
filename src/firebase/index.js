@@ -1,6 +1,7 @@
-import * as firebase from 'firebase/app';
+import firebase from 'firebase/app';
 import 'firebase/storage';
 import 'firebase/firestore';
+
 
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_APIKEY,
@@ -12,7 +13,10 @@ const firebaseConfig = {
     appId: process.env.REACT_APP_APP_ID,
     measurementId: process.env.REACT_APP_MEASUREMENT_ID,
 };
+
 firebase.initializeApp(firebaseConfig);
 const storage = firebase.storage();
 const firestore = firebase.firestore();
-export { storage, firestore, firebase as default };
+const timestamp = firebase.firestore.FieldValue.serverTimestamp;
+
+export { storage, firestore, timestamp, firebase };

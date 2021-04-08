@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
@@ -17,7 +17,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import QuestionAnswerRoundedIcon from '@material-ui/icons/QuestionAnswerRounded';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-import Styled from 'styled-components';
+import TransitionsModal from './FavoritesModal';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -49,12 +49,11 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-const UserThumbCard = ({ allUser, handleOtherUserId }) => {
+const UserThumbCard = ({ allUser }) => {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
   const [showMenu, setShowMenu] = useState(false);
-  const { id } = useParams();
-  console.log(allUser.user_nickname);
+  const [open, setOpen] = React.useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -63,26 +62,11 @@ const UserThumbCard = ({ allUser, handleOtherUserId }) => {
   const handleMenuClick = async (event) => {
     event.preventDefault();
     setShowMenu(!showMenu);
-    console.log(allUser.user_nickname);
   }
 
-  //favorites
-  const _handleSubmitFavorites = async (e) => {
-    e.preventDefault();
-    const apiUrl = 'http://127.0.0.1:3333/favorites/add';
-    const submitResponse = await fetch(apiUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ id })
-    }).then((response) => response);
-    console.log("FAVORITES 123 IS ADDING WOOHOO: ", submitResponse)
-
-    if (submitResponse.status === 200) {
-        console.log("submit response is 200")
-        
-    }
-  }
-  //
+  const handleOpen = () => {
+    setOpen(true);
+  };
 
   return (
     <Card className={classes.root}>
@@ -136,10 +120,8 @@ const UserThumbCard = ({ allUser, handleOtherUserId }) => {
         )}
         {showMenu && (
           <Link to={`/full_profile/${allUser.id}`} style={{paddingLeft: 12, textDecoration: 'none', color: '#3f51b5'}}>View Full Profile</Link>
-        )
-        }
+        )}
         
-
       <CardMedia
         className={classes.media}
         image="/static/images/cards/paella.jpg"
@@ -149,7 +131,8 @@ const UserThumbCard = ({ allUser, handleOtherUserId }) => {
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
-          <FavoriteIcon onClick={_handleSubmitFavorites}/>
+          <FavoriteIcon type="button" onClick={handleOpen} />
+          <TransitionsModal allUser={allUser} open={open} setOpen={setOpen}/>
         </IconButton>
         <IconButton aria-label="start a chat">
           <QuestionAnswerRoundedIcon />

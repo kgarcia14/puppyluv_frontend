@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react'
+import { useAuth0 } from '@auth0/auth0-react';
 import Styled from 'styled-components';
 import {
     fontSize,
@@ -5,10 +7,10 @@ import {
     gray5,
     accent1
 } from '../nonConnectedUsers/styles/Styles'
-import FilterThumbCard from './FilterThumbCard';
-import { useAuth0 } from '@auth0/auth0-react';
+import FavoritesThumbCard from './FavoritesThumbCard';
 
 const Container = Styled.div`
+width: 100%;
 margin: 30px auto;
 font-size: ${fontSize};
 color: ${gray2};
@@ -45,24 +47,25 @@ border-top: 1px solid ${gray5};
 }
 `;
 
-const Filter = ({ filteredUsers }) => {
-  const { user } = useAuth0();
-        
-    return(
+const MyFavoritesList = ({favoriteUsers}) => {
+
+    return (
         <>
-        {!!filteredUsers && (
+        {!!favoriteUsers ? (
             <Container>
                 <List>
-                {filteredUsers.filter(fUser => fUser.user_nickname !== user.sub).map((fUser, index) => (
-                    <ListItem key={index}>
-                        <FilterThumbCard fUser={fUser} />
-                    </ListItem>
+                {favoriteUsers.map((favorite, index) => (
+                <ListItem key={index}>
+                    <FavoritesThumbCard favorite={favorite}/>
+                </ListItem>
                 ))}
                 </List>
-            </Container>
+        </Container>
+        ) : (
+            <p>You Haven't favorited anyone yet get out there and find your PuppyLuv Partner!</p>
         )}
         </>
     )
 }
 
-export default Filter;
+export default MyFavoritesList;

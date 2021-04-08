@@ -6,6 +6,11 @@ import AddIcon from '@material-ui/icons/Add';
 import Fab from '@material-ui/core/Fab';
 import Tooltip from '@material-ui/core/Tooltip';
 import { makeStyles } from "@material-ui/core/styles";
+import ProfPhotoUpload from '../profPhotoStuff/ProfPhotoUpload';
+import ProfImage from '../profPhotoStuff/ProfImage';
+import PetPhotoUpload from '../petPhotoStuff/PetPhotoUpload';
+import PetImageGrid from '../petPhotoStuff/PetImageGrid';
+import PhotoModal from '../petPhotoStuff/PhotoModal';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -43,11 +48,11 @@ const useStyles = makeStyles((theme) => ({
 const MyProfile = ({ handleReload, reload }) => {
     const classes = useStyles();
     const { user } = useAuth0();
+    const [selectedImg, setSelectedImg] = useState(null);
     const [uniqueId, setUniqueId] = useState([]);
 
     useEffect(() => {
         (async () => {
-            console.log(user.sub);
             const apiUrl = `http://127.0.0.1:3333/users/${user.sub}`;
             const usersData = await fetch(apiUrl).then((response) => response.json());
             setUniqueId(usersData);
@@ -61,7 +66,7 @@ const MyProfile = ({ handleReload, reload }) => {
     return (
         <div className={classes.root}>
             <div className={classes.header}>
-                <div>{uniqueId.user_img}</div>
+                <ProfImage setSelectedImg={setSelectedImg} />
                 <h2>
                     {uniqueId.first_name} {uniqueId.last_name}
                 </h2>
@@ -71,6 +76,8 @@ const MyProfile = ({ handleReload, reload }) => {
                 <p>{uniqueId.about_us}</p>
             </div>
             <h4>My Pets</h4>
+            <PetImageGrid setSelectedImg={setSelectedImg} />
+            { selectedImg && <PhotoModal setSelectedImg={setSelectedImg} selectedImg={selectedImg} /> }
             <div className={classes.profile}>
                 {!!uniqueId.pet_name1 && uniqueId.pet_name2 === null ? (
                     <Grid container spacing={3}>
@@ -91,40 +98,18 @@ const MyProfile = ({ handleReload, reload }) => {
                     <Grid container spacing={3}>
                         <Grid item xs>
                             <Paper className={classes.paper}>
-                                <h4>{uniqueId.pet_name1}</h4>
-                                <p>{uniqueId.pet_breed1}, {uniqueId.pet_age1}</p>
-                                <p>{uniqueId.pet_personality1}</p>
-                            </Paper>
-                        </Grid>
-                        <Grid item xs>
-                            <Paper className={classes.paper}>
                                 <h4>{uniqueId.pet_name2}</h4>
                                 <p>{uniqueId.pet_breed2}, {uniqueId.pet_age2}</p>
                                 <p>{uniqueId.pet_personality2}</p>
                             </Paper>
                         </Grid>
                     </Grid>
-                ) : (
-                    <>
-                    </>
-                )}
-
-                {!!uniqueId.pet_name3 ? (
+                    ) : (
+                        <>
+                        </>
+                    )}
+                    {!!uniqueId.pet_name3 ? (
                     <Grid container spacing={3}>
-                        <Grid item xs>
-                            <Paper className={classes.paper}>
-                                <h4>{uniqueId.pet_name1}</h4>
-                                <p>{uniqueId.pet_breed1}, {uniqueId.pet_age1}</p>
-                                <p>{uniqueId.pet_personality1}</p>
-                            </Paper>
-                        </Grid>
-                        <Grid item xs>
-                            <Paper className={classes.paper}>
-                                <h4>{uniqueId.pet_name2}</h4>
-                                <p>{uniqueId.pet_breed2}, {uniqueId.pet_age2}</p>
-                                <p>{uniqueId.pet_personality2}</p>
-                            </Paper>
-                        </Grid>
                         <Grid item xs>
                             <Paper className={classes.paper}>
                                 <h4>{uniqueId.pet_name3}</h4>
