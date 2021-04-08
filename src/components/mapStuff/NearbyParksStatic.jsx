@@ -61,7 +61,7 @@ const NearbyParksStatic = () => {
     const _handleSubmit = async (e) => {
         e.preventDefault();
         console.log('pplace:', pplace);
-        const apiUrl = `https://maps.googleapis.com/maps/api/place/textsearch/json?radius=10000&language=en&type=park&query=parks+in+${pplace}&key=AIzaSyD3piy94zR9vcXGQIz0LOqBeLM02YXrJwc`
+        const apiUrl = `https://maps.googleapis.com/maps/api/place/textsearch/json?radius=10000&language=en&type=park&query=parks+in+${pplace}&key=AIzaSyB-fRn8azkVPcHlDIJekteuVleYKApmuFI`
         const submitResponse = await fetch(apiUrl, {
             method: "GET",
             headers: { "Content-Type": "application/json" },

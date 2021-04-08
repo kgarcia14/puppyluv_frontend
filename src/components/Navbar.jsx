@@ -54,10 +54,11 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.up('md')]: {
             display: 'none',
         },
+        
     },
 }));
 
-export default function Test() {
+const Navbar = () => {
     const classes = useStyles();
     const { user, isAuthenticated } = useAuth0();
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -255,3 +256,5 @@ export default function Test() {
         </div>
     );
 }
+
+export default Navbar;
