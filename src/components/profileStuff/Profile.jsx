@@ -5,8 +5,9 @@ import LandingPage from '../landingPageStuff/LandingPage';
 import MoreInfo from '../landingPageStuff/MoreInfo';
 import HowItWorks from '../landingPageStuff/HowItWorks';
 
+
 const Profile = () => {
-    const { user, isAuthenticated } = useAuth0();
+    const { isAuthenticated } = useAuth0();
     const [reload, setReload] = useState(false);
 
     const handleReload = (status) => {
@@ -16,6 +17,7 @@ const Profile = () => {
     return(
         isAuthenticated ? (
             <div>
+                
                 <UserInfo handleReload={handleReload} reload={reload} />
             </div>
         ) : (

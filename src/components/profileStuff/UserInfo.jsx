@@ -9,6 +9,11 @@ import Select from '@material-ui/core/Select';
 import Icon from '@material-ui/core/Icon';
 import Button from '@material-ui/core/Button';
 import React from 'react';
+import PetPhotoUpload from '../petPhotoStuff/PetPhotoUpload';
+import PetImageGrid from '../petPhotoStuff/PetImageGrid';
+import PhotoModal from '../petPhotoStuff/PhotoModal';
+import ProfPhotoUpload from '../profPhotoStuff/ProfPhotoUpload';
+import ProfImage from '../profPhotoStuff/ProfImage';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -27,19 +32,18 @@ const useStyles = makeStyles((theme) => ({
     },
     form: {
         textAlign: 'center',
-        marginTop: '30px',
+        marginTop: '10px',
     },
 }));
 
 const UserInfo = ({handleReload, reload}) => {
     const { user } = useAuth0();
     const [uniqueId, setUniqueId] = useState([]);
-    const [filter, setFilter] = useState('')
-    const [filterBy, setFilterBy] = useState('')
-    const [filteredUsers, setFilteredUsers] = useState([])
+    const [filter, setFilter] = useState('');
+    const [filterBy, setFilterBy] = useState('');
+    const [filteredUsers, setFilteredUsers] = useState([]);
+    const [selectedImg, setSelectedImg] = useState(null);
     const classes = useStyles();
-    
-    console.log("uniqueId: ", uniqueId)
 
     const _handleFilterChange = (e) => {
         setFilter(e.target.value);
@@ -86,6 +90,11 @@ const UserInfo = ({handleReload, reload}) => {
         )}
         {uniqueId !== 'No data returned from the query.' && uniqueId.about_us !== null && (
             <div className={classes.form}>
+            <ProfPhotoUpload />
+            <ProfImage setSelectedImg={setSelectedImg} />
+            <PetPhotoUpload />
+            <PetImageGrid setSelectedImg={setSelectedImg} />
+            { selectedImg && <PhotoModal setSelectedImg={setSelectedImg} selectedImg={selectedImg} /> }
             <h4>Let's find puppies to play with!</h4>
             <Select
             value={filter}
@@ -246,7 +255,9 @@ const UserInfo = ({handleReload, reload}) => {
             </form>
         )}
         {!!filteredUsers.length ? (
+            <>
             <Filter filteredUsers={filteredUsers}/>
+            </>
         ) : (
             <PossibleConnections />
         )}

@@ -1,12 +1,9 @@
 import { useParams } from 'react-router-dom';
-import { useAuth0 } from "@auth0/auth0-react";
 import { useState, useEffect } from "react";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
-import AddIcon from '@material-ui/icons/Add';
-import Fab from '@material-ui/core/Fab';
-import Tooltip from '@material-ui/core/Tooltip';
 import { makeStyles } from "@material-ui/core/styles";
+import OthersProfImage from '../profPhotoStuff/OthersProfImage';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -41,6 +38,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
+
 const FullProfile = () => {
     const classes = useStyles();
     const [fullProfile, setFullProfile] = useState([]);
@@ -58,7 +56,7 @@ const FullProfile = () => {
     return (
         <div className={classes.root}>
             <div className={classes.header}>
-                <div>{fullProfile.user_img}</div>
+                <OthersProfImage fullProfile={fullProfile} />
                 <h2>
                     {fullProfile.first_name} {fullProfile.last_name}
                 </h2>

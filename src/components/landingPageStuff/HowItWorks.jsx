@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function HowItWorks() {
     const classes = useStyles();
-    const { loginWithRedirect, isAuthenticated } = useAuth0()
+    const { loginWithRedirect } = useAuth0()
 
     return (
         <div className={classes.root}>

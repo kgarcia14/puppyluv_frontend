@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useAuth0 } from '@auth0/auth0-react';
+import { Link, useParams } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
@@ -13,11 +14,10 @@ import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { pink, blue, deepPurple } from '@material-ui/core/colors';
-import FavoriteIcon from '@material-ui/icons/Favorite';
 import QuestionAnswerRoundedIcon from '@material-ui/icons/QuestionAnswerRounded';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-import FilterTransitionsModal from './FilteredFavoritesModal';
+import Styled from 'styled-components';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -49,11 +49,12 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-const FilterThumbCard = ({ fUser }) => {
+const FavoritesThumbCard = ({ favorite }) => {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
   const [showMenu, setShowMenu] = useState(false);
-  const [open, setOpen] = React.useState(false);
+  const { user } = useAuth0();
+  const { id } = useParams();
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -62,20 +63,16 @@ const FilterThumbCard = ({ fUser }) => {
   const handleMenuClick = async (event) => {
     event.preventDefault();
     setShowMenu(!showMenu);
-    console.log(fUser.user_nickname);
-  };
-
-  const handleOpen = () => {
-    setOpen(true);
+    console.log(favorite.user_nickname);
   };
 
   return (
     <Card className={classes.root}>
-        {fUser.gender === 'male' && (
+        {favorite.gender === 'male' && (
             <CardHeader
             avatar={
               <Avatar aria-label="recipe" className={classes.avatarM}>
-                {fUser.user_img}
+                {favorite.user_img}
               </Avatar>
             }
             action={
@@ -83,15 +80,15 @@ const FilterThumbCard = ({ fUser }) => {
                 <MoreVertIcon/>
               </IconButton>
             }
-            title={fUser.first_name} 
-            subheader={fUser.last_name}
+            title={favorite.first_name} 
+            subheader={favorite.last_name}
           />
         )}
-        {fUser.gender === 'female' && (
+        {favorite.gender === 'female' && (
             <CardHeader
             avatar={
               <Avatar aria-label="recipe" className={classes.avatarF}>
-                {fUser.user_img}
+                {favorite.user_img}
               </Avatar>
             }
             action={
@@ -99,15 +96,15 @@ const FilterThumbCard = ({ fUser }) => {
                 <MoreVertIcon />
               </IconButton>
             }
-            title={fUser.first_name} 
-            subheader={fUser.last_name}
+            title={favorite.first_name} 
+            subheader={favorite.last_name}
           />
         )}
-        {fUser.gender === 'other' && (
+        {favorite.gender === 'other' && (
             <CardHeader
             avatar={
               <Avatar aria-label="recipe" className={classes.avatarO}>
-                {fUser.user_img}
+                {favorite.user_img}
               </Avatar>
             }
             action={
@@ -115,12 +112,12 @@ const FilterThumbCard = ({ fUser }) => {
                 <MoreVertIcon />
               </IconButton>
             }
-            title={fUser.first_name} 
-            subheader={fUser.last_name}
+            title={favorite.first_name} 
+            subheader={favorite.last_name}
           />
         )}
         {showMenu && (
-          <Link to={`/full_profile/${fUser.id}`} style={{paddingLeft: 12, textDecoration: 'none', color: '#3f51b5'}}>View Full Profile</Link>
+          <Link to={`/full_profile/${favorite.id}`} style={{paddingLeft: 12, textDecoration: 'none', color: '#3f51b5'}}>View Full Profile</Link>
         )}
         
       <CardMedia
@@ -131,10 +128,6 @@ const FilterThumbCard = ({ fUser }) => {
       <CardContent>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon type="button" onClick={handleOpen}/>
-          <FilterTransitionsModal fUser={fUser} open={open} setOpen={setOpen}/>
-        </IconButton>
         <IconButton aria-label="start a chat">
           <QuestionAnswerRoundedIcon />
         </IconButton>
@@ -151,10 +144,10 @@ const FilterThumbCard = ({ fUser }) => {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>{fUser.about_us}</Typography>
+          <Typography paragraph>{favorite.about_us}</Typography>
         </CardContent>
       </Collapse>
     </Card>
   );
 }
-export default FilterThumbCard;
+export default FavoritesThumbCard;

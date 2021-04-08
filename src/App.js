@@ -10,7 +10,7 @@ import { CssBaseline } from '@material-ui/core';
 import FullProfile from './components/profileStuff/FullProfile';
 import PossibleConnections from './components/nonConnectedUsers/PossibleConnections';
 import MyProfile from './components/profileStuff/MyProfile';
-import MyFavorites from './components/profileStuff/MyFavorites';
+import MyFavorites from './components/favoritesStuff/MyFavorites';
 import UserInfo from './components/profileStuff/UserInfo';
 import RegisterPet2 from './components/petRegistry/RegisterPet2'
 import NearbyParksStatic from './components/mapStuff/NearbyParksStatic';
@@ -51,10 +51,10 @@ function App() {
             <MyFavorites/>
           </Route>
           <Route exact path='/pet2register'>
-            <RegisterPet2/>
+            <RegisterPet2 />
           </Route>
           <Route exact path='/nearbyparks'>
-            <NearbyParksStatic/>
+            <NearbyParksStatic />
           </Route>
         </Switch>
         <Footer/>

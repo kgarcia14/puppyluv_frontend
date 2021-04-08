@@ -3,6 +3,8 @@ import { useState } from 'react';
 import Styled from 'styled-components';
 import { Button } from '@material-ui/core';
 import { makeStyles } from "@material-ui/core/styles";
+import ProfPhotoUpload from '../profPhotoStuff/ProfPhotoUpload'
+import ProfImage from '../profPhotoStuff/ProfImage';
 
 const H2 = Styled.h2`
 text-align: center;
@@ -80,11 +82,13 @@ const UserRegister = ({ handleReload }) => {
     const [gender, setGender] = useState('');
     const [city, setCity] = useState('');
     const [zipCode, setZipCode] = useState('');
-    const [userImg, setUserImg] = useState('');
     const [numbPets, setNumbPets] = useState('');
+    const [userImg, setUserImg] = useState(null)
+    const [userEmail, setUserEmail] = useState('');
 
     const _firstNameChange = async (e) => {
         setFirstName(e.target.value)
+        setUserEmail(user.email)
         setUserNickname(user.sub)
     }
     const _lastNameChange = async (e) => {
@@ -102,10 +106,8 @@ const UserRegister = ({ handleReload }) => {
     const _zipCodeChange = async (e) => {
         setZipCode(e.target.value)
     }
-    const _userImgChange = async (e) => {
-        setUserImg(e.target.value)
-    }
-    const _numPetsChange = async (e) => {
+    const _numbPetsChange = async (e) => {
+        console.log("number of pets: ", e.target.value)
         setNumbPets(e.target.value)
     }
 
@@ -123,8 +125,9 @@ const UserRegister = ({ handleReload }) => {
                 city: city, 
                 zipcode: zipCode,
                 user_img: userImg,
+                user_email: userEmail,
                 user_nickname: userNickname,
-                numb_pets: numbPets,    
+                numb_pets: numbPets 
             })
         }).then((response) => response);
         console.log("submit user response is: ", submitResponse)
@@ -196,20 +199,13 @@ const UserRegister = ({ handleReload }) => {
                         value={zipCode}
                         onChange={_zipCodeChange}/>
                 </Label>
-                <Label>Profile Picture
-                    <Input 
-                    type="file"
-                    name="pet_img"
-                    value={userImg}
-                    onChange={_userImgChange}
-                    />
-                </Label>
+                
                 <Label>How many dogs do you have?
                     <Select
                         required
                         name="numb_pets"
                         value={numbPets}
-                        onChange={_numPetsChange}>
+                        onChange={_numbPetsChange}>
 
                         <option value=""></option>
                         <option value="1">1</option>
@@ -226,6 +222,8 @@ const UserRegister = ({ handleReload }) => {
                         Submit
                 </Button>
             </Form>
+            <ProfPhotoUpload />
+            <ProfImage />
         </div>
     )
 }

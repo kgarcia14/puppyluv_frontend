@@ -45,7 +45,7 @@ https://github.com/sean-mac1357
 - Susan Yun:
     Full-stack Developer
 https://github.com/sujjanyun
-    coding and development, front-end, design logo, Styles
+    coding and development, UX designer, front-end, design logo, Styles
 - Terrence Childs:
     Full-stack Developer
 https://github.com/tchilds11

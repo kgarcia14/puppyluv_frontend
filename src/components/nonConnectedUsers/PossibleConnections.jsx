@@ -58,7 +58,8 @@ const PossibleConnections = ({ handleOtherUserId }) => {
             const allUsersData = await fetch(apiUrl).then(response => response.json());
             setAllUsers(allUsersData)
         })();
-    },[user.sub])
+    },[user.sub]);
+    
     return (
         <Container>
           <List>
