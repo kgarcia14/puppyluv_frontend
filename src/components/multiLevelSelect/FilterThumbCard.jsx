@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { useAuth0 } from '@auth0/auth0-react';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
@@ -18,7 +17,6 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import QuestionAnswerRoundedIcon from '@material-ui/icons/QuestionAnswerRounded';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-import Styled from 'styled-components';
 import FilterTransitionsModal from './FilteredFavoritesModal';
 
 
@@ -55,8 +53,6 @@ const FilterThumbCard = ({ fUser }) => {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
   const [showMenu, setShowMenu] = useState(false);
-  const { user } = useAuth0();
-  const { id } = useParams();
   const [open, setOpen] = React.useState(false);
 
   const handleExpandClick = () => {
