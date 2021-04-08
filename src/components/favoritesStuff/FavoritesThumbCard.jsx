@@ -14,12 +14,10 @@ import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { pink, blue, deepPurple } from '@material-ui/core/colors';
-import FavoriteIcon from '@material-ui/icons/Favorite';
 import QuestionAnswerRoundedIcon from '@material-ui/icons/QuestionAnswerRounded';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Styled from 'styled-components';
-import FilterTransitionsModal from './FilteredFavoritesModal';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -57,7 +55,6 @@ const FilterThumbCard = ({ fUser }) => {
   const [showMenu, setShowMenu] = useState(false);
   const { user } = useAuth0();
   const { id } = useParams();
-  const [open, setOpen] = React.useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -67,10 +64,6 @@ const FilterThumbCard = ({ fUser }) => {
     event.preventDefault();
     setShowMenu(!showMenu);
     console.log(fUser.user_nickname);
-  };
-
-  const handleOpen = () => {
-    setOpen(true);
   };
 
   return (
@@ -135,10 +128,6 @@ const FilterThumbCard = ({ fUser }) => {
       <CardContent>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon type="button" onClick={handleOpen}/>
-          <FilterTransitionsModal fUser={fUser} open={open} setOpen={setOpen}/>
-        </IconButton>
         <IconButton aria-label="start a chat">
           <QuestionAnswerRoundedIcon />
         </IconButton>
