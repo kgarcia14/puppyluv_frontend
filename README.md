@@ -37,11 +37,11 @@ Other fun features are that you are able to select profiles of people around you
     Full-stack Developer
 https://github.com/kgarcia14
     PM/SCRUM Master
-    coding and development, Trello board, wireframing, front-end structuring
+    Coding and development, Trello board, wireframing, front-end structuring, Styling.
 - Sean McEchaern
     Full-stack Developer
 https://github.com/sean-mac1357
-    coding and development, back-end SQL DB, front-end Auth0 feature, dotENV feature. Cors, Firebase.
+    Coding and development, back-end SQL DB, front-end Auth0 feature, dotENV feature. Cors, Firebase.
 - Susan Yun:
     Full-stack Developer
 https://github.com/sujjanyun
@@ -49,7 +49,7 @@ https://github.com/sujjanyun
 - Terrence Childs:
     Full-stack Developer
 https://github.com/tchilds11
-    Coding and development, front end, chat-box design.
+    Coding and development, front-end, firebase, messaging design.
 - Hilda Robles:
     Full-stack Developer
 https://github.com/hpatrob82
