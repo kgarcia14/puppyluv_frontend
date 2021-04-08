@@ -73,8 +73,6 @@ const AboutUs = ({handleReload}) => {
                     placeholder="Tell us about you and your doggy..."
                     required></Textarea>
                 </Label>
-                <PetPhotoUpload />
-                
                 <Button 
                     className="user-register-button"
                     variant="contained" 
@@ -83,6 +81,7 @@ const AboutUs = ({handleReload}) => {
                         Submit
                 </Button>
             </Form>
+            <PetPhotoUpload />
             <PetImageGrid />
         </>
     )

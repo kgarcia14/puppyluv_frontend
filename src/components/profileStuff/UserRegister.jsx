@@ -84,9 +84,11 @@ const UserRegister = ({ handleReload }) => {
     const [zipCode, setZipCode] = useState('');
     const [numbPets, setNumbPets] = useState('');
     const [userImg, setUserImg] = useState(null)
+    const [userEmail, setUserEmail] = useState('');
 
     const _firstNameChange = async (e) => {
         setFirstName(e.target.value)
+        setUserEmail(user.email)
         setUserNickname(user.sub)
     }
     const _lastNameChange = async (e) => {
@@ -123,6 +125,7 @@ const UserRegister = ({ handleReload }) => {
                 city: city, 
                 zipcode: zipCode,
                 user_img: userImg,
+                user_email: userEmail,
                 user_nickname: userNickname,
                 numb_pets: numbPets 
             })
@@ -219,6 +222,7 @@ const UserRegister = ({ handleReload }) => {
                         Submit
                 </Button>
             </Form>
+            <ProfPhotoUpload />
             <ProfImage />
         </div>
     )
