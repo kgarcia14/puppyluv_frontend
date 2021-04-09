@@ -20,7 +20,7 @@
     "react-scripts": "^4.0.3",
     "react-scroll": "^1.8.2",
     "stream-chat": "^3.7.0",
-    "stream-chat-react": "^5.1.0",
+    "stream-chat-react": "^0.6.26",
     "styled-components": "^5.2.1",
     "web-vitals": "^1.1.1"
   },

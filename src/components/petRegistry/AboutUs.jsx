@@ -4,6 +4,8 @@ import { Button } from '@material-ui/core';
 import Styled from 'styled-components';
 import PetPhotoUpload from '../petPhotoStuff/PetPhotoUpload';
 import PetImageGrid from '../petPhotoStuff/PetImageGrid';
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
 
 const Textarea = Styled.textarea`
     border-radius: 4px;
@@ -20,6 +22,12 @@ const Textarea = Styled.textarea`
     }
 `;
 
+const H2 = Styled.h2`
+    text-align: center;
+    margin-top: 15px;
+    color: #333;
+`;
+
 const Form = Styled.form`
     display: flex;
     flex-direction: column;
@@ -31,10 +39,19 @@ const Label = Styled.label`
     flex-direction: column;
 `;
 
+const useStyles = makeStyles((theme) => ({
+    text: {
+        margin: theme.spacing(1),
+        width: '50ch',
+    },
+}));
+
 const AboutUs = ({handleReload}) => {
     const { user } = useAuth0();
     const [userNickname, setUserNickname] = useState('');
     const [aboutUs, setAboutUs] = useState('');
+    const classes = useStyles();
+
 
     const _aboutUsChange = async (e) => {
         setAboutUs(e.target.value)
@@ -62,16 +79,18 @@ const AboutUs = ({handleReload}) => {
 
     return(
         <>
+            <H2>About Us</H2>
             <Form onSubmit={_handleSubmitAboutUs}>
                 <Label>
-                    <Textarea 
-                    rows="5" 
-                    cols="47" 
+                    <TextField className={classes.text}
                     name="about_us"
+                    label="Tell us about you and your doggy..."
+                    multiline
+                    rows={4}
+                    variant="outlined"
                     value={aboutUs}
                     onChange={_aboutUsChange}
-                    placeholder="Tell us about you and your doggy..."
-                    required></Textarea>
+                    required></TextField>
                 </Label>
                 <Button 
                     className="user-register-button"

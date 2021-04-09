@@ -133,20 +133,18 @@ const Navbar = () => {
             }}>
                 <IconButton aria-label="show 4 new mails" color="primary">
                     <Badge badgeContent={4} color="secondary">
-                        <MailIcon />
+                        <ForumIcon/>
                     </Badge>
                 </IconButton>
-                <p>Messages</p>
+                <p>Chat</p>
             </MenuItem>
             <MenuItem 
                 onClick={(e) => {
                     e.preventDefault();
                     window.location.href = '/my_favorites';
                 }}>
-                <IconButton color="primary" >
-                    <Badge color="secondary">
+                <IconButton color="secondary" >
                         <FavoriteIcon />
-                    </Badge>
                 </IconButton>
                 <p>Favorites</p>
             </MenuItem>
