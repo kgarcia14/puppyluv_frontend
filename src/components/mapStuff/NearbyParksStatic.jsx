@@ -57,16 +57,14 @@ const NearbyParksStatic = () => {
     const classes = useStyles();
     const [pplace, setPPlace] = useState('');
     const [parks, setParks] = useState([]);
+    console.log('parks:', parks);
 
     const _handleSubmit = async (e) => {
         e.preventDefault();
-        const apiKey = process.env.REACT_APP_G_MAP_API_KEY
-        console.log('pplace:', pplace);
-        const apiUrl = `https://127.0.0.1:3333/proxy/${pplace}`;
-        console.log('api:', apiUrl)
+        const apiUrl = `http://127.0.0.1:3333/proxy/${pplace}`;
         const parksData = await fetch(apiUrl).then(response => response.json());
-        console.log("park data is: ", parksData);
-        setParks(parksData);
+        console.log("park data is: ", parksData.results);
+        setParks(parksData.results);
     }
 
     const _handlePPlaceChange = (e) => {
