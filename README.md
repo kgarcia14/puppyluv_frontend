@@ -63,6 +63,7 @@ https://github.com/tchilds11
 https://github.com/hpatrob82
     Coding and development, back-end Postico, ElephantSQL DB, and ReadMe file.
 
-<p align="center">
-<a href="" rel="" target="_blank"><img width="150" src="PuppyAuth.png"></a></p>
+
+<div style="text-align:center"> 
+<img width="150" src="PuppyAuth.png"></div>
 
