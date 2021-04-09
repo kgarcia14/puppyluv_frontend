@@ -12,7 +12,6 @@ import PossibleConnections from './components/nonConnectedUsers/PossibleConnecti
 import MyProfile from './components/profileStuff/MyProfile';
 import MyFavorites from './components/favoritesStuff/MyFavorites';
 import UserInfo from './components/profileStuff/UserInfo';
-import RegisterPet2 from './components/petRegistry/RegisterPet2'
 import NearbyParksStatic from './components/mapStuff/NearbyParksStatic';
 
 function App() {
@@ -28,7 +27,7 @@ function App() {
       <Router>
         <Navbar/>
 
-        <div style={{minHeight:'calc(100vh - 56px)', backgroundColor:'purple'}}>
+        <div style={{minHeight:'calc(100vh - 56px)'}}>
         <Switch>
           <Route exact path="/">
             <CssBaseline/>
@@ -51,9 +50,6 @@ function App() {
           </Route>
           <Route exact path='/my_favorites'>
             <MyFavorites/>
-          </Route>
-          <Route exact path='/pet2register'>
-            <RegisterPet2 />
           </Route>
           <Route exact path='/nearbyparks'>
             <NearbyParksStatic />

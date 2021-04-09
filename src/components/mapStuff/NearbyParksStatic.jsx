@@ -57,6 +57,7 @@ const NearbyParksStatic = () => {
     const classes = useStyles();
     const [pplace, setPPlace] = useState('');
     const [parks, setParks] = useState([]);
+    const [photos, PhotoMetadata] = useState('');
     console.log('parks:', parks);
 
     const _handleSubmit = async (e) => {
@@ -83,17 +84,19 @@ const NearbyParksStatic = () => {
                 <Card className={classes.card}>
                         {parks.map((park, index) => (
                             <Paper className={classes.paper} xs key={index}>
-                                <CardMedia
-                                className={classes.media}
-                                image={park.photos}
-                                title="Paella dish"
-                                />
+                                {park.photos.map((pic, i) => (
+                                    <CardMedia key={i}
+                                        image={pic.photo_reference}
+                                        title="Paella dish">
+                                    </CardMedia>
+                                ))}
                                 <CardContent/>
                                 <h4>{park.name}</h4>
                                 <p>{park.formatted_address}</p>
                                 <p>Rated at: {park.rating} <sup>★'s</sup></p>
                                 <CardContent/>
                             </Paper>
+
                         ))}
                 </Card>
             ) : (
