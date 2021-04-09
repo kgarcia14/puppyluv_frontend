@@ -10,10 +10,13 @@ import {
 import FavoritesThumbCard from './FavoritesThumbCard';
 
 const Container = Styled.div`
-width: 100%;
-margin: 30px auto;
+margin: 50px 20px;
 font-size: ${fontSize};
 color: ${gray2};
+
+@media (min-width: 750px) {
+  margin-top: 80px;
+}
 `;
 
 const List = Styled.ul`
@@ -60,10 +63,12 @@ const MyFavoritesList = ({favoriteUsers}) => {
                 </ListItem>
                 ))}
                 </List>
-        </Container>
+          </Container>
         ) : (
           <Container>
-            <p>You haven't favorite-ed anyone yet! Get out there and find your PuppyLuv Partner!</p>
+            <div>
+              <h3>You haven't favorite-ed anyone yet! Get out there and find your PuppyLuv Partner!</h3>
+            </div>
           </Container>
         )}
         </>
