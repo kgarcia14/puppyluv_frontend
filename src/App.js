@@ -13,6 +13,7 @@ import MyProfile from './components/profileStuff/MyProfile';
 import MyFavoritesList from './components/favoritesStuff/MyFavoritesList';
 import UserInfo from './components/profileStuff/UserInfo';
 import NearbyParksStatic from './components/mapStuff/NearbyParksStatic';
+import MyFavorites from './components/favoritesStuff/MyFavorites';
 
 function App() {
   const { isLoading } = useAuth0();
@@ -49,7 +50,7 @@ function App() {
             <UserInfo/>
           </Route>
           <Route exact path='/my_favorites'>
-            <MyFavoritesList/>
+            <MyFavorites/>
           </Route>
           <Route exact path='/nearbyparks'>
             <NearbyParksStatic />

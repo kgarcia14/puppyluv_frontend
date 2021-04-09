@@ -6,21 +6,7 @@ import PetPhotoUpload from '../petPhotoStuff/PetPhotoUpload';
 import PetImageGrid from '../petPhotoStuff/PetImageGrid';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-
-const Textarea = Styled.textarea`
-    border-radius: 4px;
-    width: 300px;
-    
-    @media (min-width: 370px) {
-        width: 350px;
-    }
-    @media (min-width: 410px) {
-        width: 350px;
-    }
-    @media (min-width: 750px) {
-        width: 500px;
-    }
-`;
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 const H2 = Styled.h2`
     text-align: center;
@@ -32,6 +18,7 @@ const Form = Styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 72vh;
 `;
 
 const Label = Styled.label`
@@ -42,7 +29,7 @@ const Label = Styled.label`
 const useStyles = makeStyles((theme) => ({
     text: {
         margin: theme.spacing(1),
-        width: '50ch',
+        width: '325px',
     },
 }));
 
