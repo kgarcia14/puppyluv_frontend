@@ -129,6 +129,7 @@ const FilterThumbCard = ({ fUser }) => {
         title="Paella dish"
       />
       <CardContent>
+        <FilterThumbCard fUser={fUser} />
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">

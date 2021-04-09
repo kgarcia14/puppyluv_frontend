@@ -18,6 +18,8 @@ import QuestionAnswerRoundedIcon from '@material-ui/icons/QuestionAnswerRounded'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import TransitionsModal from './FavoritesModal';
+import ChatModal from '../messageStuff/ChatModal'
+import OthersThumbPhoto from './OthersThumbPhoto';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -54,6 +56,7 @@ const UserThumbCard = ({ allUser }) => {
   const [expanded, setExpanded] = React.useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [open, setOpen] = React.useState(false);
+  const [chatOpen, setChatOpen] = useState(false)
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -66,6 +69,9 @@ const UserThumbCard = ({ allUser }) => {
 
   const handleOpen = () => {
     setOpen(true);
+  };
+  const handleChatOpen = () => {
+    setChatOpen(true);
   };
 
   return (
@@ -128,6 +134,7 @@ const UserThumbCard = ({ allUser }) => {
         title="Paella dish"
       />
       <CardContent>
+        <OthersThumbPhoto allUser={allUser} />
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
@@ -135,7 +142,8 @@ const UserThumbCard = ({ allUser }) => {
           <TransitionsModal allUser={allUser} open={open} setOpen={setOpen}/>
         </IconButton>
         <IconButton aria-label="start a chat">
-          <QuestionAnswerRoundedIcon />
+          <QuestionAnswerRoundedIcon type="button" onClick={handleChatOpen}/>
+          <ChatModal allUser={allUser} chatOpen={chatOpen} setChatOpen={setChatOpen} />
         </IconButton>
         <IconButton
           className={clsx(classes.expand, {
