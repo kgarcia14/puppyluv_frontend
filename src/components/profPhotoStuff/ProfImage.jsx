@@ -9,7 +9,7 @@ const ProfImage = ({ setSelectedImg }) => {
     console.log(docs);
 
     return(
-        <div className="Prof-img">
+        <div className="Prof-img" >
             { docs && docs.map(doc => (
                 <motion.div 
                     className="img-wrap" 
@@ -20,8 +20,8 @@ const ProfImage = ({ setSelectedImg }) => {
                     <motion.img 
                         src={doc.url} 
                         alt="uploaded pic"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
+                        initial={{ opacity: 2 }}
+                        animate={{ opacity: 2 }}
                         transition={{ delay: 1 }} />
                 </motion.div>
             ))}
