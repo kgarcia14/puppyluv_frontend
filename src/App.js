@@ -13,7 +13,6 @@ import MyProfile from './components/profileStuff/MyProfile';
 import MyFavorites from './components/favoritesStuff/MyFavorites';
 import UserInfo from './components/profileStuff/UserInfo';
 import NearbyParksStatic from './components/mapStuff/NearbyParksStatic';
-import MyFavorites from './components/favoritesStuff/MyFavorites';
 
 function App() {
   const { isLoading } = useAuth0();
