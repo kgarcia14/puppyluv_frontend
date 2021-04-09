@@ -4,6 +4,7 @@ import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import OthersProfImage from '../profPhotoStuff/OthersProfImage';
+import OtherPetImgGrid from '../petPhotoStuff/OtherPetImgGrid';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -66,6 +67,7 @@ const FullProfile = () => {
                 <p>{fullProfile.about_us}</p>
             </div>
             <h4>My Pets</h4>
+            <OtherPetImgGrid fullProfile={fullProfile} />
             <div className={classes.profile}>
             {fullProfile.numb_pets === 1 && (
                 <Grid container spacing={3}>
