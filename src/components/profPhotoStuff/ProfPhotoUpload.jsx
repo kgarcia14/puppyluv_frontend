@@ -1,5 +1,15 @@
 import React, {useState} from 'react';
 import ProfProgressBar from './ProfProgressBar';
+import Styled from 'styled-components';
+
+const Label = Styled.label`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
+const Div = Styled.div`
+`;
 
 const PetPhotoUpload = () => {
     const [image, setImage] = useState(null);
@@ -21,19 +31,22 @@ const PetPhotoUpload = () => {
 
     return (
         <form>
-            <label>
+            <Label>
                 Upload a profile picture
+            <Div>
             <input 
                 type="file" 
                 onChange={handleChange} />
-            <div 
-                className="output">
+            
+            <div className="output">
                 { error && <div className="error">{ error }</div> }
                 { image && <div>{ image.name }</div> }
                 { image && <ProfProgressBar image={image} setImage={setImage} /> }
             </div>
-            </label>
+            </Div>
+            </Label>
         </form>
+        
     )
 }
 export default PetPhotoUpload;
