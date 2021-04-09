@@ -86,7 +86,7 @@ const NearbyParksStatic = () => {
                             <Paper className={classes.paper} xs key={index}>
                                 {park.photos.map((pic, i) => (
                                     <CardMedia key={i}
-                                        image={pic.photo_reference}
+                                        image={{uri: pic.html_attributions}}
                                         title="Paella dish">
                                     </CardMedia>
                                 ))}
