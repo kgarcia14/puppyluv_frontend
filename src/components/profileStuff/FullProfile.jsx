@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: "30px",
         marginTop: "30px",
         paddingBottom: '30px',
-        minHeight: '80vh',
+        minHeight: '100vh',
     },
     header: {
         paddingTop: "30px",
@@ -56,13 +56,13 @@ const FullProfile = () => {
         <div className={classes.root}>
             <div className={classes.header}>
                 <OthersProfImage fullProfile={fullProfile} />
-                <h2>
-                    {fullProfile.first_name} {fullProfile.last_name}
-                </h2>
-                <p>
-                    {fullProfile.age} {fullProfile.gender}, {fullProfile.city}
-                </p>
-                <p>{fullProfile.about_us}</p>
+                    <h2>
+                        {fullProfile.first_name} {fullProfile.last_name}
+                    </h2>
+                    <p>
+                        {fullProfile.age} {fullProfile.gender}, {fullProfile.city}
+                    </p>
+                    <p>{fullProfile.about_us}</p>
             </div>
             <h4>My Pets</h4>
             
@@ -72,7 +72,7 @@ const FullProfile = () => {
                     <Grid item xs>
                         <Paper className={classes.paper}>
                             <h4>{fullProfile.pet_name1}</h4>
-                            <p>{fullProfile.pet_breed1}, {fullProfile.pet_age1}</p>
+                            <p>{fullProfile.pet_breed1}, {fullProfile.pet_age1} yrs old</p>
                             <p>{fullProfile.pet_personality1}</p>
                         </Paper>
                     </Grid>
@@ -85,14 +85,14 @@ const FullProfile = () => {
                         <Grid item xs>
                             <Paper className={classes.paper}>
                                 <h4>{fullProfile.pet_name1}</h4>
-                                <p>{fullProfile.pet_breed1}, {fullProfile.pet_age1}</p>
+                                <p>{fullProfile.pet_breed1}, {fullProfile.pet_age1} yrs old</p>
                                 <p>{fullProfile.pet_personality1}</p>
                             </Paper>
                         </Grid>
                         <Grid item xs>
                             <Paper className={classes.paper}>
                                 <h4>{fullProfile.pet_name2}</h4>
-                                <p>{fullProfile.pet_breed2}, {fullProfile.pet_age2}</p>
+                                <p>{fullProfile.pet_breed2}, {fullProfile.pet_age2} yrs old</p>
                                 <p>{fullProfile.pet_personality2}</p>
                             </Paper>
                         </Grid>
@@ -106,21 +106,21 @@ const FullProfile = () => {
                     <Grid item xs>
                         <Paper className={classes.paper}>
                             <h4>{fullProfile.pet_name1}</h4>
-                            <p>{fullProfile.pet_breed1}, {fullProfile.pet_age1}</p>
+                            <p>{fullProfile.pet_breed1}, {fullProfile.pet_age1} yrs old</p>
                             <p>{fullProfile.pet_personality1}</p>
                         </Paper>
                     </Grid>
                     <Grid item xs>
                         <Paper className={classes.paper}>
                             <h4>{fullProfile.pet_name2}</h4>
-                            <p>{fullProfile.pet_breed2}, {fullProfile.pet_age2}</p>
+                            <p>{fullProfile.pet_breed2}, {fullProfile.pet_age2} yrs old</p>
                             <p>{fullProfile.pet_personality2}</p>
                         </Paper>
                     </Grid>
                     <Grid item xs>
                         <Paper className={classes.paper}>
                             <h4>{fullProfile.pet_name3}</h4>
-                            <p>{fullProfile.pet_breed3}, {fullProfile.pet_age3}</p>
+                            <p>{fullProfile.pet_breed3}, {fullProfile.pet_age3} yrs old</p>
                             <p>{fullProfile.pet_personality3}</p>
                         </Paper>
                     </Grid>
