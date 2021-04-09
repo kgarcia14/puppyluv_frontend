@@ -62,7 +62,7 @@ export default function HowItWorks() {
                     </div>
                     <span className={classes.number}>1. </span><span>Register and Login!</span>
                     </h4>
-                    <p>Elsewhere, registering is RUFF. Login the easy way using our safe and secure system. Fill in some basic information and let us know WHO YOU ARE and WHO YOUR PET IS.</p>
+                    <p>Register and login the easy way using our safe and secure system. Fill in some basic information and let us know WHO YOU ARE and WHO YOUR PET IS.</p>
                     </Paper>
                 </Grid>
                 <Grid item xs>

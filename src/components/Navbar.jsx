@@ -20,9 +20,14 @@ const useStyles = makeStyles((theme) => ({
         fontFamily: 'Cabin',
         flexGrow: 1,
         fontColor: '#585459',
+        overflow: 'hidden',
+        top: '0',
+        width: '100vw',
+        position: 'fixed',
+        zIndex: '500',
     },
     appbar: {
-        background: 'none',
+        background: 'white',
     },
     appbarTitle: {
         flexGrow: '1',
@@ -54,6 +59,7 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.up('md')]: {
             display: 'none',
         },
+
         
     },
 }));
@@ -202,7 +208,7 @@ const Navbar = () => {
                                         e.preventDefault();
                                         window.location.href = '/my_favorites';
                                 }}>
-                                <IconButton color="primary">
+                                <IconButton color="secondary">
                                     <Badge color="secondary">
                                         <FavoriteIcon />
                                     </Badge>
