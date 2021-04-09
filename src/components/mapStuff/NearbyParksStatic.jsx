@@ -60,7 +60,6 @@ const NearbyParksStatic = () => {
 
     const _handleSubmit = async (e) => {
         e.preventDefault();
-        const apiKey = process.env.REACT_APP_G_MAP_API_KEY
         console.log('pplace:', pplace);
         const apiUrl = `https://127.0.0.1:3333/proxy/${pplace}`;
         console.log('api:', apiUrl)
