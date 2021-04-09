@@ -12,9 +12,14 @@ const H2 = Styled.h2`
 const Form = Styled.form`
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    min-height: 77vh;
+    min-height: 70vh;
+
+    @media (min-width: 370px) {
+        min-height: 80vh;
+    }
+    @media (min-width: 750px) {
+    }
 `;
 
 const Label = Styled.label`

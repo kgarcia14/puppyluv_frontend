@@ -86,6 +86,7 @@ const MyProfile = ({ handleReload, reload }) => {
 
     return (
         <div className={classes.root}>
+            <ProfPhotoUpload />
             <div className={classes.header}>
                 <Grid className={classes.pic}>
                     <Grid item xs>

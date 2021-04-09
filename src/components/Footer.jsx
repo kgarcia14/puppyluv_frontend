@@ -2,7 +2,7 @@ import React from 'react';
 import { useHistory } from "react-router-dom";
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
-import { Typography, Link } from "@material-ui/core";
+import { Typography, Link, Toolbar } from "@material-ui/core";
 import classNames from 'classnames'
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
@@ -10,15 +10,15 @@ import RestoreIcon from '@material-ui/icons/Restore';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import { useAuth0 } from '@auth0/auth0-react';
-import { FixedHeightMessage } from 'stream-chat-react';
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
         overflowX: 'hidden',
         fontFamily: 'Cabin',
         fontSize: '10px',
-        bottom: 0,
-        width: '100%',
+        bottom: '0',
+        width: '100vw',
         textAlign: 'center',
     },
     footerSections: {
@@ -58,13 +58,12 @@ const useStyles = makeStyles((theme) => ({
     },
     sectionMobile: {
         display: 'flex',
-        backgroundColor: 'transparent',
         [theme.breakpoints.up('md')]: {
             display: 'none',
         },
     },
     bottomNav: {
-        width: '100%',
+        width: '100vw',
         position: 'fixed',
         bottom: 0,
     }
