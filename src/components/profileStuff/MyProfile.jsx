@@ -17,12 +17,10 @@ const useStyles = makeStyles((theme) => ({
         fontFamily: "Cabin",
         textAlign: "center",
         backgroundColor: "pink",
-        marginLeft: "30px",
-        marginRight: "30px",
         marginBottom: "30px",
         marginTop: "30px",
         paddingBottom: '30px',
-        minHeight: '80vh',
+        minHeight: '100vh',
     },
     boot: {
         display: "block",
@@ -57,12 +55,6 @@ const useStyles = makeStyles((theme) => ({
         padding: theme.spacing(2),
         textAlign: 'center',
         border: '2px #e75480 solid',
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginLeft: '30px',
-        marginRight: '30px',
-        marginBottom: '30px',
-        marginTop: '30px',
     },
 }));
 
@@ -92,60 +84,75 @@ const MyProfile = ({ handleReload, reload }) => {
                         <ProfImage setSelectedImg={setSelectedImg} />
                     </Grid>
                 </Grid>
-                <Paper className={classes.paper}>
                 <h2>{uniqueId.first_name} {uniqueId.last_name}</h2>
                 <p>{uniqueId.age} {uniqueId.gender}, {uniqueId.city}</p>
                 <p>{uniqueId.about_us}</p>
-                </Paper>
             </div>
             <h3>My Pets</h3>
             <div className={classes.boot}>
             <PetImageGrid setSelectedImg={setSelectedImg} />
             { selectedImg && <PhotoModal setSelectedImg={setSelectedImg} selectedImg={selectedImg} /> }
             <div className={classes.profile}>
-                {!!uniqueId.pet_name1 && uniqueId.pet_name2 === null ? (
+                {uniqueId.numb_pets === 1 &&(
                     <Grid container spacing={3}>
                         <Grid item xs>
                             <Paper className={classes.paper}>
                                 <h4>{uniqueId.pet_name1}</h4>
-                                <p>{uniqueId.pet_breed1}, {uniqueId.pet_age1}</p>
+                                <p>{uniqueId.pet_breed1}, {uniqueId.pet_age1} yrs old</p>
                                 <p>{uniqueId.pet_personality1}</p>
                             </Paper>
                         </Grid>
                     </Grid>
-                ) : (
-                    <>
-                    </>
                 )}
 
-                {!!uniqueId.pet_name2 && uniqueId.pet_name3 === null ? (
-                    <Grid container spacing={3}>
-                        <Grid item xs>
-                            <Paper className={classes.paper}>
-                                <h4>{uniqueId.pet_name2}</h4>
-                                <p>{uniqueId.pet_breed2}, {uniqueId.pet_age2}</p>
-                                <p>{uniqueId.pet_personality2}</p>
-                            </Paper>
-                        </Grid>
-                    </Grid>
-                    ) : (
+                    {uniqueId.numb_pets === 2 && (
                         <>
+                            <Grid container spacing={3}>
+                                <Grid item xs>
+                                    <Paper className={classes.paper}>
+                                        <h4>{uniqueId.pet_name1}</h4>
+                                        <p>{uniqueId.pet_breed1}, {uniqueId.pet_age1} yrs old</p>
+                                        <p>{uniqueId.pet_personality1}</p>
+                                    </Paper>
+                                </Grid>
+                                <Grid item xs>
+                                    <Paper className={classes.paper}>
+                                        <h4>{uniqueId.pet_name2}</h4>
+                                        <p>{uniqueId.pet_breed2}, {uniqueId.pet_age2} yrs old</p>
+                                        <p>{uniqueId.pet_personality2}</p>
+                                    </Paper>
+                                </Grid>
+                            </Grid>
                         </>
                     )}
-                    {!!uniqueId.pet_name3 ? (
-                    <Grid container spacing={3}>
-                        <Grid item xs>
-                            <Paper className={classes.paper}>
-                                <h4>{uniqueId.pet_name3}</h4>
-                                <p>{uniqueId.pet_breed3}, {uniqueId.pet_age3}</p>
-                                <p>{uniqueId.pet_personality3}</p>
-                            </Paper>
-                        </Grid>
-                    </Grid>
-                ) : (
-                    <>
-                    </>
-                )}
+                    
+                    {uniqueId.numb_pets === 3 && (
+                        <>
+                            <Grid container spacing={3}>
+                                <Grid item xs>
+                                    <Paper className={classes.paper}>
+                                        <h4>{uniqueId.pet_name1}</h4>
+                                        <p>{uniqueId.pet_breed1}, {uniqueId.pet_age1} yrs old</p>
+                                        <p>{uniqueId.pet_personality1}</p>
+                                    </Paper>
+                                </Grid>
+                                <Grid item xs>
+                                    <Paper className={classes.paper}>
+                                        <h4>{uniqueId.pet_name2}</h4>
+                                        <p>{uniqueId.pet_breed2}, {uniqueId.pet_age2} yrs old</p>
+                                        <p>{uniqueId.pet_personality2}</p>
+                                    </Paper>
+                                </Grid>
+                                <Grid item xs>
+                                    <Paper className={classes.paper}>
+                                        <h4>{uniqueId.pet_name3}</h4>
+                                        <p>{uniqueId.pet_breed3}, {uniqueId.pet_age3} yrs old</p>
+                                        <p>{uniqueId.pet_personality3}</p>
+                                    </Paper>
+                                </Grid>
+                            </Grid>
+                        </>
+                    )}
             </div>
             </div>
         </div>

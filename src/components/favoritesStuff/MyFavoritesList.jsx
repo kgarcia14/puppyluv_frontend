@@ -55,7 +55,7 @@ const MyFavoritesList = ({favoriteUsers}) => {
     return (
         <>
         {!!favoriteUsers && (
-            <Container>
+          <Container>
                 <List>
                 {favoriteUsers.map((favorite, index) => (
                 <ListItem key={index}>
