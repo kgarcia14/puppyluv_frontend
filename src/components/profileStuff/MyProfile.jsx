@@ -62,6 +62,7 @@ const MyProfile = ({ handleReload, reload }) => {
 
     return (
         <div className={classes.root}>
+            <ProfPhotoUpload />
             <div className={classes.header}>
                 <ProfImage setSelectedImg={setSelectedImg} />
                 <h2>

@@ -14,8 +14,6 @@ const useStyles = makeStyles((theme) => ({
         fontFamily: "Cabin",
         textAlign: "center",
         backgroundColor: "pink",
-        marginLeft: "30px",
-        marginRight: "30px",
         marginBottom: "30px",
         marginTop: "30px",
         paddingBottom: '30px',
@@ -67,7 +65,7 @@ const FullProfile = () => {
                 <p>{fullProfile.about_us}</p>
             </div>
             <h4>My Pets</h4>
-            <OtherPetImgGrid fullProfile={fullProfile} />
+            
             <div className={classes.profile}>
             {fullProfile.numb_pets === 1 && (
                 <Grid container spacing={3}>
@@ -130,6 +128,7 @@ const FullProfile = () => {
                 </>
             )}
             </div>
+            <OtherPetImgGrid fullProfile={fullProfile} />
         </div>
     )
 }

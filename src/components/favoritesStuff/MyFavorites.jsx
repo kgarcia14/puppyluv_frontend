@@ -30,7 +30,9 @@ const MyFavorites = ({ handleReload, reload }) => {
         {!!favoriteUsers.length ? (
             <MyFavoritesList favoriteUsers={favoriteUsers} />
         ) : (
-            <h1>hiii</h1>
+            <div>
+            <p>Go favorite some people!</p>
+            </div>
         )}
         </>
     );

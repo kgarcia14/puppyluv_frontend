@@ -90,11 +90,6 @@ const UserInfo = ({handleReload, reload}) => {
         )}
         {uniqueId !== 'No data returned from the query.' && uniqueId.about_us !== null && (
             <div className={classes.form}>
-            <ProfPhotoUpload />
-            <ProfImage setSelectedImg={setSelectedImg} />
-            <PetPhotoUpload />
-            <PetImageGrid setSelectedImg={setSelectedImg} />
-            { selectedImg && <PhotoModal setSelectedImg={setSelectedImg} selectedImg={selectedImg} /> }
             <h4>Let's find puppies to play with!</h4>
             <Select
             value={filter}

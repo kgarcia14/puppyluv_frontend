@@ -17,7 +17,8 @@ const ProfImage = ({ setSelectedImg }) => {
                     whileHover={{ opacity: 1 }}
                     layout
                     onClick={() => setSelectedImg(doc.url)}>
-                    <motion.img 
+                    <motion.img
+                        className="profile-pic"
                         src={doc.url} 
                         alt="uploaded pic"
                         initial={{ opacity: 2 }}
