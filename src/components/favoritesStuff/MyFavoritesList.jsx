@@ -54,7 +54,7 @@ const MyFavoritesList = ({favoriteUsers}) => {
 
     return (
         <>
-        {!!favoriteUsers ? (
+        {!!favoriteUsers && (
             <Container>
                 <List>
                 {favoriteUsers.map((favorite, index) => (
@@ -63,12 +63,6 @@ const MyFavoritesList = ({favoriteUsers}) => {
                 </ListItem>
                 ))}
                 </List>
-          </Container>
-        ) : (
-          <Container>
-            <div>
-              <h3>You haven't favorite-ed anyone yet! Get out there and find your PuppyLuv Partner!</h3>
-            </div>
           </Container>
         )}
         </>

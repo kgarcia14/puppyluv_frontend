@@ -18,6 +18,7 @@ import QuestionAnswerRoundedIcon from '@material-ui/icons/QuestionAnswerRounded'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Styled from 'styled-components';
+import FavoritesThumbPhoto from './FavoritesThumbPhoto';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -119,13 +120,8 @@ const FavoritesThumbCard = ({ favorite }) => {
         {showMenu && (
           <Link to={`/full_profile/${favorite.id}`} style={{paddingLeft: 12, textDecoration: 'none', color: '#3f51b5'}}>View Full Profile</Link>
         )}
-        
-      <CardMedia
-        className={classes.media}
-        image="/static/images/cards/paella.jpg"
-        title="Paella dish"
-      />
       <CardContent>
+        <FavoritesThumbPhoto favorite={favorite} />
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="start a chat">

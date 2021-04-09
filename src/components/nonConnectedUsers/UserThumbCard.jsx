@@ -127,12 +127,6 @@ const UserThumbCard = ({ allUser }) => {
         {showMenu && (
           <Link to={`/full_profile/${allUser.id}`} style={{paddingLeft: 12, textDecoration: 'none', color: '#3f51b5'}}>View Full Profile</Link>
         )}
-        
-      <CardMedia
-        className={classes.media}
-        image="/static/images/cards/paella.jpg"
-        title="Paella dish"
-      />
       <CardContent>
         <OthersThumbPhoto allUser={allUser} />
       </CardContent>

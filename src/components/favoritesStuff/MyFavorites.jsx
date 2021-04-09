@@ -15,6 +15,7 @@ const MyFavorites = ({ handleReload, reload }) => {
     const classes = useStyles();
     const { user } = useAuth0();
     const [favoriteUsers, setFavoriteUsers] = useState([]);
+    console.log("favorites are: ", favoriteUsers)
     
     useEffect(() => {
         (async () => {
