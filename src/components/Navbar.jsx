@@ -202,7 +202,7 @@ const Navbar = () => {
                                         e.preventDefault();
                                         window.location.href = '/my_favorites';
                                 }}>
-                                <IconButton color="primary">
+                                <IconButton color="secondary">
                                     <Badge color="secondary">
                                         <FavoriteIcon />
                                     </Badge>
