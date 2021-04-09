@@ -57,15 +57,15 @@ const NearbyParksStatic = () => {
     const classes = useStyles();
     const [pplace, setPPlace] = useState('');
     const [parks, setParks] = useState([]);
+    const [photos, PhotoMetadata] = useState('');
+    console.log('parks:', parks);
 
     const _handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('pplace:', pplace);
-        const apiUrl = `https://127.0.0.1:3333/proxy/${pplace}`;
-        console.log('api:', apiUrl)
+        const apiUrl = `http://127.0.0.1:3333/proxy/${pplace}`;
         const parksData = await fetch(apiUrl).then(response => response.json());
-        console.log("park data is: ", parksData);
-        setParks(parksData);
+        console.log("park data is: ", parksData.results);
+        setParks(parksData.results);
     }
 
     const _handlePPlaceChange = (e) => {
@@ -84,17 +84,19 @@ const NearbyParksStatic = () => {
                 <Card className={classes.card}>
                         {parks.map((park, index) => (
                             <Paper className={classes.paper} xs key={index}>
-                                <CardMedia
-                                className={classes.media}
-                                image={park.photos}
-                                title="Paella dish"
-                                />
+                                {park.photos.map((pic, i) => (
+                                    <CardMedia key={i}
+                                        image={{uri: pic.html_attributions}}
+                                        title="Paella dish">
+                                    </CardMedia>
+                                ))}
                                 <CardContent/>
                                 <h4>{park.name}</h4>
                                 <p>{park.formatted_address}</p>
                                 <p>Rated at: {park.rating} <sup>★'s</sup></p>
                                 <CardContent/>
                             </Paper>
+
                         ))}
                 </Card>
             ) : (

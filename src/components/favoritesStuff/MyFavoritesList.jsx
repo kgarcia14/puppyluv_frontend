@@ -62,7 +62,9 @@ const MyFavoritesList = ({favoriteUsers}) => {
                 </List>
         </Container>
         ) : (
-            <p>You Haven't favorited anyone yet get out there and find your PuppyLuv Partner!</p>
+          <Container>
+            <p>You haven't favorite-ed anyone yet! Get out there and find your PuppyLuv Partner!</p>
+          </Container>
         )}
         </>
     )

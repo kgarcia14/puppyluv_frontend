@@ -24,8 +24,26 @@ const useStyles = makeStyles((theme) => ({
         paddingBottom: '30px',
         minHeight: '80vh',
     },
+    boot: {
+        display: "block",
+        justifyContent: "center",
+        alignItems: "center",
+        fontFamily: "Cabin",
+        textAlign: "center",
+        backgroundColor: "pink",
+        marginLeft: "30px",
+        marginRight: "30px",
+        marginBottom: "30px",
+        marginTop: "30px",
+        minHeight: '80vh',
+    },
     header: {
         paddingTop: "30px",
+        marginLeft: '30px',
+        marginRight: '30px',
+        justifyContent: "center",
+        alignItems: "center",
+        textAlign: "center",
     },
     profile: {
         flexGrow: 1,
@@ -39,6 +57,12 @@ const useStyles = makeStyles((theme) => ({
         padding: theme.spacing(2),
         textAlign: 'center',
         border: '2px #e75480 solid',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginLeft: '30px',
+        marginRight: '30px',
+        marginBottom: '30px',
+        marginTop: '30px',
     },
 }));
 
@@ -62,17 +86,21 @@ const MyProfile = ({ handleReload, reload }) => {
 
     return (
         <div className={classes.root}>
+            <ProfPhotoUpload />
             <div className={classes.header}>
-                <ProfImage setSelectedImg={setSelectedImg} />
-                <h2>
-                    {uniqueId.first_name} {uniqueId.last_name}
-                </h2>
-                <p>
-                    {uniqueId.age} {uniqueId.gender}, {uniqueId.city}
-                </p>
+                <Grid className={classes.pic}>
+                    <Grid item xs>
+                        <ProfImage setSelectedImg={setSelectedImg} />
+                    </Grid>
+                </Grid>
+                <Paper className={classes.paper}>
+                <h2>{uniqueId.first_name} {uniqueId.last_name}</h2>
+                <p>{uniqueId.age} {uniqueId.gender}, {uniqueId.city}</p>
                 <p>{uniqueId.about_us}</p>
+                </Paper>
             </div>
-            <h4>My Pets</h4>
+            <h3>My Pets</h3>
+            <div className={classes.boot}>
             <PetImageGrid setSelectedImg={setSelectedImg} />
             { selectedImg && <PhotoModal setSelectedImg={setSelectedImg} selectedImg={selectedImg} /> }
             <div className={classes.profile}>
@@ -119,6 +147,7 @@ const MyProfile = ({ handleReload, reload }) => {
                     <>
                     </>
                 )}
+            </div>
             </div>
         </div>
     );
