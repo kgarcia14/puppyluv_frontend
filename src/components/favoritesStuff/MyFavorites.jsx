@@ -3,6 +3,18 @@ import { useState, useEffect } from "react";
 import Paper from "@material-ui/core/Paper";
 import { makeStyles } from "@material-ui/core/styles";
 import MyFavoritesList from "./MyFavoritesList";
+import Styled from 'styled-components';
+import { fontSize, gray2 } from '../nonConnectedUsers/styles/Styles';
+
+const Div = Styled.div`
+margin: 50px 20px;
+font-size: ${fontSize};
+color: ${gray2};
+
+@media (min-width: 750px) {
+  margin-top: 80px;
+}
+`;
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -15,6 +27,7 @@ const MyFavorites = ({ handleReload, reload }) => {
     const classes = useStyles();
     const { user } = useAuth0();
     const [favoriteUsers, setFavoriteUsers] = useState([]);
+    console.log("favorites are: ", favoriteUsers)
     
     useEffect(() => {
         (async () => {
@@ -30,7 +43,9 @@ const MyFavorites = ({ handleReload, reload }) => {
         {!!favoriteUsers.length ? (
             <MyFavoritesList favoriteUsers={favoriteUsers} />
         ) : (
-            <h1>Go favorite some people!</h1>
+            <Div>
+                <h3>You haven't favorite-ed anyone yet! Get out there and find your PuppyLuv Partner!</h3>
+            </Div>
         )}
         </>
     );

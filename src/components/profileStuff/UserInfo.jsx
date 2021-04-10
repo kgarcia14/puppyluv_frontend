@@ -9,11 +9,6 @@ import Select from '@material-ui/core/Select';
 import Icon from '@material-ui/core/Icon';
 import Button from '@material-ui/core/Button';
 import React from 'react';
-import PetPhotoUpload from '../petPhotoStuff/PetPhotoUpload';
-import PetImageGrid from '../petPhotoStuff/PetImageGrid';
-import PhotoModal from '../petPhotoStuff/PhotoModal';
-import ProfPhotoUpload from '../profPhotoStuff/ProfPhotoUpload';
-import ProfImage from '../profPhotoStuff/ProfImage';
 
 const useStyles = makeStyles((theme) => ({
     root: {

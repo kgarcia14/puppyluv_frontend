@@ -12,14 +12,9 @@ const H2 = Styled.h2`
 const Form = Styled.form`
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    min-height: 70vh;
-
-    @media (min-width: 370px) {
-        min-height: 80vh;
-    }
-    @media (min-width: 750px) {
-    }
+    min-height: 90vh;
 `;
 
 const Label = Styled.label`
@@ -117,8 +112,8 @@ const RegisterPet3 = ({ handleReload, pet1, pet2, pet3 }) => {
         <>
         {pet1 !== null && pet2 !== null && pet3 === null ? (
             <>
-            <H2>Dog 3</H2>
             <Form onSubmit={_handleSubmitPetInfo}>
+                <H2>Dog 3</H2>
                 <Label>Dog Name
                     <Input
                         required
