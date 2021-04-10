@@ -1,5 +1,3 @@
-import { useState, useEffect } from 'react'
-import { useAuth0 } from '@auth0/auth0-react';
 import Styled from 'styled-components';
 import {
     fontSize,

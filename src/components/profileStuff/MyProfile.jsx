@@ -90,7 +90,7 @@ const MyProfile = ({ handleReload, reload }) => {
             </div>
             <h3>My Pets</h3>
             <div className={classes.boot}>
-            <PetImageGrid setSelectedImg={setSelectedImg} />
+            
             { selectedImg && <PhotoModal setSelectedImg={setSelectedImg} selectedImg={selectedImg} /> }
             <div className={classes.profile}>
                 {uniqueId.numb_pets === 1 &&(
@@ -154,6 +154,7 @@ const MyProfile = ({ handleReload, reload }) => {
                         </>
                     )}
             </div>
+            <PetImageGrid setSelectedImg={setSelectedImg} />
             </div>
         </div>
     );
