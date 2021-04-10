@@ -6,7 +6,7 @@ import useWindowPosition from "../../hook/useWindowPosition";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    minHeight: "100vh",
+    minHeight: "70vh",
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: 'pink',
@@ -23,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
       flexDirection: "column",
     },
     justifyContent: "center",
+    alignItems: "center",
   },
 }));
 
