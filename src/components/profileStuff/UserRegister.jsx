@@ -195,6 +195,7 @@ const UserRegister = ({ handleReload }) => {
                         onChange={_cityChange}>
                             <option value=""></option>
                             <option value="Atlanta">Atlanta</option>
+                            <option value="Houston">Houston</option>
                     </Select>
                 </Label>
                 <Label>Zip Code 

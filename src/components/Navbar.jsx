@@ -190,15 +190,13 @@ const Navbar = () => {
                             <div className={classes.sectionDesktop}>
                                 <span className={classes.luv}>Logged in as: {user.nickname}</span>
                                 <Tooltip 
-                                    title="Chat"  
+                                    title="Nearby Parks"  
                                     onClick={(e) => {
                                         e.preventDefault();
-                                        window.location.href = '/Chatbox';
+                                        window.location.href = '/nearbyparks';
                                 }}>
-                                <IconButton color="primary" aria-label="show 4 new mails" color="primary">
-                                    <Badge badgeContent={4} color="secondary">
-                                        <ForumIcon/>
-                                    </Badge>
+                                <IconButton color="primary">
+                                        <LocationOnIcon/>
                                 </IconButton>
                                 </Tooltip>
                                 <Tooltip 
