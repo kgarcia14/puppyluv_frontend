@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Profile from './components/profileStuff/Profile';
 import Navbar from "./components/Navbar";
 import Footer from './components/Footer';
-import Chatbox from './components/Chatbox';
 import { CssBaseline } from '@material-ui/core';
 import FullProfile from './components/profileStuff/FullProfile';
 import PossibleConnections from './components/nonConnectedUsers/PossibleConnections';
@@ -28,33 +27,30 @@ function App() {
         <Navbar/>
 
         <div style={{minHeight:'calc(100vh - 56px)'}}>
-        <Switch>
-          <Route exact path="/">
-            <CssBaseline/>
-            <Profile />
-          </Route>
-          <Route exact path="/chatbox">
-            <Chatbox component={Chatbox} />
-          </Route>
-          <Route exact path="/possible_connections">
-            <PossibleConnections handleOtherUserId={_handleOtherUserId}/>
-          </Route>
-          <Route exact path="/full_profile/:otherUserId">
-            <FullProfile otherUserId={otherUserId}/>
-          </Route>
-          <Route exact path='/my_profile'>
-            <MyProfile/>
-          </Route>
-          <Route exact path='/home'>
-            <UserInfo/>
-          </Route>
-          <Route exact path='/my_favorites'>
-            <MyFavorites/>
-          </Route>
-          <Route exact path='/nearbyparks'>
-            <NearbyParksStatic />
-          </Route>
-        </Switch>
+          <Switch>
+            <Route exact path="/">
+              <CssBaseline/>
+              <Profile />
+            </Route>
+            <Route exact path="/possible_connections">
+              <PossibleConnections handleOtherUserId={_handleOtherUserId}/>
+            </Route>
+            <Route exact path="/full_profile/:otherUserId">
+              <FullProfile otherUserId={otherUserId}/>
+            </Route>
+            <Route exact path='/my_profile'>
+              <MyProfile/>
+            </Route>
+            <Route exact path='/home'>
+              <UserInfo/>
+            </Route>
+            <Route exact path='/my_favorites'>
+              <MyFavorites/>
+            </Route>
+            <Route exact path='/nearbyparks'>
+              <NearbyParksStatic />
+            </Route>
+          </Switch>
         </div>
 
         <Footer/>
