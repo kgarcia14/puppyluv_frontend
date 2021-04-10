@@ -9,6 +9,10 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+.favorites-modal {
+    
+}
+
 .user-register-button {
     width: 275px;
     height: 30px;
@@ -25,6 +29,10 @@ code {
     width: 200px;
     border-radius: 10px;
     margin-top: 20px;
+}
+
+.card-content {
+    display: flex;
 }
 
 @media (min-width: 370px) {

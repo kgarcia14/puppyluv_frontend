@@ -12,7 +12,7 @@ const Div = Styled.div`
 
 const H2 = Styled.h2`
 text-align: center;
-margin-top: 15px;
+margin-top: 80px;
 color: #333;
 `;
 

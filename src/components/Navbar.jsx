@@ -5,7 +5,6 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import ForumIcon from '@material-ui/icons/Forum';
 import Badge from '@material-ui/core/Badge';
 import MenuIcon from '@material-ui/icons/Menu';
-import MailIcon from '@material-ui/icons/Mail';
 import PetsIcon from '@material-ui/icons/Pets';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
@@ -135,14 +134,12 @@ const Navbar = () => {
             <MenuItem 
                 onClick={(e) => {
                     e.preventDefault();
-                    window.location.href = '/Chatbox';
+                    window.location.href = '/nearbyparks';
             }}>
-                <IconButton aria-label="show 4 new mails" color="primary">
-                    <Badge badgeContent={4} color="secondary">
-                        <ForumIcon/>
-                    </Badge>
+                <IconButton color="primary">
+                        <LocationOnIcon/>
                 </IconButton>
-                <p>Chat</p>
+                <p>Nearby Parks</p>
             </MenuItem>
             <MenuItem 
                 onClick={(e) => {
