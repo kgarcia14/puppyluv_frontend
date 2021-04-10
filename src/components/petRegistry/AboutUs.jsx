@@ -27,10 +27,19 @@ const Label = Styled.label`
 `;
 
 const useStyles = makeStyles((theme) => ({
+    root: {
+        minHeight: '100vh',
+        paddingTop: '80px',
+        alignItems: 'center',
+    },
     text: {
         margin: theme.spacing(1),
         width: '325px',
     },
+    upload: {
+        justifyContent: 'center',
+        textAlign: 'center',
+    }
 }));
 
 const AboutUs = ({handleReload}) => {
@@ -65,7 +74,7 @@ const AboutUs = ({handleReload}) => {
     }
 
     return(
-        <>
+        <div className={classes.root}>
             <H2>About Us</H2>
             <Form onSubmit={_handleSubmitAboutUs}>
                 <Label>
@@ -87,9 +96,9 @@ const AboutUs = ({handleReload}) => {
                         Submit
                 </Button>
             </Form>
-            <PetPhotoUpload />
-            <PetImageGrid />
-        </>
+            <PetPhotoUpload/>
+            <PetImageGrid/>
+        </div>
     )
 }
 

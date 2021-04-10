@@ -198,8 +198,10 @@ const Navbar = () => {
                                         e.preventDefault();
                                         window.location.href = '/Chatbox';
                                 }}>
-                                <IconButton color="primary">
-                                    <ForumIcon/>
+                                <IconButton color="primary" aria-label="show 4 new mails" color="primary">
+                                    <Badge badgeContent={4} color="secondary">
+                                        <ForumIcon/>
+                                    </Badge>
                                 </IconButton>
                                 </Tooltip>
                                 <Tooltip 

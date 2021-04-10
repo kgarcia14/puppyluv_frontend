@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: 'Prata',
     flexGrow: 1,
     textAlign: 'center',
-    paddingTop: '30px',
+    paddingTop: '80px',
   },
   cards: {
     display: "flex",
