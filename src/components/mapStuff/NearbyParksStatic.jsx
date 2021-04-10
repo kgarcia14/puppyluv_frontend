@@ -81,23 +81,16 @@ const NearbyParksStatic = () => {
             <div className={classes.search}>
             {!!parks.length ? (
                 <Card className={classes.card}>
-                        {parks.map((park, index) => (
-                            <Paper className={classes.paper} xs key={index}>
-                                {park.photos.map((pic, i) => (
-                                    <CardMedia 
-                                        key={i}
-                                        image={{uri: pic.html_attributions}}
-                                        title="paella dish">
-                                    </CardMedia>
-                                ))}
-                                <CardContent/>
-                                <h4>{park.name}</h4>
-                                <p>{park.formatted_address}</p>
-                                <p>Rated at: {park.rating} <sup>★'s</sup></p>
-                                <CardContent/>
-                            </Paper>
+                    {parks.map((park, index) => (
+                        <Paper className={classes.paper} xs key={index}>
+                            <CardContent/>
+                            <h4>{park.name}</h4>
+                            <p>{park.formatted_address}</p>
+                            <p>Rated at: {park.rating} <sup>★'s</sup></p>
+                            <CardContent/>
+                        </Paper>
 
-                        ))}
+                    ))}
                 </Card>
             ) : (
                 <p>Come on human! Let's hurry and play!</p>

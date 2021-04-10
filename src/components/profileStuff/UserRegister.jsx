@@ -12,7 +12,7 @@ const Div = Styled.div`
 
 const H2 = Styled.h2`
 text-align: center;
-margin-top: 15px;
+margin-top: 80px;
 color: #333;
 `;
 
@@ -145,7 +145,6 @@ const UserRegister = ({ handleReload }) => {
 
     return(
         <div className={classes.root}>
-            <H2>User Information</H2>
             <H2>User Information</H2>
             <Form onSubmit={_handleSubmitUserInfo}>
                 <Label>First Name

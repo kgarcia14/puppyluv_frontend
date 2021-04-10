@@ -11,7 +11,7 @@ const Container = Styled.div`
 margin: 50px 20px;
 font-size: ${fontSize};
 color: ${gray2};
-
+margin-top: 60px;
 @media (min-width: 750px) {
   margin-top: 80px;
 }
