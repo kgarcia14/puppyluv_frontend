@@ -29,6 +29,9 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center',
         marginTop: '10px',
     },
+    button: {
+        margin: theme.spacing(1),
+      },
 }));
 
 const UserInfo = ({handleReload, reload}) => {
@@ -168,6 +171,7 @@ const UserInfo = ({handleReload, reload}) => {
                 onChange={_handleFilterByChange}>
                     <option value="">Please Select City</option>
                     <option value="Atlanta">Atlanta</option>
+                    <option value="Houston">Houston</option>
                 </Select>
                 <div className={classes.formControl}>
                 <Button
