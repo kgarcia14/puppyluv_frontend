@@ -9,10 +9,6 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Styled from 'styled-components';
 
-const H2 = Styled.h2`
-    margin-top: 50px;
-`;
-
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -73,7 +69,7 @@ const NearbyParksStatic = () => {
 
     return (
         <div className={classes.root}>
-            <H2>Search for a Park to Meet and Mingle!</H2>
+            <h2>Search for a Park to Meet and Mingle!</h2>
             <form noValidate autoComplete="off" onSubmit={_handleSubmit} className={classes.form}>
                 <Input placeholder="Location or Zip Code" inputProps={{ 'aria-label': 'description' }} onChange={_handlePPlaceChange} />
                 <Button size="small" variant="outlined" color="primary" type='submit'>Search</Button>
