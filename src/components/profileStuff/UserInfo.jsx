@@ -125,7 +125,6 @@ const UserInfo = ({handleReload, reload}) => {
                     variant="outlined"
                     color="primary"
                     className={classes.button}
-                    endIcon={<Icon>send</Icon>}
                     type='submit'
                 >
                     Submit
@@ -153,7 +152,6 @@ const UserInfo = ({handleReload, reload}) => {
                     variant="outlined"
                     color="primary"
                     className={classes.button}
-                    endIcon={<Icon>send</Icon>}
                     type='submit'
                 >
                     Submit
@@ -179,7 +177,6 @@ const UserInfo = ({handleReload, reload}) => {
                     variant="outlined"
                     color="primary"
                     className={classes.button}
-                    endIcon={<Icon>send</Icon>}
                     type='submit'
                 >
                     Submit
@@ -209,7 +206,6 @@ const UserInfo = ({handleReload, reload}) => {
                     variant="outlined"
                     color="primary"
                     className={classes.button}
-                    endIcon={<Icon>send</Icon>}
                     type='submit'
                 >
                     Submit
@@ -240,7 +236,6 @@ const UserInfo = ({handleReload, reload}) => {
                     variant="outlined"
                     color="primary"
                     className={classes.button}
-                    endIcon={<Icon>send</Icon>}
                     type='submit'
                 >
                     Submit

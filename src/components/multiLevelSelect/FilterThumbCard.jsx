@@ -18,6 +18,7 @@ import QuestionAnswerRoundedIcon from '@material-ui/icons/QuestionAnswerRounded'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import FilterTransitionsModal from './FilteredFavoritesModal';
+import FilterThumbPhoto from './FilterThumbPhoto';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -123,7 +124,7 @@ const FilterThumbCard = ({ fUser }) => {
           <Link to={`/full_profile/${fUser.id}`} style={{paddingLeft: 12, textDecoration: 'none', color: '#3f51b5'}}>View Full Profile</Link>
         )}
       <CardContent>
-        <FilterThumbCard fUser={fUser} />
+        <FilterThumbPhoto fUser={fUser} />
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">

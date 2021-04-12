@@ -8,7 +8,8 @@ const Label = Styled.label`
     align-items: center;
 `;
 
-const Div = Styled.div`
+const Form = Styled.form`
+    margin-bottom: 100px;
 `;
 
 const PetPhotoUpload = () => {
@@ -30,10 +31,10 @@ const PetPhotoUpload = () => {
     }; 
 
     return (
-        <form>
+        <Form>
             <Label>
                 Upload a profile picture
-            <Div>
+            <div>
             <input 
                 type="file" 
                 onChange={handleChange} />
@@ -43,9 +44,9 @@ const PetPhotoUpload = () => {
                 { image && <div>{ image.name }</div> }
                 { image && <ProfProgressBar image={image} setImage={setImage} /> }
             </div>
-            </Div>
+            </div>
             </Label>
-        </form>
+        </Form>
         
     )
 }
