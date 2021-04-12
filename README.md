@@ -46,7 +46,7 @@
 <li>LucidChart</li>
 
 
-<h4 style="color:crimson">Created by:</h4>
+## Created by
 
 <h4>Kurtis Garcia: Full-stack Developer
     <a href="https://github.com/kgarcia14">github.com/kgarcia14</a>
@@ -83,6 +83,6 @@
 </li>
 
 
-<div style="text-align:center">
+<div align="center">
     <img width="150" src="PuppyAuth.png">
 </div>
