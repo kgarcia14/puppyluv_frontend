@@ -93,7 +93,7 @@ const FullProfile = () => {
                         <Grid item xs>
                             <Paper className={classes.paper}>
                                 <h4>{fullProfile.pet_name2}</h4>
-                                <p>{fullProfile.pet_breed2}, {fullProfile.pet_age2} yrs old</p>
+                                <p>{fullProfile.pet_breed2} {fullProfile.pet_age2} yrs old</p>
                                 <p>{fullProfile.pet_personality2}</p>
                             </Paper>
                         </Grid>

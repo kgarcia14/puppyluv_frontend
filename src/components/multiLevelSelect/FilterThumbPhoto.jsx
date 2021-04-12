@@ -3,7 +3,7 @@ import useFirestore from '../../hook/useFirestore'
 import { motion } from 'framer-motion';
 
 
-const FilterThumbPhoto = ({ fUser}) => {
+const FilterThumbPhoto = ({ fUser }) => {
     const { docs } = useFirestore('prof '+ fUser.user_nickname)
     console.log(docs);
 
