@@ -82,9 +82,9 @@ export default function HowItWorks() {
                     <div>
                     <ForumIcon/>
                     </div>
-                    <span className={classes.number}>3. </span><span>Match and Mingle!</span>
+                    <span className={classes.number}>3. </span><span>Connect and Mingle!</span>
                     </h4>
-                    <p>CHOOSE your favorite friends and CONNECT - both online, using our chat-box, AND offline, by meeting at a local park near YOU. Un-LEASH the mingling BEAST.</p>
+                    <p>CHOOSE your favorite friends and CONNECT - both online, via email, AND offline, by meeting at a local park near YOU. Un-LEASH the mingling BEAST.</p>
                     </Paper>
                 </Grid>
             </Grid>

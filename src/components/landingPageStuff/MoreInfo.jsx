@@ -34,9 +34,9 @@ export default function MoreInfo() {
     <div className={classes.root} id="more-info">
       <h2>Meet the App that has helped millions of souls, connect.</h2>
       <div className={classes.cards}>
-      <ImageCard info={info[0]} checked={checked} />
       <ImageCard info={info[1]} checked={checked} />
       <ImageCard info={info[2]} checked={checked} />
+      <ImageCard info={info[0]} checked={checked} />
       </div>
     </div>
   );
