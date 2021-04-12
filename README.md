@@ -1,4 +1,4 @@
-<div style="text-align:center">
+<div align="center">
     <img width="155" height="" src="PuppyLuv_Logo.png">
 </div>
 
