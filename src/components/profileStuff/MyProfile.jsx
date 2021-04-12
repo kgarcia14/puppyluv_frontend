@@ -85,7 +85,7 @@ const MyProfile = ({ handleReload, reload }) => {
                     </Grid>
                 </Grid>
                 <h2>{uniqueId.first_name} {uniqueId.last_name}</h2>
-                <p><a href="mailto:{fullProfile.user_email}">{uniqueId.user_email}</a></p>
+                <p><a href="mailto:">{uniqueId.user_email}</a></p>
                 <p>{uniqueId.age} {uniqueId.gender}, {uniqueId.city}</p>
                 <p>{uniqueId.about_us}</p>
             </div>
