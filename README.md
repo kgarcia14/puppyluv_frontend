@@ -3,8 +3,8 @@
 </div>
 
 <!-- <h2 style="text-align:center">PuppyLuv</h2> -->
-**[]**
-<h2>Overview</h2>
+
+## Overview
 
 
 <p>PuppyLuv is a fun application for pet lovers that want to connect with each other and share their fur babies’ stories! In this app you can create an account using your email address and password. Once you are logged in you are able to input your information
@@ -13,7 +13,8 @@
 <div align="center">
     <img width="275" height="200px" src="PuppyLuv.png">
 </div>
-<h3 align="center">Features</h3>
+
+## Features
 
 <li>User sign-up & login</li>
 <li>Upload profile & pet pictures</li>
