@@ -85,12 +85,13 @@ const MyProfile = ({ handleReload, reload }) => {
                     </Grid>
                 </Grid>
                 <h2>{uniqueId.first_name} {uniqueId.last_name}</h2>
+                <p><a href="mailto:{fullProfile.user_email}">{uniqueId.user_email}</a></p>
                 <p>{uniqueId.age} {uniqueId.gender}, {uniqueId.city}</p>
                 <p>{uniqueId.about_us}</p>
             </div>
             <h3>My Pets</h3>
             <div className={classes.boot}>
-            <PetImageGrid setSelectedImg={setSelectedImg} />
+            
             { selectedImg && <PhotoModal setSelectedImg={setSelectedImg} selectedImg={selectedImg} /> }
             <div className={classes.profile}>
                 {uniqueId.numb_pets === 1 &&(
@@ -154,6 +155,7 @@ const MyProfile = ({ handleReload, reload }) => {
                         </>
                     )}
             </div>
+            <PetImageGrid setSelectedImg={setSelectedImg} />
             </div>
         </div>
     );

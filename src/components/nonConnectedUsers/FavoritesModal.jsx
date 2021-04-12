@@ -4,6 +4,15 @@ import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
+import Styled from 'styled-components';
+
+const Button = Styled.button`
+  background-color: #3f51b5;
+  color: #fff;
+  border: 1px solid #3f51b5;
+  border-radius: 5px;
+  padding: 5px 50px;
+`;
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -13,7 +22,9 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     backgroundColor: theme.palette.background.paper,
-    border: '2px solid #000',
+    color: '#333',
+    border: '2px solid #fff',
+    borderRadius: '10px',
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
   },
@@ -62,10 +73,11 @@ export default function TransitionsModal({allUser, open, setOpen}) {
       >
         <Fade in={open}>
           <div className={classes.paper}>
-            <h2 id="transition-modal-title">Would you like to add {allUser.first_name} {allUser.last_name} to your favorites?</h2>
+            <h2 id="transition-modal-title">Add {allUser.first_name} {allUser.last_name} to your favorites?</h2>
             <form onSubmit={_handleSubmitFavorites}>
-                <button
-                    type="submit">Yes</button>
+                <Button
+                    className="favorites-modal"
+                    type="submit">Yes</Button>
             </form>
           </div>
         </Fade>

@@ -1,5 +1,18 @@
 import React, {useState} from 'react';
 import PetProgressBar from './PetProgressBar';
+import Styled from 'styled-components';
+
+const Form = Styled.form`
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+`;
+const Label = Styled.label`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+`;
 
 const PetPhotoUpload = () => {
     const [image, setImage] = useState(null);
@@ -20,21 +33,21 @@ const PetPhotoUpload = () => {
     }; 
 
     return (
-        <form>
-            <label>
-                Upload some photos of your fury friends
+        <Form>
+            <Label>
+                Upload some photos of your fury friends:
             <input 
                 type="file" 
                 required
                 onChange={handleChange} />
+            </Label>
             <div 
                 className="output">
                 { error && <div className="error">{ error }</div> }
                 { image && <div>{ image.name }</div> }
                 { image && <PetProgressBar image={image} setImage={setImage} /> }
             </div>
-            </label>
-        </form>
+        </Form>
     )
 }
 export default PetPhotoUpload;

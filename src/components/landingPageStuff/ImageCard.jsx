@@ -5,9 +5,12 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import { Collapse } from '@material-ui/core';
+import Styled from 'styled-components';
+
 
 const useStyles = makeStyles({
   root: {
+    height: 770,
     maxWidth: 500,
     background: 'rgba(0,0,0,0.5)',
     margin: '20px',

@@ -12,7 +12,7 @@ const Div = Styled.div`
 
 const H2 = Styled.h2`
 text-align: center;
-margin-top: 15px;
+margin-top: 80px;
 color: #333;
 `;
 
@@ -195,6 +195,7 @@ const UserRegister = ({ handleReload }) => {
                         onChange={_cityChange}>
                             <option value=""></option>
                             <option value="Atlanta">Atlanta</option>
+                            <option value="Houston">Houston</option>
                     </Select>
                 </Label>
                 <Label>Zip Code 

@@ -1,18 +1,13 @@
 import React from 'react';
 import Paper from "@material-ui/core/Paper";
 import { makeStyles } from "@material-ui/core/styles";
-import Grid from '@material-ui/core/Grid';
 import { useState } from 'react';
-import { useParams } from 'react-router-dom'
 import Input from '@material-ui/core/Input';
 import Button from '@material-ui/core/Button';
-
 import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
+import Styled from 'styled-components';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -22,8 +17,8 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
         paddingLeft: '30px',
         paddingRight: '30px',
-        paddingBottom: '30px',
-        paddingTop: '30px',
+        paddingBottom: '80px',
+        paddingTop: '80px',
         minHeight: '100vh',
         textAlign: 'center',
         fontFamily: 'cabin',
@@ -82,22 +77,16 @@ const NearbyParksStatic = () => {
             <div className={classes.search}>
             {!!parks.length ? (
                 <Card className={classes.card}>
-                        {parks.map((park, index) => (
-                            <Paper className={classes.paper} xs key={index}>
-                                {park.photos.map((pic, i) => (
-                                    <CardMedia key={i}
-                                        image={{uri: pic.html_attributions}}
-                                        title="Paella dish">
-                                    </CardMedia>
-                                ))}
-                                <CardContent/>
-                                <h4>{park.name}</h4>
-                                <p>{park.formatted_address}</p>
-                                <p>Rated at: {park.rating} <sup>★'s</sup></p>
-                                <CardContent/>
-                            </Paper>
+                    {parks.map((park, index) => (
+                        <Paper className={classes.paper} xs key={index}>
+                            <CardContent/>
+                            <h4>{park.name}</h4>
+                            <p>{park.formatted_address}</p>
+                            <p>Rated at: {park.rating} <sup>★'s</sup></p>
+                            <CardContent/>
+                        </Paper>
 
-                        ))}
+                    ))}
                 </Card>
             ) : (
                 <p>Come on human! Let's hurry and play!</p>

@@ -18,6 +18,8 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: 'cover',
     paddingLeft: '50px',
     paddingRight: '50px',
+    paddingBottom: '80px',
+    paddingTop: '80px',
     backgroundPosition: 'center',
   },
   icon: {

@@ -59,6 +59,7 @@ const FullProfile = () => {
                     <h2>
                         {fullProfile.first_name} {fullProfile.last_name}
                     </h2>
+                    <p><a href="mailto:{fullProfile.user_email}">{fullProfile.user_email}</a></p>
                     <p>
                         {fullProfile.age} {fullProfile.gender}, {fullProfile.city}
                     </p>
