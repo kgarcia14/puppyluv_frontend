@@ -9,10 +9,10 @@
 <p>PuppyLuv is a fun application for pet lovers that want to connect with each other and share their fur babies’ stories! In this app you can create an account using your email address and password. Once you are logged in you are able to input your information
     such as first name, last name, age, gender, city, zip code, user image and number of pets. You are also able to add your pets’ information such as name, breed, age, personality and select an image for each of your pets (up to three pets). Other
     fun features are that you are able to select profiles of people around you and favorite them, chat with them and maybe meet up at a dog park to have a doggy play-date!</p>
-<div style="text-align:center">
+<div align="center">
     <img width="275" height="200px" src="PuppyLuv.png">
 </div>
-<h3 style="color:blueviolet">Features</h3>
+<h3 align="center">Features</h3>
 
 <li>User sign-up & login</li>
 <li>Upload profile & pet pictures</li>
